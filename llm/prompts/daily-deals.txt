@@ -12,6 +12,7 @@ CRITICAL RULES - MUST FOLLOW:
 OUTPUT FORMAT:
 ---
 title: "Home Gym Deals — [Full Month Name] [Day], [Year]"
+date: "[YYYY-MM-DD format]"
 description: "Today's best home gym equipment deals with discounts up to [highest %]%. Save on [category types]."
 publishedTime: "[ISO 8601 date]"
 ---

@@ -47,7 +47,6 @@ Thumbs.db
 # Generated content (keep structure, ignore generated files)
 content/deals/*.md
 !content/deals/.gitkeep
-data/deals-today.json
 
 # Backup files
 *.bak

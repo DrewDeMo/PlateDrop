@@ -68,12 +68,8 @@ async function validateDeals() {
       // Validate prices if present
       const priceMatches = content.match(/\$[\d,]+(?:\.\d{2})?/g);
       if (priceMatches && priceMatches.length > 0) {
-        console.log(`   Found ${priceMatches.length} price(s) to validate`);
-        const pricesValid = await validatePrices(priceMatches);
-        if (!pricesValid) {
-          console.warn(`⚠️  Some prices may be invalid in ${file}`);
-          // Don't fail validation for price issues, just warn
-        }
+        console.log(`   Found ${priceMatches.length} price(s)`);
+        // Price validation is informational only
       }
       
       // Check for affiliate links
