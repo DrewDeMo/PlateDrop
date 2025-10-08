@@ -1,0 +1,269 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import DealCard from '@components/DealCard.astro';
+
+// This will be replaced with actual data from deals-today.json
+const mockDeals = [
+  {
+    id: 'rogue-echo-bike',
+    title: 'Rogue Echo Bike',
+    brand: 'Rogue Fitness',
+    category: 'cardio',
+    url: 'https://www.roguefitness.com/rogue-echo-bike',
+    image_url: 'https://placehold.co/600x400/2563eb/ffffff?text=Echo+Bike',
+    price_current: 795.00,
+    price_prev: 895.00,
+    discount_pct: 11.17,
+    rating: 4.8,
+    reviews_count: 1247,
+    retailer: 'Rogue Fitness'
+  },
+  {
+    id: 'rep-pr-4000',
+    title: 'REP PR-4000 Power Rack',
+    brand: 'REP Fitness',
+    category: 'racks',
+    url: 'https://www.repfitness.com/pr-4000',
+    image_url: 'https://placehold.co/600x400/0891b2/ffffff?text=Power+Rack',
+    price_current: 595.00,
+    price_prev: 695.00,
+    discount_pct: 14.39,
+    rating: 4.9,
+    reviews_count: 892,
+    retailer: 'REP Fitness'
+  },
+  {
+    id: 'powerblock-elite',
+    title: 'PowerBlock Elite EXP Adjustable Dumbbells',
+    brand: 'PowerBlock',
+    category: 'dumbbells',
+    url: 'https://www.amazon.com/powerblock-elite',
+    image_url: 'https://placehold.co/600x400/f59e0b/ffffff?text=Dumbbells',
+    price_current: 399.00,
+    price_prev: 499.00,
+    discount_pct: 20.04,
+    rating: 4.7,
+    reviews_count: 2341,
+    retailer: 'Amazon'
+  }
+];
+
+const today = new Date();
+const formattedDate = today.toLocaleDateString('en-US', { 
+  weekday: 'long',
+  year: 'numeric', 
+  month: 'long', 
+  day: 'numeric' 
+});
+---
+
+<BaseLayout
+  title="Today's Home Gym Deals"
+  description="Daily curated deals on home gym equipment including power racks, barbells, dumbbells, and cardio machines. Save on quality fitness gear."
+>
+  <div class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Today's Best Home Gym Deals
+        </h1>
+        <p class="hero-subtitle">
+          {formattedDate}
+        </p>
+        <p class="hero-description">
+          Curated daily deals on quality home gym equipment. We track prices across major retailers 
+          so you don't have to. All deals verified and updated daily.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <section class="deals-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Deals</h2>
+        <p class="section-description">
+          Hand-picked deals with the best discounts and value
+        </p>
+      </div>
+      
+      <div class="deals-grid">
+        {mockDeals.map((deal) => (
+          <DealCard {...deal} />
+        ))}
+      </div>
+      
+      <div class="deals-footer">
+        <p class="disclaimer">
+          <strong>Price Disclaimer:</strong> Prices and availability are accurate as of the time of posting 
+          but may change. We earn from qualifying purchases through affiliate links.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <h2 class="cta-title">Never Miss a Deal</h2>
+        <p class="cta-description">
+          Subscribe to our RSS feed to get daily deals delivered automatically.
+        </p>
+        <a href="/rss.xml" class="btn btn-primary btn-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 11a9 9 0 0 1 9 9"></path>
+            <path d="M4 4a16 16 0 0 1 16 16"></path>
+            <circle cx="5" cy="19" r="1"></circle>
+          </svg>
+          Subscribe to RSS Feed
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: white;
+    padding-block: var(--space-20) var(--space-16);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin-inline: auto;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: var(--text-4xl);
+    font-weight: 800;
+    margin-bottom: var(--space-3);
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--text-lg);
+    font-weight: 500;
+    margin-bottom: var(--space-6);
+    opacity: 0.9;
+  }
+  
+  .hero-description {
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    opacity: 0.95;
+    max-width: 60ch;
+    margin-inline: auto;
+  }
+  
+  .deals-section {
+    padding-block: var(--space-20);
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+  }
+  
+  .section-title {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+  }
+  
+  .section-description {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    max-width: 60ch;
+    margin-inline: auto;
+  }
+  
+  .deals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-8);
+    margin-bottom: var(--space-12);
+  }
+  
+  .deals-footer {
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--color-border);
+  }
+  
+  .disclaimer {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+    text-align: center;
+    max-width: 70ch;
+    margin-inline: auto;
+  }
+  
+  .cta-section {
+    padding-block: var(--space-20);
+    background-color: var(--color-bg-secondary);
+  }
+  
+  .cta-card {
+    max-width: 600px;
+    margin-inline: auto;
+    text-align: center;
+    padding: var(--space-12);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .cta-title {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+  }
+  
+  .cta-description {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-6);
+  }
+  
+  .btn-lg {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-lg);
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      padding-block: var(--space-16) var(--space-12);
+    }
+    
+    .hero-title {
+      font-size: var(--text-3xl);
+    }
+    
+    .deals-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+    
+    .cta-card {
+      padding: var(--space-8);
+    }
+  }
+</style>

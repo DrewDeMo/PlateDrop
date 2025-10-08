@@ -1,0 +1,60 @@
+{
+  "topics": [
+    {
+      "id": "home-gym-essentials",
+      "title": "Essential Home Gym Equipment for Beginners",
+      "status": "pending",
+      "priority": 1,
+      "keywords": ["home gym", "beginner", "essentials", "starter equipment"]
+    },
+    {
+      "id": "power-rack-guide",
+      "title": "Complete Power Rack Buying Guide",
+      "status": "pending",
+      "priority": 2,
+      "keywords": ["power rack", "squat rack", "safety", "buying guide"]
+    },
+    {
+      "id": "barbell-selection",
+      "title": "How to Choose the Right Barbell",
+      "status": "pending",
+      "priority": 3,
+      "keywords": ["barbell", "olympic bar", "powerlifting", "weightlifting"]
+    },
+    {
+      "id": "adjustable-dumbbells",
+      "title": "Best Adjustable Dumbbells for Home Gyms",
+      "status": "pending",
+      "priority": 4,
+      "keywords": ["dumbbells", "adjustable", "space-saving", "versatile"]
+    },
+    {
+      "id": "garage-gym-setup",
+      "title": "Setting Up a Garage Gym: Complete Guide",
+      "status": "pending",
+      "priority": 5,
+      "keywords": ["garage gym", "setup", "flooring", "climate control"]
+    },
+    {
+      "id": "budget-home-gym",
+      "title": "Building a Home Gym on a Budget",
+      "status": "pending",
+      "priority": 6,
+      "keywords": ["budget", "affordable", "cost-effective", "value"]
+    },
+    {
+      "id": "cardio-equipment",
+      "title": "Home Cardio Equipment: What's Worth It?",
+      "status": "pending",
+      "priority": 7,
+      "keywords": ["cardio", "treadmill", "bike", "rower", "conditioning"]
+    },
+    {
+      "id": "gym-flooring",
+      "title": "Home Gym Flooring Options Compared",
+      "status": "pending",
+      "priority": 8,
+      "keywords": ["flooring", "rubber mats", "protection", "noise reduction"]
+    }
+  ]
+}

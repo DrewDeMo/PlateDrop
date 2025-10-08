@@ -1,0 +1,56 @@
+{
+  "name": "platedrop",
+  "version": "1.0.0",
+  "description": "Automated home gym deals and guides platform",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "fetch": "node scripts/fetch/index.js",
+    "generate:daily": "node scripts/generate/daily-deals.js",
+    "generate:guide": "node scripts/generate/evergreen-guide.js",
+    "validate": "node scripts/validate/index.js",
+    "test": "node --test tests/**/*.test.js",
+    "lint": "eslint . --ext .js,.astro",
+    "format": "prettier --write \"**/*.{js,astro,md,json}\""
+  },
+  "dependencies": {
+    "astro": "^4.15.0",
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/mdx": "^3.1.5",
+    "openai": "^4.58.1",
+    "dotenv": "^16.4.5",
+    "zod": "^3.23.8",
+    "cheerio": "^1.0.0",
+    "node-fetch": "^3.3.2",
+    "date-fns": "^3.6.0",
+    "gray-matter": "^4.0.3",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.5",
+    "typescript": "^5.6.2",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-astro": "^1.2.3"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "keywords": [
+    "home-gym",
+    "fitness",
+    "deals",
+    "equipment",
+    "astro",
+    "static-site"
+  ],
+  "author": "PlateDrop",
+  "license": "MIT"
+}

@@ -1,0 +1,57 @@
+{
+  "retailers": [
+    {
+      "id": "mock",
+      "name": "Mock Data",
+      "enabled": true,
+      "type": "mock",
+      "product_count": 15,
+      "description": "Mock data generator for testing"
+    },
+    {
+      "id": "rogue",
+      "name": "Rogue Fitness",
+      "enabled": false,
+      "base_url": "https://www.roguefitness.com",
+      "deals_endpoint": "/deals",
+      "affiliate_params": {
+        "param_name": "tag",
+        "tag_value": "env:ROGUE_AFFILIATE_TAG"
+      },
+      "rate_limit_ms": 2000,
+      "parser_type": "html",
+      "selectors": {
+        "product_container": ".product-item",
+        "title": ".product-title",
+        "price": ".price-current",
+        "prev_price": ".price-was"
+      }
+    },
+    {
+      "id": "rep",
+      "name": "Rep Fitness",
+      "enabled": false,
+      "base_url": "https://www.repfitness.com",
+      "deals_endpoint": "/deals",
+      "affiliate_params": {
+        "param_name": "tag",
+        "tag_value": "env:REP_AFFILIATE_TAG"
+      },
+      "rate_limit_ms": 2000,
+      "parser_type": "html"
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "enabled": false,
+      "base_url": "https://www.amazon.com",
+      "affiliate_params": {
+        "param_name": "tag",
+        "tag_value": "env:AMAZON_ASSOC_TAG"
+      },
+      "use_pa_api": false,
+      "parser_type": "manual",
+      "note": "Requires manual product list or Product Advertising API"
+    }
+  ]
+}
