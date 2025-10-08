@@ -61,7 +61,7 @@ The GitHub Actions workflow has been successfully tested and debugged:
    ```
    Framework: Astro
    Build command: npm run build
-   Build output: site/dist
+   Build output: dist
    Root directory: /
    ```
 5. Add environment variables:
