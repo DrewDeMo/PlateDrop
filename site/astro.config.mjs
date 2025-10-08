@@ -20,6 +20,7 @@ export default defineConfig({
       entrypoint: 'astro/assets/services/sharp'
     }
   },
+  outDir: '../dist',
   build: {
     inlineStylesheets: 'auto'
   },
