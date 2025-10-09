@@ -105,18 +105,18 @@ const itemListSchema = deals.length > 0 ? {
           Premium home gym equipment at unbeatable prices. We track thousands of deals across top retailers, 
           bringing you only the best discounts on quality fitness gear.
         </p>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="stat-value">$2.4M+</div>
-            <div class="stat-label">Saved</div>
+        <div class="hero-features">
+          <div class="hero-feature">
+            <div class="feature-icon-small">✓</div>
+            <div class="feature-text">Verified Discounts</div>
           </div>
-          <div class="hero-stat">
-            <div class="stat-value">15K+</div>
-            <div class="stat-label">Daily Deals</div>
+          <div class="hero-feature">
+            <div class="feature-icon-small">🔄</div>
+            <div class="feature-text">Updated Daily</div>
           </div>
-          <div class="hero-stat">
-            <div class="stat-value">98%</div>
-            <div class="stat-label">Accuracy</div>
+          <div class="hero-feature">
+            <div class="feature-icon-small">🎯</div>
+            <div class="feature-text">Quality Brands Only</div>
           </div>
         </div>
       </div>
@@ -370,64 +370,61 @@ const itemListSchema = deals.length > 0 ? {
     </div>
   </section>
 
-  <section class="testimonials-section">
+  <section class="value-props-section">
     <div class="container">
       <div class="section-header">
         <div class="section-badge">
-          <span>⭐</span>
-          <span>Testimonials</span>
+          <span>💡</span>
+          <span>Smart Shopping</span>
         </div>
-        <h2 class="section-title">Trusted by Fitness Enthusiasts</h2>
+        <h2 class="section-title">Build Your Gym the Smart Way</h2>
         <p class="section-description">
-          Join thousands who've built their dream gyms with our help
+          Strategic tips for maximizing value on home gym equipment
         </p>
       </div>
       
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-rating">
-            ⭐⭐⭐⭐⭐
+      <div class="value-props-grid">
+        <div class="value-prop-card">
+          <div class="value-prop-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
           </div>
-          <p class="testimonial-text">
-            "Saved over $800 on my home gym setup thanks to PlateDrop. The deals are legit and the price tracking is spot-on."
+          <h3>Timing is Everything</h3>
+          <p>
+            Major sales events like Black Friday, New Year, and end-of-season clearances can offer 20-40% off retail prices.
+            Our daily tracking helps you catch these opportunities as they happen.
           </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">MC</div>
-            <div>
-              <div class="author-name">Mike Chen</div>
-              <div class="author-role">Home Gym Enthusiast</div>
-            </div>
-          </div>
         </div>
 
-        <div class="testimonial-card">
-          <div class="testimonial-rating">
-            ⭐⭐⭐⭐⭐
+        <div class="value-prop-card">
+          <div class="value-prop-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
           </div>
-          <p class="testimonial-text">
-            "Finally, a deals site that doesn't spam me with fake discounts. Every deal I've clicked has been the real deal."
+          <h3>Quality Over Quantity</h3>
+          <p>
+            A few pieces of quality equipment will serve you better than a garage full of cheap gear.
+            Focus on reputable brands with solid warranties and proven durability.
           </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">SJ</div>
-            <div>
-              <div class="author-name">Sarah Johnson</div>
-              <div class="author-role">Fitness Coach</div>
-            </div>
-          </div>
         </div>
 
-        <div class="testimonial-card">
-          <div class="testimonial-rating">
-            ⭐⭐⭐⭐⭐
+        <div class="value-prop-card">
+          <div class="value-prop-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
           </div>
-          <p class="testimonial-text">
-            "The daily updates are perfect. I check every morning and have scored some incredible deals on quality equipment."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">DM</div>
-            <div>
-              <div class="author-name">David Martinez</div>
-              <div class="author-role">Powerlifter</div>
+          <h3>Start with Essentials</h3>
+          <p>
+            Power rack, barbell, and plates form the foundation of any home gym.
+            Once you have these basics, you can add specialized equipment as deals arise and your training evolves.
             </div>
           </div>
         </div>
@@ -557,29 +554,39 @@ const itemListSchema = deals.length > 0 ? {
   .hero-stats {
     display: flex;
     justify-content: center;
-    gap: var(--space-12);
+    gap: var(--space-8);
     flex-wrap: wrap;
     animation: fadeIn var(--transition-slow) ease-out 0.8s backwards;
   }
   
-  .hero-stat {
-    text-align: center;
+  .hero-feature {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-5);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-base);
   }
   
-  .stat-value {
-    font-size: var(--text-4xl);
-    font-weight: 900;
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: var(--space-2);
+  .hero-feature:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
   }
   
-  .stat-label {
+  .feature-icon-small {
+    font-size: var(--text-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .feature-text {
     font-size: var(--text-base);
-    opacity: 0.9;
     font-weight: 600;
+    white-space: nowrap;
   }
   
   .hero-scroll-indicator {
@@ -928,13 +935,13 @@ const itemListSchema = deals.length > 0 ? {
     transform: translateX(0);
   }
   
-  /* Testimonials Section */
-  .testimonials-section {
+  /* Value Props Section */
+  .value-props-section {
     padding-block: var(--space-24);
     background: var(--color-bg-secondary);
   }
   
-  .testimonials-grid {
+  .value-props-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: var(--space-10);
@@ -950,55 +957,43 @@ blur);
     transition: all var(--transition-base);
   }
   
-  .testimonial-card:hover {
+  .value-prop-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-2xl);
     border-color: var(--color-primary);
   }
   
-  .testimonial-rating {
-    font-size: var(--text-2xl);
-    margin-bottom: var(--space-5);
-  }
-  
-  .testimonial-text {
-    font-size: var(--text-lg);
-    line-height: 1.7;
-    color: var(--color-text);
-    margin-bottom: var(--space-6);
-    font-style: italic;
-  }
-  
-  .testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: var(--space-4);
-  }
-  
-  .author-avatar {
-    width: 56px;
-    height: 56px;
+  .value-prop-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--space-6);
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--gradient-primary);
-    border-radius: 50%;
-    font-size: var(--text-lg);
-    font-weight: 800;
+    border-radius: var(--radius-xl);
     color: white;
-    flex-shrink: 0;
+    box-shadow: var(--shadow-glow);
+    transition: transform var(--transition-base);
   }
   
-  .author-name {
+  .value-prop-card:hover .value-prop-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  .value-prop-card h3 {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    margin-bottom: var(--space-4);
+    color: var(--color-text-primary);
+  }
+  
+  .value-prop-card p {
     font-size: var(--text-base);
-    font-weight: 700;
-    color: var(--color-text);
-    margin-bottom: var(--space-1);
-  }
-  
-  .author-role {
-    font-size: var(--text-sm);
-    color: var(--color-text-tertiary);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin: 0;
+    text-align: left;
   }
   
   /* CTA Section */
@@ -1062,7 +1057,7 @@ blur);
       padding-block: var(--space-24) var(--space-20);
     }
     
-    .hero-stats {
+    .hero-features {
       gap: var(--space-8);
     }
   }
@@ -1077,12 +1072,8 @@ blur);
       font-size: var(--text-3xl);
     }
     
-    .hero-stats {
+    .hero-features {
       gap: var(--space-6);
-    }
-    
-    .stat-value {
-      font-size: var(--text-3xl);
     }
     
     .deals-grid {
@@ -1092,7 +1083,7 @@ blur);
     
     .features-grid,
     .categories-grid,
-    .testimonials-grid {
+    .value-props-grid {
       grid-template-columns: 1fr;
       gap: var(--space-8);
     }
@@ -1117,7 +1108,7 @@ blur);
       font-size: var(--text-base);
     }
     
-    .hero-stats {
+    .hero-features {
       flex-direction: column;
       gap: var(--space-4);
     }
