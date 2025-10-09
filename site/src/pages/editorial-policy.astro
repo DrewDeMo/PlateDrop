@@ -30,104 +30,52 @@ const htmlContent = marked(content);
 ---
 
 <BaseLayout title={title} description={description}>
-  <div class="legal-page">
+  <div class="py-16 md:py-8 min-h-[60vh]">
     <div class="container">
-      <article class="legal-content" set:html={htmlContent} />
+      <article class="legal-content max-w-[800px] mx-auto glass p-12 md:p-6 rounded-2xl" set:html={htmlContent} />
     </div>
   </div>
 </BaseLayout>
 
 <style>
-  .legal-page {
-    padding: var(--space-16) 0;
-    min-height: 60vh;
-  }
-
-  .legal-content {
-    max-width: 800px;
-    margin: 0 auto;
-    background: var(--gradient-card);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-2xl);
-    padding: var(--space-12);
-  }
-
   .legal-content :global(h1) {
-    font-size: var(--text-4xl);
-    font-weight: 800;
-    margin-bottom: var(--space-6);
-    background: var(--gradient-text);
+    @apply text-4xl md:text-3xl font-extrabold mb-6;
+    background: linear-gradient(135deg, var(--color-text) 0%, var(--color-primary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .legal-content :global(h2) {
-    font-size: var(--text-2xl);
-    font-weight: 700;
-    margin-top: var(--space-8);
-    margin-bottom: var(--space-4);
-    color: var(--color-text-primary);
+    @apply text-2xl font-bold mt-8 mb-4 text-text;
   }
 
   .legal-content :global(h3) {
-    font-size: var(--text-xl);
-    font-weight: 600;
-    margin-top: var(--space-6);
-    margin-bottom: var(--space-3);
-    color: var(--color-text-primary);
+    @apply text-xl font-semibold mt-6 mb-3 text-text;
   }
 
   .legal-content :global(p) {
-    margin-bottom: var(--space-4);
-    line-height: 1.7;
-    color: var(--color-text-secondary);
+    @apply mb-4 leading-relaxed text-text-secondary;
   }
 
   .legal-content :global(ul),
   .legal-content :global(ol) {
-    margin-bottom: var(--space-4);
-    padding-left: var(--space-6);
-    color: var(--color-text-secondary);
+    @apply mb-4 pl-6 text-text-secondary;
   }
 
   .legal-content :global(li) {
-    margin-bottom: var(--space-2);
-    line-height: 1.7;
+    @apply mb-2 leading-relaxed;
   }
 
   .legal-content :global(a) {
-    color: var(--color-primary);
-    text-decoration: underline;
-  }
-
-  .legal-content :global(a:hover) {
-    color: var(--color-secondary);
+    @apply text-primary underline hover:text-secondary;
   }
 
   .legal-content :global(strong) {
-    color: var(--color-text-primary);
-    font-weight: 600;
+    @apply text-text font-semibold;
   }
 
   .legal-content :global(hr) {
-    border: none;
-    border-top: 1px solid var(--glass-border);
-    margin: var(--space-8) 0;
-  }
-
-  @media (max-width: 768px) {
-    .legal-page {
-      padding: var(--space-8) 0;
-    }
-
-    .legal-content {
-      padding: var(--space-6);
-    }
-
-    .legal-content :global(h1) {
-      font-size: var(--text-3xl);
-    }
+    @apply border-0 border-t border-glass-border my-8;
   }
 </style>

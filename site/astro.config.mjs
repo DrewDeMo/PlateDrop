@@ -38,6 +38,9 @@ export default defineConfig({
         '@layouts': '/src/layouts',
         '@styles': '/src/styles'
       }
+    },
+    ssr: {
+      noExternal: ['lucide-astro']
     }
   }
 });

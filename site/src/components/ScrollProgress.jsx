@@ -18,15 +18,9 @@ export default function ScrollProgress() {
     return (
         <div
             id="scroll-progress"
+            className="fixed top-0 left-0 h-1 bg-gradient-to-r from-primary to-secondary z-[5000] transition-[width] duration-100"
             style={{
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                height: '4px',
                 width: `${scrolled}%`,
-                background: 'linear-gradient(90deg, #C5693D 0%, #C7F000 100%)',
-                zIndex: 5000,
-                transition: 'width 0.1s linear',
             }}
         />
     )

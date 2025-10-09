@@ -18,181 +18,268 @@ const { Content } = await workout.render();
   title={workout.data.title}
   description={workout.data.description}
 >
-  <article class="workout-detail">
-    <header class="workout-header">
-      <h1>{workout.data.title}</h1>
-      <div class="workout-meta">
-        <span class="difficulty">{workout.data.difficulty}</span>
-        <span class="duration">{workout.data.duration}</span>
-        <span class="date">
-          {new Date(workout.data.publishDate).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-          })}
-        </span>
+  <article class="max-w-5xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+    <!-- Hero Header -->
+    <header class="mb-16">
+      <div class="text-center mb-8">
+        <h1 class="workout-title text-5xl md:text-6xl font-black mb-6 text-white leading-tight tracking-tight">{workout.data.title}</h1>
+        <p class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">{workout.data.description}</p>
       </div>
+      
+      <!-- Meta Info Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div class="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 text-center transform hover:scale-105 transition-transform duration-300">
+          <div class="text-blue-200 text-sm font-semibold uppercase tracking-wider mb-2">Difficulty</div>
+          <div class="text-white text-2xl font-bold">{workout.data.difficulty}</div>
+        </div>
+        <div class="bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl p-6 text-center transform hover:scale-105 transition-transform duration-300">
+          <div class="text-purple-200 text-sm font-semibold uppercase tracking-wider mb-2">Duration</div>
+          <div class="text-white text-2xl font-bold">{workout.data.duration}</div>
+        </div>
+        <div class="bg-gradient-to-br from-primary to-primary-dark rounded-2xl p-6 text-center transform hover:scale-105 transition-transform duration-300">
+          <div class="text-orange-200 text-sm font-semibold uppercase tracking-wider mb-2">Published</div>
+          <div class="text-white text-lg font-bold">
+            {new Date(workout.data.publishDate).toLocaleDateString('en-US', {
+              month: 'short',
+              day: 'numeric',
+              year: 'numeric'
+            })}
+          </div>
+        </div>
+      </div>
+
+      <!-- Equipment Card -->
       {workout.data.equipment && workout.data.equipment.length > 0 && (
-        <div class="equipment-list">
-          <strong>Equipment needed:</strong>
-          {workout.data.equipment.map((item, index) => (
-            <span>
-              {item}{index < workout.data.equipment.length - 1 ? ', ' : ''}
-            </span>
-          ))}
+        <div class="bg-surface-elevated rounded-2xl p-8 border border-border shadow-lg">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+            <strong class="text-white font-bold text-lg">Equipment Needed</strong>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            {workout.data.equipment.map((item) => (
+              <span class="inline-flex items-center px-4 py-2 bg-bg-tertiary rounded-lg text-gray-300 font-medium capitalize border border-border hover:border-primary transition-colors duration-200">
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
       )}
     </header>
     
-    <div class="workout-content">
+    <!-- Main Content -->
+    <div class="workout-content bg-surface rounded-3xl p-8 md:p-12 border border-border shadow-2xl">
       <Content />
     </div>
 
-    <footer class="workout-footer">
-      <a href="/workouts" class="back-link">← Back to all workouts</a>
+    <!-- Footer Navigation -->
+    <footer class="mt-12 pt-8 border-t border-border">
+      <div class="flex justify-between items-center">
+        <a href="/workouts" class="inline-flex items-center gap-2 px-6 py-3 bg-surface-elevated rounded-xl text-primary font-bold text-base hover:bg-bg-tertiary transition-all duration-200 group border border-border hover:border-primary">
+          <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          <span>All Workouts</span>
+        </a>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="inline-flex items-center gap-2 px-6 py-3 bg-primary rounded-xl text-white font-bold text-base hover:bg-primary-light transition-all duration-200 shadow-glow">
+          <span>Back to Top</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          </svg>
+        </button>
+      </div>
     </footer>
   </article>
 </BaseLayout>
 
-<style>
-  .workout-detail {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-  }
-
-  .workout-header {
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 2px solid #e5e7eb;
-  }
-
-  .workout-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #111827;
-    line-height: 1.2;
-  }
-
-  .workout-meta {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-  }
-
-  .workout-meta span {
-    padding: 0.25rem 0.75rem;
-    background: #f3f4f6;
-    border-radius: 0.375rem;
-    color: #374151;
-  }
-
-  .difficulty {
-    font-weight: 600;
-    background: #dbeafe !important;
-    color: #1e40af !important;
-  }
-
-  .equipment-list {
-    margin-top: 1rem;
-    padding: 1rem;
-    background: #f9fafb;
-    border-radius: 0.5rem;
-    font-size: 0.95rem;
-  }
-
-  .equipment-list strong {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #374151;
+<style is:global>
+  /* Override global.css gradient for workout title */
+  .workout-title {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+    background-clip: unset !important;
+    color: white !important;
   }
 
   .workout-content {
-    line-height: 1.7;
-    color: #374151;
+    @apply max-w-none;
+  }
+
+  /* Hide H1 since we show title in header */
+  .workout-content :global(h1) {
+    @apply hidden;
+  }
+
+  /* Headings with gradient accents */
+  .workout-content :global(h2),
+  .workout-content :global(h3),
+  .workout-content :global(h4),
+  .workout-content :global(h5),
+  .workout-content :global(h6) {
+    @apply font-bold text-white mb-6;
   }
 
   .workout-content :global(h2) {
-    font-size: 1.75rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: #111827;
+    @apply text-4xl mt-16 mb-8 text-white font-black tracking-tight;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    padding-bottom: 1rem;
+  }
+
+  .workout-content :global(h2)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+    border-radius: 2px;
   }
 
   .workout-content :global(h3) {
-    font-size: 1.35rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-    color: #1f2937;
+    @apply text-2xl mt-12 mb-6 text-white font-bold;
   }
 
+  .workout-content :global(h4) {
+    @apply text-xl mt-8 mb-4 text-white font-semibold;
+  }
+
+  /* Paragraphs */
   .workout-content :global(p) {
-    margin-bottom: 1rem;
+    @apply text-gray-300 leading-relaxed mb-6 text-lg;
   }
 
+  /* Links */
+  .workout-content :global(a) {
+    @apply text-primary no-underline font-semibold hover:text-primary-light transition-colors duration-200 border-b-2 border-primary/30 hover:border-primary;
+  }
+
+  /* Strong/Bold */
+  .workout-content :global(strong) {
+    @apply text-white font-bold;
+  }
+
+  /* Lists with better styling */
   .workout-content :global(ul),
   .workout-content :global(ol) {
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
+    @apply my-8 pl-0 text-gray-300 space-y-3;
+  }
+
+  .workout-content :global(ul) {
+    @apply list-none;
+  }
+
+  .workout-content :global(ol) {
+    @apply list-none;
   }
 
   .workout-content :global(li) {
-    margin-bottom: 0.5rem;
+    @apply my-3 leading-relaxed pl-8 relative text-lg;
   }
 
-  .workout-content :global(a) {
-    color: #2563eb;
-    text-decoration: underline;
+  .workout-content :global(ul > li)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+    border-radius: 50%;
   }
 
-  .workout-content :global(a:hover) {
-    color: #1d4ed8;
+  .workout-content :global(ol) {
+    counter-reset: item;
   }
 
-  .workout-content :global(strong) {
-    font-weight: 600;
-    color: #111827;
+  .workout-content :global(ol > li) {
+    counter-increment: item;
   }
 
+  .workout-content :global(ol > li)::before {
+    content: counter(item);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  .workout-content :global(li) :global(p) {
+    @apply mb-2;
+  }
+
+  /* Nested lists */
+  .workout-content :global(li) :global(ul),
+  .workout-content :global(li) :global(ol) {
+    @apply mt-3 mb-3;
+  }
+
+  /* Code */
   .workout-content :global(code) {
-    background: #f3f4f6;
-    padding: 0.125rem 0.375rem;
-    border-radius: 0.25rem;
-    font-size: 0.9em;
+    @apply bg-gray-800 px-2 py-1 rounded text-sm font-mono text-gray-300;
   }
 
-  .workout-footer {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid #e5e7eb;
+  .workout-content :global(pre) {
+    @apply bg-gray-800 p-4 rounded-lg overflow-x-auto my-6;
   }
 
-  .back-link {
-    display: inline-block;
-    color: #2563eb;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
+  .workout-content :global(pre code) {
+    @apply bg-transparent p-0;
   }
 
-  .back-link:hover {
-    color: #1d4ed8;
-    text-decoration: underline;
+  /* Horizontal Rule */
+  .workout-content :global(hr) {
+    @apply border-gray-700 my-12;
   }
 
+  /* Blockquotes */
+  .workout-content :global(blockquote) {
+    @apply border-l-4 border-primary pl-4 py-2 my-6 italic text-gray-300;
+  }
+
+  /* Tables */
+  .workout-content :global(table) {
+    @apply w-full my-6 border-collapse;
+  }
+
+  .workout-content :global(th),
+  .workout-content :global(td) {
+    @apply border border-gray-700 px-4 py-2 text-left text-gray-300;
+  }
+
+  .workout-content :global(th) {
+    @apply bg-gray-800 font-semibold text-white;
+  }
+
+  /* Images */
+  .workout-content :global(img) {
+    @apply rounded-lg my-6 max-w-full h-auto;
+  }
+
+  /* Responsive adjustments */
   @media (max-width: 768px) {
-    .workout-header h1 {
-      font-size: 2rem;
-    }
-
     .workout-content :global(h2) {
-      font-size: 1.5rem;
+      @apply text-2xl mt-8 mb-4;
     }
 
     .workout-content :global(h3) {
-      font-size: 1.25rem;
+      @apply text-xl mt-6 mb-3;
     }
   }
 </style>
+

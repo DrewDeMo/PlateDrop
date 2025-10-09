@@ -6,10 +6,10 @@ import BaseLayout from '@layouts/BaseLayout.astro';
   title="404 - Page Not Found | PlateDrop"
   description="The page you're looking for doesn't exist. Check out today's deals or browse our guides."
 >
-  <div class="error-page">
+  <div class="min-h-[70vh] flex items-center justify-center py-20">
     <div class="container">
-      <div class="error-content">
-        <div class="error-illustration">
+      <div class="max-w-[600px] mx-auto text-center">
+        <div class="error-illustration mb-8 text-primary animate-float">
           <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="100" cy="100" r="80" stroke="currentColor" stroke-width="4" opacity="0.2"/>
             <path d="M70 85C70 80.5817 73.5817 77 78 77H82C86.4183 77 90 80.5817 90 85V95C90 99.4183 86.4183 103 82 103H78C73.5817 103 70 99.4183 70 95V85Z" fill="currentColor"/>
@@ -18,32 +18,32 @@ import BaseLayout from '@layouts/BaseLayout.astro';
           </svg>
         </div>
         
-        <h1 class="error-title">404</h1>
-        <h2 class="error-subtitle">Page Not Found</h2>
-        <p class="error-description">
+        <h1 class="text-[clamp(4rem,15vw,8rem)] font-black bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent leading-none mb-4">404</h1>
+        <h2 class="text-3xl font-bold text-text mb-4">Page Not Found</h2>
+        <p class="text-lg text-text-secondary mb-10 leading-relaxed">
           Looks like this page took a rest day. Let's get you back to finding great deals!
         </p>
         
-        <div class="error-actions">
-          <a href="/" class="btn btn-primary btn-lg">
+        <div class="flex gap-4 justify-center flex-wrap mb-12 sm:flex-col sm:w-full">
+          <a href="/" class="btn btn-primary py-4 px-8 text-lg">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
               <polyline points="9 22 9 12 15 12 15 22"></polyline>
             </svg>
             Back to Home
           </a>
-          <a href="/guides" class="btn btn-secondary btn-lg">
+          <a href="/guides" class="btn btn-secondary py-4 px-8 text-lg sm:w-full">
             Browse Guides
           </a>
         </div>
         
-        <div class="helpful-links">
-          <h3>Popular Pages</h3>
-          <ul>
-            <li><a href="/">Today's Deals</a></li>
-            <li><a href="/guides">Home Gym Guides</a></li>
-            <li><a href="/about">About PlateDrop</a></li>
-            <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <div class="pt-12 border-t border-border">
+          <h3 class="text-xl font-semibold mb-6 text-text">Popular Pages</h3>
+          <ul class="list-none p-0 m-0 flex flex-wrap gap-4 justify-center sm:flex-col sm:items-center">
+            <li class="m-0"><a href="/" class="inline-block py-2 px-4 bg-bg-tertiary rounded-full text-base font-medium text-text-secondary no-underline transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-0.5">Today's Deals</a></li>
+            <li class="m-0"><a href="/guides" class="inline-block py-2 px-4 bg-bg-tertiary rounded-full text-base font-medium text-text-secondary no-underline transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-0.5">Home Gym Guides</a></li>
+            <li class="m-0"><a href="/about" class="inline-block py-2 px-4 bg-bg-tertiary rounded-full text-base font-medium text-text-secondary no-underline transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-0.5">About PlateDrop</a></li>
+            <li class="m-0"><a href="/privacy-policy" class="inline-block py-2 px-4 bg-bg-tertiary rounded-full text-base font-medium text-text-secondary no-underline transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-0.5">Privacy Policy</a></li>
           </ul>
         </div>
       </div>
@@ -52,26 +52,6 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-  .error-page {
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-block: var(--space-20);
-  }
-  
-  .error-content {
-    max-width: 600px;
-    margin-inline: auto;
-    text-align: center;
-  }
-  
-  .error-illustration {
-    margin-bottom: var(--space-8);
-    color: var(--color-primary);
-    animation: float 3s ease-in-out infinite;
-  }
-  
   @keyframes float {
     0%, 100% {
       transform: translateY(0px);
@@ -81,102 +61,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     }
   }
   
-  .error-title {
-    font-size: clamp(4rem, 15vw, 8rem);
-    font-weight: 900;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1;
-    margin-bottom: var(--space-4);
-  }
-  
-  .error-subtitle {
-    font-size: var(--text-3xl);
-    font-weight: 700;
-    color: var(--color-text);
-    margin-bottom: var(--space-4);
-  }
-  
-  .error-description {
-    font-size: var(--text-lg);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-10);
-    line-height: 1.6;
-  }
-  
-  .error-actions {
-    display: flex;
-    gap: var(--space-4);
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: var(--space-12);
-  }
-  
-  .btn-lg {
-    padding: var(--space-4) var(--space-8);
-    font-size: var(--text-lg);
-  }
-  
-  .helpful-links {
-    padding-top: var(--space-12);
-    border-top: 1px solid var(--color-border);
-  }
-  
-  .helpful-links h3 {
-    font-size: var(--text-xl);
-    font-weight: 600;
-    margin-bottom: var(--space-6);
-    color: var(--color-text);
-  }
-  
-  .helpful-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-4);
-    justify-content: center;
-  }
-  
-  .helpful-links li {
-    margin: 0;
-  }
-  
-  .helpful-links a {
-    display: inline-block;
-    padding: var(--space-2) var(--space-4);
-    background-color: var(--color-bg-tertiary);
-    border-radius: var(--radius-full);
-    font-size: var(--text-base);
-    font-weight: 500;
-    color: var(--color-text-secondary);
-    text-decoration: none;
-    transition: all var(--transition-base);
-  }
-  
-  .helpful-links a:hover {
-    background-color: var(--color-primary);
-    color: white;
-    transform: translateY(-2px);
-    text-decoration: none;
-  }
-  
-  @media (max-width: 640px) {
-    .error-actions {
-      flex-direction: column;
-      width: 100%;
-    }
-    
-    .error-actions .btn {
-      width: 100%;
-    }
-    
-    .helpful-links ul {
-      flex-direction: column;
-      align-items: center;
-    }
+  .error-illustration {
+    animation: float 3s ease-in-out infinite;
   }
 </style>
