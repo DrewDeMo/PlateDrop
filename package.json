@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "description": "Automated home gym deals and guides platform",
   "type": "module",
+  "private": true,
+  "workspaces": [
+    "site"
+  ],
   "scripts": {
-    "dev": "cd site && astro dev",
-    "start": "cd site && astro dev",
-    "build": "cd site && astro build",
-    "preview": "cd site && astro preview",
-    "astro": "cd site && astro",
+    "dev": "npm run dev --workspace site",
+    "start": "npm run dev --workspace site",
+    "build": "npm run build --workspace site",
+    "preview": "npm run preview --workspace site",
+    "astro": "npm exec --workspace site astro",
     "fetch": "node scripts/fetch/index.js",
     "generate:daily": "node scripts/generate/daily-deals.js",
     "generate:guide": "node scripts/generate/evergreen-guide.js",
@@ -18,30 +22,18 @@
     "format": "prettier --write \"**/*.{js,astro,md,json}\""
   },
   "dependencies": {
-    "@astrojs/mdx": "^3.1.5",
-    "@astrojs/rss": "^4.0.7",
-    "@astrojs/sitemap": "^3.1.6",
-    "astro": "^4.15.0",
     "cheerio": "^1.0.0",
-    "date-fns": "^3.6.0",
     "dotenv": "^16.4.5",
-    "gray-matter": "^4.0.3",
-    "lucide-astro": "^0.545.0",
-    "marked": "^16.4.0",
     "node-fetch": "^3.3.2",
     "openai": "^4.58.1",
-    "sharp": "^0.33.5",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@astrojs/tailwind": "^6.0.2",
-    "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^20.16.5",
     "eslint": "^8.57.0",
     "eslint-plugin-astro": "^1.2.3",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
-    "tailwindcss": "^3.4.18",
     "typescript": "^5.6.2"
   },
   "engines": {

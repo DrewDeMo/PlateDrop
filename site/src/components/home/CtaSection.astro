@@ -1,0 +1,54 @@
+<section class="cta-section py-20 bg-gradient-to-br from-[#1a1a1a] to-[#2d2d2d]">
+  <div class="container">
+    <div class="cta-content-modern flex items-center justify-between gap-12 p-12 bg-white/5 rounded-2xl border border-white/10">
+      <div class="cta-text flex-1">
+        <h2 class="cta-title-modern text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold text-white mb-3 tracking-tight">Ready to Build Your Gym?</h2>
+        <p class="cta-description-modern text-lg text-white/80 m-0 leading-relaxed">
+          Explore our comprehensive buying guides to make informed decisions
+        </p>
+      </div>
+      <div class="cta-actions flex gap-4 flex-shrink-0">
+        <a
+          href="/guides"
+          class="cta-button-primary inline-flex items-center gap-2 px-8 py-4 bg-primary text-white text-base font-bold rounded-lg no-underline transition-all duration-base whitespace-nowrap hover:bg-primary-dark hover:text-white hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(255,107,53,0.4)]"
+        >
+          Browse Guides
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            class="transition-transform duration-base group-hover:translate-x-1"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a
+          href="/about"
+          class="cta-button-secondary inline-flex items-center px-8 py-4 bg-transparent text-white text-base font-semibold border-2 border-white/20 rounded-lg no-underline transition-all duration-base whitespace-nowrap hover:bg-white/10 hover:border-white/40"
+        >
+          Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    .cta-content-modern {
+      @apply flex-col text-center p-10;
+    }
+
+    .cta-actions {
+      @apply flex-col w-full;
+    }
+
+    .cta-button-primary,
+    .cta-button-secondary {
+      @apply w-full justify-center;
+    }
+  }
+</style>

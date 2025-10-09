@@ -1,0 +1,89 @@
+---
+import DealCard from '@components/DealCard.astro';
+import type { DealProduct } from '@utils/deals';
+
+interface Props {
+  deals: DealProduct[];
+}
+
+const { deals } = Astro.props;
+---
+<section id="deals" class="deals-section py-24 relative">
+  <div class="container">
+    <div class="section-header-modern text-center mb-16">
+      <div class="section-eyebrow inline-block text-sm font-bold text-primary uppercase tracking-wider mb-4">Today's Best Offers</div>
+      <h2 class="section-title-modern text-4xl font-black mb-4 bg-gradient-primary bg-clip-text text-transparent">Featured Deals</h2>
+      <p class="section-description-modern text-xl text-text-secondary max-w-[60ch] mx-auto">
+        Verified discounts on premium equipment. Updated daily at 2 AM UTC.
+      </p>
+    </div>
+
+    <div class="affiliate-disclosure-banner bg-primary/10 border border-primary/20 rounded-lg p-4 mb-8 text-center">
+      <p class="m-0 text-sm text-text-secondary flex items-center justify-center gap-2 flex-wrap">
+        <strong>Affiliate Disclosure:</strong> We participate in the Amazon Associates Program and other affiliate programs.
+        We may earn commissions from qualifying purchases at no extra cost to you.
+        <a href="/affiliate-disclosure" class="text-primary underline font-semibold hover:text-secondary">Learn more</a>
+      </p>
+    </div>
+
+    <div class="deals-grid grid grid-cols-[repeat(auto-fill,minmax(340px,1fr))] gap-10 mb-16">
+      {deals.length > 0 ? (
+        deals.map((deal, index) => (
+          <div class="deal-wrapper animate-fade-in" style={`animation-delay: ${index * 100}ms`}>
+            <DealCard {...deal} />
+          </div>
+        ))
+      ) : (
+        <div class="no-deals col-span-full text-center p-20 bg-gradient-card backdrop-blur-glass rounded-2xl border-2 border-dashed border-border">
+          <svg
+            class="no-deals-icon text-5xl mb-6 animate-float inline-block"
+            width="80"
+            height="80"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path d="M6.5 6.5h11M6.5 17.5h11M9 12h6" />
+            <circle cx="9" cy="9" r="1.5" />
+            <circle cx="15" cy="9" r="1.5" />
+            <circle cx="9" cy="15" r="1.5" />
+            <circle cx="15" cy="15" r="1.5" />
+          </svg>
+          <h3 class="text-2xl mb-3">No deals available yet</h3>
+          <p class="text-base text-text-secondary">
+            Check back soon! Our automated system runs daily at 2 AM UTC to fetch the latest deals.
+          </p>
+        </div>
+      )}
+    </div>
+
+    <div class="deals-footer pt-10 border-t border-border">
+      <p class="disclaimer text-sm text-text-tertiary text-center max-w-[70ch] mx-auto leading-relaxed flex items-center justify-center gap-2">
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          class="flex-shrink-0 text-primary"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <strong>Price Disclaimer:</strong> Prices and availability are accurate as of posting time but may change.
+        We earn from qualifying purchases through affiliate links.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    .deals-grid {
+      @apply grid-cols-1 gap-8;
+    }
+  }
+</style>

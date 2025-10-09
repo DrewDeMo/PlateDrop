@@ -1,151 +1,75 @@
 ---
-import { Flame, BookOpen, HelpCircle, Info, Mail, Menu, X, Dumbbell } from 'lucide-astro';
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="site-header sticky top-0 z-[1000] bg-glass-bg backdrop-blur-glass border-b border-glass-border shadow-lg transition-all duration-smooth" id="site-header">
-  <div class="header-progress absolute top-0 left-0 h-[3px] bg-gradient-primary w-0 transition-[width] duration-100 ease-out z-[2] shadow-[0_0_10px_rgba(255,107,53,0.5)]"></div>
-  <div class="header-glow absolute top-0 left-1/2 -translate-x-1/2 w-4/5 h-full pointer-events-none opacity-0 transition-opacity duration-smooth" style="background: radial-gradient(ellipse at center, rgba(255, 107, 53, 0.15) 0%, transparent 70%);"></div>
-  <div class="container">
-    <nav class="nav-wrapper flex items-center justify-between py-5 gap-8 relative transition-all duration-smooth">
-      <a href="/" class="logo flex items-center gap-3 text-2xl font-extrabold text-text no-underline transition-transform duration-spring relative z-[2] hover:scale-[1.08] hover:no-underline active:scale-[1.02] active:transition-transform active:duration-100">
-        <div class="logo-icon relative flex items-center justify-center w-12 h-12 transition-all duration-smooth">
-          <div class="absolute inset-[-4px] bg-gradient-primary rounded-full opacity-0 blur-[12px] transition-opacity duration-smooth logo-icon-glow"></div>
-          <img src="/svgs/logo_new.svg" alt="PlateDrop Logo" width="40" height="40" class="w-full h-full object-contain transition-transform duration-spring relative z-[1]" />
-        </div>
-        <span class="logo-text flex tracking-tight">
-          <span class="logo-main bg-gradient-primary bg-clip-text text-transparent">Plate</span><span class="logo-accent text-text font-bold">Drop</span>
-        </span>
+<header class="site-header sticky top-0 z-[1000] bg-[#1a1614]/95 backdrop-blur-xl border-b border-white/5 transition-all duration-300" id="site-header">
+  <div class="container max-w-[1400px] mx-auto px-6">
+    <nav class="nav-wrapper flex items-center justify-between py-4 gap-8 relative z-[1001]">
+      <a href="/" class="logo flex items-center gap-2 text-xl font-bold text-white no-underline transition-opacity duration-200 hover:opacity-80 hover:no-underline">
+        <img src="/svgs/logo_new.svg" alt="PlateDrop Logo" width="32" height="32" class="w-8 h-8" />
+        <span class="logo-text tracking-tight">PlateDrop</span>
       </a>
       
-      <ul class="nav-links flex items-center gap-2 list-none m-0 p-0">
+      <ul class="nav-links flex items-center gap-1 list-none m-0 p-0">
         <li>
-          <a href="/" class={`nav-link flex items-center gap-2 text-base font-semibold text-text-secondary no-underline px-5 py-3 rounded-full transition-all duration-base relative overflow-hidden hover:text-primary hover:-translate-y-[3px] hover:scale-105 hover:no-underline active:-translate-y-[1px] active:scale-[1.02] active:transition-transform active:duration-100 ${currentPath === '/' ? 'active text-text bg-gradient-primary shadow-glow' : ''}`}>
-            <div class="nav-link-bg absolute inset-0 bg-gradient-primary opacity-0 transition-opacity duration-smooth rounded-full"></div>
-            <Flame class="nav-icon relative z-[1] transition-all duration-spring stroke-[2.5]" size={20} />
-            <span class="relative z-[1]">Deals</span>
+          <a href="/" class={`nav-link text-sm font-medium no-underline px-4 py-2 rounded-md transition-all duration-200 hover:no-underline ${currentPath === '/' ? 'text-white bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/5'}`}>
+            About Us
           </a>
         </li>
         <li>
-          <a href="/workouts" class={`nav-link flex items-center gap-2 text-base font-semibold text-text-secondary no-underline px-5 py-3 rounded-full transition-all duration-base relative overflow-hidden hover:text-primary hover:-translate-y-[3px] hover:scale-105 hover:no-underline active:-translate-y-[1px] active:scale-[1.02] active:transition-transform active:duration-100 ${currentPath.startsWith('/workouts') ? 'active text-text bg-gradient-primary shadow-glow' : ''}`}>
-            <div class="nav-link-bg absolute inset-0 bg-gradient-primary opacity-0 transition-opacity duration-smooth rounded-full"></div>
-            <Dumbbell class="nav-icon relative z-[1] transition-all duration-spring stroke-[2.5]" size={20} />
-            <span class="relative z-[1]">Workouts</span>
+          <a href="/guides" class={`nav-link text-sm font-medium no-underline px-4 py-2 rounded-md transition-all duration-200 hover:no-underline ${currentPath.startsWith('/guides') ? 'text-white bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/5'}`}>
+            Services
           </a>
         </li>
         <li>
-          <a href="/guides" class={`nav-link flex items-center gap-2 text-base font-semibold text-text-secondary no-underline px-5 py-3 rounded-full transition-all duration-base relative overflow-hidden hover:text-primary hover:-translate-y-[3px] hover:scale-105 hover:no-underline active:-translate-y-[1px] active:scale-[1.02] active:transition-transform active:duration-100 ${currentPath.startsWith('/guides') ? 'active text-text bg-gradient-primary shadow-glow' : ''}`}>
-            <div class="nav-link-bg absolute inset-0 bg-gradient-primary opacity-0 transition-opacity duration-smooth rounded-full"></div>
-            <BookOpen class="nav-icon relative z-[1] transition-all duration-spring stroke-[2.5]" size={20} />
-            <span class="relative z-[1]">Guides</span>
+          <a href="/workouts" class={`nav-link text-sm font-medium no-underline px-4 py-2 rounded-md transition-all duration-200 hover:no-underline ${currentPath.startsWith('/workouts') ? 'text-white bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/5'}`}>
+            Product
           </a>
         </li>
         <li>
-          <a href="/faq" class={`nav-link flex items-center gap-2 text-base font-semibold text-text-secondary no-underline px-5 py-3 rounded-full transition-all duration-base relative overflow-hidden hover:text-primary hover:-translate-y-[3px] hover:scale-105 hover:no-underline active:-translate-y-[1px] active:scale-[1.02] active:transition-transform active:duration-100 ${currentPath === '/faq' ? 'active text-text bg-gradient-primary shadow-glow' : ''}`}>
-            <div class="nav-link-bg absolute inset-0 bg-gradient-primary opacity-0 transition-opacity duration-smooth rounded-full"></div>
-            <HelpCircle class="nav-icon relative z-[1] transition-all duration-spring stroke-[2.5]" size={20} />
-            <span class="relative z-[1]">FAQ</span>
-          </a>
-        </li>
-        <li>
-          <a href="/about" class={`nav-link flex items-center gap-2 text-base font-semibold text-text-secondary no-underline px-5 py-3 rounded-full transition-all duration-base relative overflow-hidden hover:text-primary hover:-translate-y-[3px] hover:scale-105 hover:no-underline active:-translate-y-[1px] active:scale-[1.02] active:transition-transform active:duration-100 ${currentPath === '/about' ? 'active text-text bg-gradient-primary shadow-glow' : ''}`}>
-            <div class="nav-link-bg absolute inset-0 bg-gradient-primary opacity-0 transition-opacity duration-smooth rounded-full"></div>
-            <Info class="nav-icon relative z-[1] transition-all duration-spring stroke-[2.5]" size={20} />
-            <span class="relative z-[1]">About</span>
-          </a>
-        </li>
-        <li>
-          <a href="/contact" class={`nav-link flex items-center gap-2 text-base font-semibold text-text-secondary no-underline px-5 py-3 rounded-full transition-all duration-base relative overflow-hidden hover:text-primary hover:-translate-y-[3px] hover:scale-105 hover:no-underline active:-translate-y-[1px] active:scale-[1.02] active:transition-transform active:duration-100 ${currentPath === '/contact' ? 'active text-text bg-gradient-primary shadow-glow' : ''}`}>
-            <div class="nav-link-bg absolute inset-0 bg-gradient-primary opacity-0 transition-opacity duration-smooth rounded-full"></div>
-            <Mail class="nav-icon relative z-[1] transition-all duration-spring stroke-[2.5]" size={20} />
-            <span class="relative z-[1]">Contact</span>
+          <a href="/faq" class={`nav-link text-sm font-medium no-underline px-4 py-2 rounded-md transition-all duration-200 hover:no-underline ${currentPath === '/faq' ? 'text-white bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/5'}`}>
+            FAQ
           </a>
         </li>
       </ul>
       
-      <button class="mobile-menu-toggle hidden md:hidden items-center justify-center bg-transparent border-none cursor-pointer p-2 z-[2] relative w-11 h-11 rounded-md transition-all duration-base hover:bg-primary/15 hover:scale-110 active:scale-95 active:transition-transform active:duration-100" aria-label="Toggle menu">
-        <Menu class="menu-icon absolute transition-all duration-smooth text-primary" size={24} />
-        <X class="close-icon absolute opacity-0 -rotate-90 scale-[0.8] transition-all duration-spring text-primary" size={24} />
+      <a href="/contact" class="cta-button inline-flex items-center gap-2 px-6 py-2.5 bg-[#ff6b35] text-white text-sm font-semibold rounded-full no-underline transition-all duration-200 hover:bg-[#ff5722] hover:no-underline hover:shadow-lg hover:shadow-[#ff6b35]/30">
+        Contact Us
+      </a>
+      
+      <button class="mobile-menu-toggle hidden md:hidden items-center justify-center bg-transparent border-none cursor-pointer p-2 z-[2] relative w-10 h-10 rounded-md transition-all duration-200 hover:bg-white/5" aria-label="Toggle menu">
+        <svg class="menu-icon w-6 h-6 text-white transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg class="close-icon w-6 h-6 text-white absolute opacity-0 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
       </button>
+      
     </nav>
   </div>
 </header>
 
 <style>
-  /* Scrolled state */
-  .site-header.scrolled {
-    @apply shadow-2xl;
-    border-bottom-color: rgba(255, 107, 53, 0.2);
-  }
-  
-  .site-header.scrolled .nav-wrapper {
-    @apply py-3;
-  }
-  
-  .site-header.scrolled .logo {
-    @apply text-xl;
-  }
-  
-  .site-header.scrolled .logo-icon {
-    @apply w-10 h-10;
-  }
-  
-  /* Header glow on hover/scroll */
-  .site-header:hover .header-glow,
-  .site-header.scrolled .header-glow {
-    @apply opacity-100;
-  }
-  
-  /* Logo hover effects */
-  .logo:hover .logo-icon-glow {
-    @apply opacity-70;
-  }
-  
-  .logo:hover .logo-icon img {
-    @apply scale-110 rotate-[5deg];
-  }
-  
-  /* Nav link hover effects */
-  .nav-link:not(.active):hover .nav-link-bg {
-    @apply opacity-15;
-  }
-  
-  .nav-link:hover .nav-icon {
-    @apply scale-[1.2] -rotate-[8deg];
-    filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.7));
-  }
-  
-  .nav-link.active .nav-link-bg {
-    @apply opacity-0;
-  }
-  
-  .nav-link.active .nav-icon {
-    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
-    animation: pulse 2s ease-in-out infinite;
-  }
-  
   /* Mobile menu toggle active state */
   .mobile-menu-toggle.active .menu-icon {
-    @apply opacity-0 rotate-90 scale-[0.8];
+    @apply opacity-0 rotate-90;
   }
   
   .mobile-menu-toggle.active .close-icon {
-    @apply opacity-100 rotate-0 scale-100;
+    @apply opacity-100 rotate-0;
   }
   
   /* Mobile styles */
   @media (max-width: 768px) {
-    .nav-wrapper {
-      @apply py-4;
-    }
-    
     .mobile-menu-toggle {
       @apply flex;
     }
     
     .nav-links {
-      @apply fixed top-0 -right-full w-[280px] h-screen bg-gradient-card backdrop-blur-glass flex-col p-6 pt-20 gap-4 border-l border-glass-border shadow-2xl;
-      transition: right 500ms cubic-bezier(0.68, -0.6, 0.32, 1.6);
+      @apply fixed top-0 -right-full w-[280px] h-screen flex-col p-6 pt-20 gap-2 border-l border-white/10 shadow-2xl backdrop-blur-xl;
+      background-color: rgba(26, 22, 20, 0.98);
+      transition: right 400ms cubic-bezier(0.68, -0.6, 0.32, 1.6);
     }
     
     .nav-links.active {
@@ -153,65 +77,16 @@ const currentPath = Astro.url.pathname;
     }
     
     .nav-links a {
-      @apply w-full justify-start px-5 py-4 text-lg;
+      @apply w-full justify-start px-4 py-3 text-base;
     }
     
-    .logo-text {
-      @apply text-xl;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .logo-text span {
-      @apply text-lg;
-    }
-    
-    .nav-links {
-      @apply w-full -right-full;
+    .cta-button {
+      @apply hidden;
     }
   }
 </style>
 
 <script>
-  // Header scroll effects
-  const header = document.getElementById('site-header');
-  const headerProgress = document.querySelector('.header-progress') as HTMLElement;
-  let lastScrollY = window.scrollY;
-  let ticking = false;
-  
-  function updateHeader() {
-    const scrollY = window.scrollY;
-    
-    // Add scrolled class when scrolled down
-    if (scrollY > 50) {
-      header?.classList.add('scrolled');
-    } else {
-      header?.classList.remove('scrolled');
-    }
-    
-    // Update progress bar
-    if (headerProgress) {
-      const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollY / windowHeight) * 100;
-      headerProgress.style.width = `${Math.min(scrollPercent, 100)}%`;
-    }
-    
-    lastScrollY = scrollY;
-    ticking = false;
-  }
-  
-  function requestTick() {
-    if (!ticking) {
-      window.requestAnimationFrame(updateHeader);
-      ticking = true;
-    }
-  }
-  
-  window.addEventListener('scroll', requestTick, { passive: true });
-  
-  // Initial update
-  updateHeader();
-  
   // Mobile menu toggle
   const menuToggle = document.querySelector('.mobile-menu-toggle');
   const navLinks = document.querySelector('.nav-links');
@@ -238,10 +113,4 @@ const currentPath = Astro.url.pathname;
       });
     });
   }
-  
-  // Add stagger animation to nav items on load
-  const navItems = document.querySelectorAll('.nav-links li');
-  navItems.forEach((item, index) => {
-    (item as HTMLElement).style.animation = `slideIn 0.5s ease-out ${index * 0.1}s both`;
-  });
 </script>
