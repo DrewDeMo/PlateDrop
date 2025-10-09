@@ -3,6 +3,7 @@ import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 import SEO from '@components/SEO.astro';
 import '@styles/tailwind.css';
+import enhancementsScriptUrl from '../scripts/page-enhancements.ts?url';
 
 interface Props {
   title: string;
@@ -12,6 +13,9 @@ interface Props {
   publishedTime?: string;
   modifiedTime?: string;
   canonical?: string;
+  author?: string;
+  schemaType?: 'WebPage' | 'Article' | 'FAQPage' | 'ItemList';
+  structuredData?: unknown;
 }
 
 const {
@@ -21,7 +25,10 @@ const {
   article = false,
   publishedTime,
   modifiedTime,
-  canonical
+  canonical,
+  author,
+  schemaType,
+  structuredData
 } = Astro.props;
 ---
 
@@ -36,6 +43,9 @@ const {
       publishedTime={publishedTime}
       modifiedTime={modifiedTime}
       canonical={canonical}
+      author={author}
+      schemaType={schemaType}
+      structuredData={structuredData}
     />
     
     <!-- Preconnect to external domains -->
@@ -74,11 +84,11 @@ const {
     </main>
     
     <Footer />
-    
+
     <!-- Scroll to top button -->
     <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <path d="M12 19V5M5 12l7-7 7 7"/>
+        <path d="M12 19V5M5 12l7-7 7 7" />
       </svg>
     </button>
   </body>
@@ -116,64 +126,4 @@ const {
     }
   }
 </style>
-
-<script>
-  // Scroll to top functionality
-  const scrollToTopBtn = document.getElementById('scroll-to-top');
-  
-  if (scrollToTopBtn) {
-    // Show/hide button based on scroll position
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 500) {
-        scrollToTopBtn.classList.add('visible');
-      } else {
-        scrollToTopBtn.classList.remove('visible');
-      }
-    });
-    
-    // Scroll to top when clicked
-    scrollToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  }
-  
-  // Add smooth scroll behavior to all anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      if (href && href !== '#') {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }
-    });
-  });
-  
-  // Add intersection observer for fade-in animations
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-fade-in');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-  
-  // Observe elements with animation classes
-  document.querySelectorAll('.feature-card, .category-card, .value-prop-card, .deal-wrapper').forEach(el => {
-    observer.observe(el);
-  });
-</script>
+<script type="module" src={enhancementsScriptUrl} />
