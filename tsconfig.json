@@ -22,7 +22,8 @@
       "@components/*": ["./site/src/components/*"],
       "@layouts/*": ["./site/src/layouts/*"],
       "@styles/*": ["./site/src/styles/*"],
-      "@scripts/*": ["./scripts/*"],
+      "@utils/*": ["./site/src/utils/*"],
+      "@scripts/*": ["./site/src/scripts/*"],
       "@data/*": ["./data/*"]
     }
   },
