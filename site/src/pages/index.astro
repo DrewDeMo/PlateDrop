@@ -85,49 +85,52 @@ const itemListSchema = deals.length > 0 ? {
   schemaType="ItemList"
   structuredData={itemListSchema}
 >
-  <div class="hero">
-    <div class="hero-visual">
-      <div class="hero-image-overlay"></div>
+  <!-- Hero Section -->
+  <div class="hero relative bg-bg-secondary py-20 pb-16 overflow-hidden min-h-[550px] flex items-center">
+    <div class="hero-visual absolute top-0 right-0 w-1/2 h-full bg-gradient-to-br from-bg-tertiary to-surface" style="clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);">
+      <div class="hero-image-overlay absolute inset-0 flex items-center justify-end" style="background-image: radial-gradient(circle at 20% 30%, rgba(255, 107, 53, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(0, 78, 137, 0.08) 0%, transparent 50%);">
+        <div class="w-full h-full bg-[url('/images/hero/hero_feature.webp')] bg-[center_right] bg-[length:auto_100%] bg-no-repeat"></div>
+      </div>
     </div>
     <div class="container">
-      <div class="hero-content">
-        <div class="hero-label">
-          <span class="hero-label-dot"></span>
+      <div class="hero-content relative z-[1] max-w-[650px]">
+        <div class="hero-label inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-sm font-semibold text-primary mb-8 tracking-wide">
+          <span class="hero-label-dot w-2 h-2 bg-primary rounded-full animate-pulse"></span>
           <span>Updated Daily</span>
         </div>
-        <h1 class="hero-title">
+        <h1 class="hero-title text-[clamp(2.5rem,5vw,4rem)] font-extrabold leading-[1.1] tracking-tight text-text mb-6">
           Premium Fitness Equipment.<br/>
-          <span class="hero-title-accent">Unbeatable Prices.</span>
+          <span class="hero-title-accent text-primary block">Unbeatable Prices.</span>
         </h1>
-        <p class="hero-description">
+        <p class="hero-description text-xl leading-relaxed text-text-secondary mb-10 max-w-[540px]">
           Curated deals on quality home gym equipment from top brands.
           Verified discounts, updated every 24 hours.
         </p>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="hero-stat-value">Daily</div>
-            <div class="hero-stat-label">Updates</div>
+        <div class="hero-stats flex items-center gap-6 mb-10">
+          <div class="hero-stat text-center">
+            <div class="hero-stat-value text-2xl font-extrabold text-text leading-none mb-1">Daily</div>
+            <div class="hero-stat-label text-sm text-text-secondary font-medium uppercase tracking-wider">Updates</div>
           </div>
-          <div class="hero-stat-divider"></div>
-          <div class="hero-stat">
-            <div class="hero-stat-value">100%</div>
-            <div class="hero-stat-label">Verified</div>
+          <div class="hero-stat-divider w-px h-10 bg-border"></div>
+          <div class="hero-stat text-center">
+            <div class="hero-stat-value text-2xl font-extrabold text-text leading-none mb-1">100%</div>
+            <div class="hero-stat-label text-sm text-text-secondary font-medium uppercase tracking-wider">Verified</div>
           </div>
-          <div class="hero-stat-divider"></div>
-          <div class="hero-stat">
-            <div class="hero-stat-value">Top</div>
-            <div class="hero-stat-label">Brands</div>
+          <div class="hero-stat-divider w-px h-10 bg-border"></div>
+          <div class="hero-stat text-center">
+            <div class="hero-stat-value text-2xl font-extrabold text-text leading-none mb-1">Top</div>
+            <div class="hero-stat-label text-sm text-text-secondary font-medium uppercase tracking-wider">Brands</div>
           </div>
         </div>
-        <div class="hero-cta">
-          <a href="#deals" class="hero-cta-primary">
+        <div class="hero-cta flex items-center gap-6 flex-wrap">
+          <a href="#deals" class="hero-cta-primary inline-flex items-center gap-3 px-8 py-4 bg-primary text-white text-lg font-bold rounded-lg no-underline transition-all duration-base shadow-[0_4px_14px_rgba(255,107,53,0.3)] hover:bg-primary-dark hover:text-white hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(255,107,53,0.4)]">
             View Today's Deals
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transition-transform duration-base group-hover:translate-x-1">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
           </a>
-          <div class="hero-date-badge">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <div class="hero-date-badge inline-flex items-center gap-2 px-5 py-3 bg-surface border border-border rounded-lg text-sm font-semibold text-text-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
               <line x1="16" y1="2" x2="16" y2="6"></line>
               <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -140,107 +143,110 @@ const itemListSchema = deals.length > 0 ? {
     </div>
   </div>
 
-  <section class="trust-section">
+  <!-- Trust Section -->
+  <section class="trust-section py-16 bg-bg border-b border-border">
     <div class="container">
-      <div class="trust-grid">
-        <div class="trust-card">
-          <div class="trust-number">24/7</div>
-          <div class="trust-label">Price Monitoring</div>
+      <div class="trust-grid grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-8">
+        <div class="trust-card text-center p-6">
+          <div class="trust-number text-[clamp(2rem,4vw,3rem)] font-extrabold text-primary leading-none mb-2">24/7</div>
+          <div class="trust-label text-base text-text-secondary font-semibold">Price Monitoring</div>
         </div>
-        <div class="trust-card">
-          <div class="trust-number">5+</div>
-          <div class="trust-label">Major Retailers</div>
+        <div class="trust-card text-center p-6">
+          <div class="trust-number text-[clamp(2rem,4vw,3rem)] font-extrabold text-primary leading-none mb-2">5+</div>
+          <div class="trust-label text-base text-text-secondary font-semibold">Major Retailers</div>
         </div>
-        <div class="trust-card">
-          <div class="trust-number">100%</div>
-          <div class="trust-label">Verified Deals</div>
+        <div class="trust-card text-center p-6">
+          <div class="trust-number text-[clamp(2rem,4vw,3rem)] font-extrabold text-primary leading-none mb-2">100%</div>
+          <div class="trust-label text-base text-text-secondary font-semibold">Verified Deals</div>
         </div>
-        <div class="trust-card">
-          <div class="trust-number">Daily</div>
-          <div class="trust-label">Updates</div>
+        <div class="trust-card text-center p-6">
+          <div class="trust-number text-[clamp(2rem,4vw,3rem)] font-extrabold text-primary leading-none mb-2">Daily</div>
+          <div class="trust-label text-base text-text-secondary font-semibold">Updates</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="how-it-works-section">
+  <!-- How It Works Section -->
+  <section class="how-it-works-section py-24 bg-bg-secondary">
     <div class="container">
-      <div class="section-header-modern">
-        <div class="section-eyebrow">Our Process</div>
-        <h2 class="section-title-modern">How We Find the Best Deals</h2>
-        <p class="section-description-modern">
+      <div class="section-header-modern text-center mb-16">
+        <div class="section-eyebrow inline-block text-sm font-bold text-primary uppercase tracking-wider mb-4">Our Process</div>
+        <h2 class="section-title-modern text-4xl font-black mb-4 bg-gradient-primary bg-clip-text text-transparent">How We Find the Best Deals</h2>
+        <p class="section-description-modern text-xl text-text-secondary max-w-[60ch] mx-auto">
           Automated tracking and verification to ensure you get genuine savings
         </p>
       </div>
       
-      <div class="process-grid">
-        <div class="process-step">
-          <div class="process-number">01</div>
-          <h3>Monitor Prices</h3>
-          <p>Our system tracks thousands of products across major retailers 24/7, comparing current prices against 30-90 day averages.</p>
+      <div class="process-grid grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-10 mt-12">
+        <div class="process-step relative">
+          <div class="process-number text-4xl font-extrabold text-primary/20 leading-none mb-4">01</div>
+          <h3 class="text-xl font-bold text-text mb-3">Monitor Prices</h3>
+          <p class="text-base leading-relaxed text-text-secondary m-0">Our system tracks thousands of products across major retailers 24/7, comparing current prices against 30-90 day averages.</p>
         </div>
-        <div class="process-step">
-          <div class="process-number">02</div>
-          <h3>Verify Discounts</h3>
-          <p>Each deal is validated against historical data to confirm genuine savings—no inflated "original" prices.</p>
+        <div class="process-step relative">
+          <div class="process-number text-4xl font-extrabold text-primary/20 leading-none mb-4">02</div>
+          <h3 class="text-xl font-bold text-text mb-3">Verify Discounts</h3>
+          <p class="text-base leading-relaxed text-text-secondary m-0">Each deal is validated against historical data to confirm genuine savings—no inflated "original" prices.</p>
         </div>
-        <div class="process-step">
-          <div class="process-number">03</div>
-          <h3>Quality Check</h3>
-          <p>Only equipment from reputable brands with solid warranties makes our list.</p>
+        <div class="process-step relative">
+          <div class="process-number text-4xl font-extrabold text-primary/20 leading-none mb-4">03</div>
+          <h3 class="text-xl font-bold text-text mb-3">Quality Check</h3>
+          <p class="text-base leading-relaxed text-text-secondary m-0">Only equipment from reputable brands with solid warranties makes our list.</p>
         </div>
-        <div class="process-step">
-          <div class="process-number">04</div>
-          <h3>Daily Updates</h3>
-          <p>Fresh deals every morning at 2 AM UTC. Out-of-stock items are removed within 24 hours.</p>
+        <div class="process-step relative">
+          <div class="process-number text-4xl font-extrabold text-primary/20 leading-none mb-4">04</div>
+          <h3 class="text-xl font-bold text-text mb-3">Daily Updates</h3>
+          <p class="text-base leading-relaxed text-text-secondary m-0">Fresh deals every morning at 2 AM UTC. Out-of-stock items are removed within 24 hours.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="deals" class="deals-section">
+  <!-- Deals Section -->
+  <section id="deals" class="deals-section py-24 relative">
     <div class="container">
-      <div class="section-header-modern">
-        <div class="section-eyebrow">Today's Best Offers</div>
-        <h2 class="section-title-modern">Featured Deals</h2>
-        <p class="section-description-modern">
+      <div class="section-header-modern text-center mb-16">
+        <div class="section-eyebrow inline-block text-sm font-bold text-primary uppercase tracking-wider mb-4">Today's Best Offers</div>
+        <h2 class="section-title-modern text-4xl font-black mb-4 bg-gradient-primary bg-clip-text text-transparent">Featured Deals</h2>
+        <p class="section-description-modern text-xl text-text-secondary max-w-[60ch] mx-auto">
           Verified discounts on premium equipment. Updated daily at 2 AM UTC.
         </p>
       </div>
 
-      <div class="affiliate-disclosure-banner">
-        <p>
+      <div class="affiliate-disclosure-banner bg-primary/10 border border-primary/20 rounded-lg p-4 mb-8 text-center">
+        <p class="m-0 text-sm text-text-secondary flex items-center justify-center gap-2 flex-wrap">
           <strong>Affiliate Disclosure:</strong> We participate in the Amazon Associates Program and other affiliate programs.
           We may earn commissions from qualifying purchases at no extra cost to you.
-          <a href="/affiliate-disclosure">Learn more</a>
+          <a href="/affiliate-disclosure" class="text-primary underline font-semibold hover:text-secondary">Learn more</a>
         </p>
       </div>
       
-      <div class="deals-grid">
+      <div class="deals-grid grid grid-cols-[repeat(auto-fill,minmax(340px,1fr))] gap-10 mb-16">
         {deals.length > 0 ? 
           deals.map((deal, index) => (
-            <div class="deal-wrapper" style={`animation-delay: ${index * 100}ms`}>
+            <div class="deal-wrapper animate-fade-in" style={`animation-delay: ${index * 100}ms`}>
               <DealCard {...deal} />
             </div>
           ))
          : 
-          <div class="no-deals">
-            <svg class="no-deals-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <div class="no-deals col-span-full text-center p-20 bg-gradient-card backdrop-blur-glass rounded-2xl border-2 border-dashed border-border">
+            <svg class="no-deals-icon text-5xl mb-6 animate-float inline-block" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M6.5 6.5h11M6.5 17.5h11M9 12h6"/>
               <circle cx="9" cy="9" r="1.5"/>
               <circle cx="15" cy="9" r="1.5"/>
               <circle cx="9" cy="15" r="1.5"/>
               <circle cx="15" cy="15" r="1.5"/>
             </svg>
-            <h3>No deals available yet</h3>
-            <p>Check back soon! Our automated system runs daily at 2 AM UTC to fetch the latest deals.</p>
+            <h3 class="text-2xl mb-3">No deals available yet</h3>
+            <p class="text-base text-text-secondary">Check back soon! Our automated system runs daily at 2 AM UTC to fetch the latest deals.</p>
           </div>
         }
       </div>
       
-      <div class="deals-footer">
-        <p class="disclaimer">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <div class="deals-footer pt-10 border-t border-border">
+        <p class="disclaimer text-sm text-text-tertiary text-center max-w-[70ch] mx-auto leading-relaxed flex items-center justify-center gap-2">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-primary">
             <circle cx="12" cy="12" r="10"></circle>
             <line x1="12" y1="16" x2="12" y2="12"></line>
             <line x1="12" y1="8" x2="12.01" y2="8"></line>
@@ -252,155 +258,159 @@ const itemListSchema = deals.length > 0 ? {
     </div>
   </section>
 
-  <section class="features-section">
+  <!-- Features Section -->
+  <section class="features-section py-24 bg-gradient-to-br from-[#1a1a1a] to-[#2d2d2d]">
     <div class="container">
-      <div class="features-split">
-        <div class="features-content">
-          <div class="section-eyebrow">Why PlateDrop</div>
-          <h2 class="section-title-large">Built for Serious Lifters</h2>
-          <p class="features-intro">
+      <div class="features-split grid grid-cols-2 gap-16 items-center">
+        <div class="features-content text-white">
+          <div class="section-eyebrow text-primary text-sm font-bold uppercase tracking-wider mb-4">Why PlateDrop</div>
+          <h2 class="section-title-large text-[clamp(2rem,4vw,3rem)] font-extrabold text-white mb-4 tracking-tight leading-[1.1]">Built for Serious Lifters</h2>
+          <p class="features-intro text-xl text-white/80 mb-10 leading-relaxed">
             We automate the tedious work of finding legitimate deals so you can spend your time where it matters—in the gym.
           </p>
-          <div class="features-list">
-            <div class="feature-item">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <div class="features-list flex flex-col gap-6">
+            <div class="feature-item flex gap-4 items-start">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="flex-shrink-0 text-primary mt-0.5">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
               </svg>
               <div>
-                <h4>Verified Discounts</h4>
-                <p>Historical price validation on every deal</p>
+                <h4 class="text-lg font-bold text-white mb-1">Verified Discounts</h4>
+                <p class="text-base text-white/70 m-0">Historical price validation on every deal</p>
               </div>
             </div>
-            <div class="feature-item">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <div class="feature-item flex gap-4 items-start">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="flex-shrink-0 text-primary mt-0.5">
                 <circle cx="12" cy="12" r="10"></circle>
                 <polyline points="12 6 12 12 16 14"></polyline>
               </svg>
               <div>
-                <h4>Daily Updates</h4>
-                <p>Fresh deals every morning at 2 AM UTC</p>
+                <h4 class="text-lg font-bold text-white mb-1">Daily Updates</h4>
+                <p class="text-base text-white/70 m-0">Fresh deals every morning at 2 AM UTC</p>
               </div>
             </div>
-            <div class="feature-item">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <div class="feature-item flex gap-4 items-start">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="flex-shrink-0 text-primary mt-0.5">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                 <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
               </svg>
               <div>
-                <h4>Privacy Focused</h4>
-                <p>No tracking, no spam, no data selling</p>
+                <h4 class="text-lg font-bold text-white mb-1">Privacy Focused</h4>
+                <p class="text-base text-white/70 m-0">No tracking, no spam, no data selling</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="features-visual">
-          <div class="features-stat-card">
-            <div class="stat-large">5+</div>
-            <div class="stat-label">Major Retailers Tracked</div>
+        <div class="features-visual grid grid-cols-1 gap-4">
+          <div class="features-stat-card p-8 bg-white/5 border border-white/10 rounded-xl text-center">
+            <div class="stat-large text-[clamp(2.5rem,5vw,4rem)] font-extrabold text-primary leading-none mb-2">5+</div>
+            <div class="stat-label text-base text-white/80 font-semibold">Major Retailers Tracked</div>
           </div>
-          <div class="features-stat-card">
-            <div class="stat-large">1000s</div>
-            <div class="stat-label">Products Monitored</div>
+          <div class="features-stat-card p-8 bg-white/5 border border-white/10 rounded-xl text-center">
+            <div class="stat-large text-[clamp(2.5rem,5vw,4rem)] font-extrabold text-primary leading-none mb-2">1000s</div>
+            <div class="stat-label text-base text-white/80 font-semibold">Products Monitored</div>
           </div>
-          <div class="features-stat-card">
-            <div class="stat-large">24/7</div>
-            <div class="stat-label">Price Monitoring</div>
+          <div class="features-stat-card p-8 bg-white/5 border border-white/10 rounded-xl text-center">
+            <div class="stat-large text-[clamp(2.5rem,5vw,4rem)] font-extrabold text-primary leading-none mb-2">24/7</div>
+            <div class="stat-label text-base text-white/80 font-semibold">Price Monitoring</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="categories-section">
-    <div class="container-wide">
-      <div class="section-header-modern">
-        <div class="section-eyebrow">Shop by Category</div>
-        <h2 class="section-title-modern">Find Your Equipment</h2>
+  <!-- Categories Section -->
+  <section class="categories-section py-24 bg-bg">
+    <div class="container-wide max-w-[1400px] mx-auto px-6">
+      <div class="section-header-modern text-center mb-12">
+        <div class="section-eyebrow inline-block text-sm font-bold text-primary uppercase tracking-wider mb-4">Shop by Category</div>
+        <h2 class="section-title-modern text-4xl font-black bg-gradient-primary bg-clip-text text-transparent">Find Your Equipment</h2>
       </div>
       
-      <div class="categories-showcase">
-        <a href="/deals?category=racks" class="category-large">
-          <div class="category-large-content">
-            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <div class="categories-showcase grid grid-cols-[1.5fr_1fr] gap-6 mt-12">
+        <a href="/deals?category=racks" class="category-large bg-gradient-to-br from-primary to-primary-dark rounded-2xl p-12 no-underline text-white flex items-center justify-center min-h-[400px] transition-transform duration-base hover:scale-[1.02] hover:no-underline">
+          <div class="category-large-content text-center">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="mb-6 inline-block">
               <rect x="4" y="2" width="16" height="20" rx="2"/>
               <line x1="8" y1="6" x2="16" y2="6"/>
               <line x1="8" y1="12" x2="16" y2="12"/>
               <line x1="8" y1="18" x2="16" y2="18"/>
             </svg>
-            <h3>Power Racks</h3>
-            <p>Squat racks, cages & rigs</p>
-            <span class="category-link">Browse Deals →</span>
+            <h3 class="text-3xl font-extrabold mb-3 text-white">Power Racks</h3>
+            <p class="text-lg mb-6 opacity-90">Squat racks, cages & rigs</p>
+            <span class="category-link inline-block text-base font-bold px-6 py-3 bg-white/20 rounded-lg transition-colors duration-base hover:bg-white/30">Browse Deals →</span>
           </div>
         </a>
         
-        <div class="categories-grid-compact">
-          <a href="/deals?category=barbells" class="category-compact">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <div class="categories-grid-compact grid grid-cols-1 gap-4">
+          <a href="/deals?category=barbells" class="category-compact flex items-center gap-4 p-6 bg-surface border-2 border-border rounded-xl no-underline transition-all duration-base hover:border-primary hover:bg-surface-elevated hover:translate-x-2 hover:no-underline">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary flex-shrink-0">
               <line x1="4" y1="12" x2="20" y2="12"/>
               <circle cx="6" cy="12" r="3"/>
               <circle cx="18" cy="12" r="3"/>
             </svg>
-            <div>
-              <h4>Barbells</h4>
-              <span>→</span>
+            <div class="flex-1 flex items-center justify-between">
+              <h4 class="text-lg font-bold text-text m-0">Barbells</h4>
+              <span class="text-primary text-xl font-bold">→</span>
             </div>
           </a>
           
-          <a href="/deals?category=plates" class="category-compact">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <a href="/deals?category=plates" class="category-compact flex items-center gap-4 p-6 bg-surface border-2 border-border rounded-xl no-underline transition-all duration-base hover:border-primary hover:bg-surface-elevated hover:translate-x-2 hover:no-underline">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary flex-shrink-0">
               <circle cx="12" cy="12" r="10"/>
               <circle cx="12" cy="12" r="4"/>
             </svg>
-            <div>
-              <h4>Weight Plates</h4>
-              <span>→</span>
+            <div class="flex-1 flex items-center justify-between">
+              <h4 class="text-lg font-bold text-text m-0">Weight Plates</h4>
+              <span class="text-primary text-xl font-bold">→</span>
             </div>
           </a>
           
-          <a href="/deals?category=dumbbells" class="category-compact">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <a href="/deals?category=dumbbells" class="category-compact flex items-center gap-4 p-6 bg-surface border-2 border-border rounded-xl no-underline transition-all duration-base hover:border-primary hover:bg-surface-elevated hover:translate-x-2 hover:no-underline">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary flex-shrink-0">
               <line x1="6" y1="12" x2="18" y2="12"/>
               <rect x="3" y="9" width="4" height="6" rx="1"/>
               <rect x="17" y="9" width="4" height="6" rx="1"/>
             </svg>
-            <div>
-              <h4>Dumbbells</h4>
-              <span>→</span>
+            <div class="flex-1 flex items-center justify-between">
+              <h4 class="text-lg font-bold text-text m-0">Dumbbells</h4>
+              <span class="text-primary text-xl font-bold">→</span>
             </div>
           </a>
           
-          <a href="/deals?category=benches" class="category-compact">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <a href="/deals?category=benches" class="category-compact flex items-center gap-4 p-6 bg-surface border-2 border-border rounded-xl no-underline transition-all duration-base hover:border-primary hover:bg-surface-elevated hover:translate-x-2 hover:no-underline">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary flex-shrink-0">
               <rect x="4" y="10" width="16" height="3" rx="1"/>
               <line x1="6" y1="13" x2="6" y2="20"/>
               <line x1="18" y1="13" x2="18" y2="20"/>
             </svg>
-            <div>
-              <h4>Benches</h4>
-              <span>→</span>
+            <div class="flex-1 flex items-center justify-between">
+              <h4 class="text-lg font-bold text-text m-0">Benches</h4>
+              <span class="text-primary text-xl font-bold">→</span>
             </div>
           </a>
           
-          <a href="/deals?category=cardio" class="category-compact">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <a href="/deals?category=cardio" class="category-compact flex items-center gap-4 p-6 bg-surface border-2 border-border rounded-xl no-underline transition-all duration-base hover:border-primary hover:bg-surface-elevated hover:translate-x-2 hover:no-underline">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary flex-shrink-0">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
             </svg>
-            <div>
-              <h4>Cardio</h4>
-              <span>→</span>
+            <div class="flex-1 flex items-center justify-between">
+              <h4 class="text-lg font-bold text-text m-0">Cardio</h4>
+              <span class="text-primary text-xl font-bold">→</span>
             </div>
           </a>
         </div>
+
       </div>
     </div>
   </section>
 
-  <section class="value-props-section">
-    <div class="value-props-bg-waves"></div>
-    <div class="container">
-      <div class="section-header">
-        <div class="section-badge">
+  <!-- Value Props Section -->
+  <section class="value-props-section py-24 bg-bg-secondary relative">
+    <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(ellipse at top left, rgba(255, 107, 53, 0.05) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(0, 78, 137, 0.05) 0%, transparent 50%);"></div>
+    <div class="container relative">
+      <div class="section-header text-center mb-16">
+        <div class="section-badge inline-flex items-center gap-2 px-5 py-2 bg-gradient-card backdrop-blur-glass border border-glass-border rounded-full text-sm font-bold mb-4">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M12 2L2 7l10 5 10-5-10-5z"/>
             <path d="M2 17l10 5 10-5"/>
@@ -408,43 +418,43 @@ const itemListSchema = deals.length > 0 ? {
           </svg>
           <span>Smart Shopping</span>
         </div>
-        <h2 class="section-title">Build Your Gym the Smart Way</h2>
-        <p class="section-description">
+        <h2 class="section-title text-4xl font-black mb-4 bg-gradient-primary bg-clip-text text-transparent">Build Your Gym the Smart Way</h2>
+        <p class="section-description text-xl text-text-secondary max-w-[60ch] mx-auto">
           Strategic tips for maximizing value on home gym equipment
         </p>
       </div>
       
-      <div class="value-props-grid">
-        <div class="value-prop-card">
-          <div class="value-prop-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <div class="value-props-grid grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+        <div class="value-prop-card card">
+          <div class="value-prop-icon mb-6">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
               <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
             </svg>
           </div>
-          <h3>Timing is Everything</h3>
-          <p>
+          <h3 class="text-xl font-bold text-text mb-3">Timing is Everything</h3>
+          <p class="text-base leading-relaxed text-text-secondary m-0">
             Major sales events like Black Friday, New Year, and end-of-season clearances can offer 20-40% off retail prices.
             Our daily tracking helps you catch these opportunities as they happen.
           </p>
         </div>
 
-        <div class="value-prop-card">
-          <div class="value-prop-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <div class="value-prop-card card">
+          <div class="value-prop-icon mb-6">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
               <polyline points="22 4 12 14.01 9 11.01"></polyline>
             </svg>
           </div>
-          <h3>Quality Over Quantity</h3>
-          <p>
+          <h3 class="text-xl font-bold text-text mb-3">Quality Over Quantity</h3>
+          <p class="text-base leading-relaxed text-text-secondary m-0">
             A few pieces of quality equipment will serve you better than a garage full of cheap gear.
             Focus on reputable brands with solid warranties and proven durability.
           </p>
         </div>
 
-        <div class="value-prop-card">
-          <div class="value-prop-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <div class="value-prop-card card">
+          <div class="value-prop-icon mb-6">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
               <polyline points="14 2 14 8 20 8"></polyline>
               <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -452,8 +462,8 @@ const itemListSchema = deals.length > 0 ? {
               <polyline points="10 9 9 9 8 9"></polyline>
             </svg>
           </div>
-          <h3>Start with Essentials</h3>
-          <p>
+          <h3 class="text-xl font-bold text-text mb-3">Start with Essentials</h3>
+          <p class="text-base leading-relaxed text-text-secondary m-0">
             Power rack, barbell, and plates form the foundation of any home gym.
             Once you have these basics, you can add specialized equipment as deals arise and your training evolves.
           </p>
@@ -462,23 +472,24 @@ const itemListSchema = deals.length > 0 ? {
     </div>
   </section>
 
-  <section class="cta-section">
+  <!-- CTA Section -->
+  <section class="cta-section py-20 bg-gradient-to-br from-[#1a1a1a] to-[#2d2d2d]">
     <div class="container">
-      <div class="cta-content-modern">
-        <div class="cta-text">
-          <h2 class="cta-title-modern">Ready to Build Your Gym?</h2>
-          <p class="cta-description-modern">
+      <div class="cta-content-modern flex items-center justify-between gap-12 p-12 bg-white/5 rounded-2xl border border-white/10">
+        <div class="cta-text flex-1">
+          <h2 class="cta-title-modern text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold text-white mb-3 tracking-tight">Ready to Build Your Gym?</h2>
+          <p class="cta-description-modern text-lg text-white/80 m-0 leading-relaxed">
             Explore our comprehensive buying guides to make informed decisions
           </p>
         </div>
-        <div class="cta-actions">
-          <a href="/guides" class="cta-button-primary">
+        <div class="cta-actions flex gap-4 flex-shrink-0">
+          <a href="/guides" class="cta-button-primary inline-flex items-center gap-2 px-8 py-4 bg-primary text-white text-base font-bold rounded-lg no-underline transition-all duration-base whitespace-nowrap hover:bg-primary-dark hover:text-white hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(255,107,53,0.4)]">
             Browse Guides
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transition-transform duration-base group-hover:translate-x-1">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
           </a>
-          <a href="/about" class="cta-button-secondary">
+          <a href="/about" class="cta-button-secondary inline-flex items-center px-8 py-4 bg-transparent text-white text-base font-semibold border-2 border-white/20 rounded-lg no-underline transition-all duration-base whitespace-nowrap hover:bg-white/10 hover:border-white/40">
             Learn More
           </a>
         </div>
@@ -487,960 +498,101 @@ const itemListSchema = deals.length > 0 ? {
   </section>
 </BaseLayout>
 
-<style is:global>
-  /* Hero Section */
-  .hero {
-    position: relative;
-    background: var(--color-bg-secondary);
-    padding: var(--space-20) 0 var(--space-16);
-    overflow: hidden;
-    min-height: 550px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .hero-visual {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(135deg, var(--color-bg-tertiary) 0%, var(--color-surface) 100%);
-    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
-  }
-  
-  .hero-image-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    background-image:
-      radial-gradient(circle at 20% 30%, rgba(255, 107, 53, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 80% 70%, rgba(0, 78, 137, 0.08) 0%, transparent 50%);
-  }
-  
-  .hero-image-overlay::after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    background-image: url('/images/hero/hero_feature.webp');
-    background-position: center right;
-    background-size: auto 100%;
-    background-repeat: no-repeat;
-  }
-  
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 650px;
-  }
-  
-  .hero-label {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-2) var(--space-4);
-    background: rgba(255, 107, 53, 0.1);
-    border-radius: var(--radius-full);
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--color-primary);
-    margin-bottom: var(--space-8);
-    letter-spacing: 0.02em;
-  }
-  
-  .hero-label-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--color-primary);
-    border-radius: 50%;
-    animation: pulse 2s ease-in-out infinite;
-  }
-  
-  .hero-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--color-text);
-    margin-bottom: var(--space-6);
-  }
-  
-  .hero-title-accent {
-    color: var(--color-primary);
-    display: block;
-  }
-  
-  .hero-description {
-    font-size: var(--text-xl);
-    line-height: 1.6;
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-10);
-    max-width: 540px;
-  }
-  
-  .hero-stats {
-    display: flex;
-    align-items: center;
-    gap: var(--space-6);
-    margin-bottom: var(--space-10);
-  }
-  
-  .hero-stat {
-    text-align: center;
-  }
-  
-  .hero-stat-value {
-    font-size: var(--text-2xl);
-    font-weight: 800;
-    color: var(--color-text);
-    line-height: 1;
-    margin-bottom: var(--space-1);
-  }
-  
-  .hero-stat-label {
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  
-  .hero-stat-divider {
-    width: 1px;
-    height: 40px;
-    background: var(--color-border);
-  }
-  
-  .hero-cta {
-    display: flex;
-    align-items: center;
-    gap: var(--space-6);
-    flex-wrap: wrap;
-  }
-  
-  .hero-cta-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-3);
-    padding: var(--space-4) var(--space-8);
-    background: var(--color-primary);
-    color: white;
-    font-size: var(--text-lg);
-    font-weight: 700;
-    border-radius: var(--radius-lg);
-    text-decoration: none;
-    transition: all var(--transition-base);
-    box-shadow: 0 4px 14px rgba(255, 107, 53, 0.3);
-  }
-  
-  .hero-cta-primary:hover {
-    background: #e85a2a;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
-  }
-  
-  .hero-cta-primary svg {
-    transition: transform var(--transition-base);
-  }
-  
-  .hero-cta-primary:hover svg {
-    transform: translateX(4px);
-  }
-  
-  .hero-date-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-3) var(--space-5);
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--color-text-secondary);
-  }
-  
-  .hero-date-badge svg {
-    color: var(--color-primary);
-  }
-  
-  .feature-icon-small {
-    font-size: var(--text-xl);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .feature-text {
-    font-size: var(--text-base);
-    font-weight: 600;
-    white-space: nowrap;
-  }
-  
-  .hero-scroll-indicator {
-    position: absolute;
-    bottom: var(--space-8);
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-2);
-    font-size: var(--text-sm);
-    opacity: 0.7;
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  /* Trust Section */
-  .trust-section {
-    padding: var(--space-16) 0;
-    background: var(--color-bg);
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .trust-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--space-8);
-  }
-
-  .trust-card {
-    text-align: center;
-    padding: var(--space-6);
-  }
-
-  .trust-number {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
-    color: var(--color-primary);
-    line-height: 1;
-    margin-bottom: var(--space-2);
-  }
-
-  .trust-label {
-    font-size: var(--text-base);
-    color: var(--color-text-secondary);
-    font-weight: 600;
-  }
-
-  /* How It Works Section */
-  .how-it-works-section {
-    padding: var(--space-24) 0;
-    background: var(--color-bg-secondary);
-  }
-
-  .process-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-10);
-    margin-top: var(--space-12);
-  }
-
-  .process-step {
-    position: relative;
-  }
-
-  .process-number {
-    font-size: var(--text-4xl);
-    font-weight: 800;
-    color: rgba(255, 107, 53, 0.2);
-    line-height: 1;
-    margin-bottom: var(--space-4);
-  }
-
-  .process-step h3 {
-    font-size: var(--text-xl);
-    font-weight: 700;
-    color: var(--color-text);
-    margin-bottom: var(--space-3);
-  }
-
-  .process-step p {
-    font-size: var(--text-base);
-    line-height: 1.6;
-    color: var(--color-text-secondary);
-    margin: 0;
-  }
-
-  .deals-section {
-    padding-block: var(--space-24);
-    position: relative;
-  }
-  
-  .section-header {
-    text-align: center;
-    margin-bottom: var(--space-16);
-  }
-  
-  .section-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-2) var(--space-5);
-    background: var(--gradient-card);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-full);
-    font-size: var(--text-sm);
-    font-weight: 700;
-    margin-bottom: var(--space-4);
-  }
-  
-  .section-title {
-    font-size: var(--text-4xl);
-    font-weight: 900;
-    margin-bottom: var(--space-4);
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .section-description {
-    font-size: var(--text-xl);
-    color: var(--color-text-secondary);
-    max-width: 60ch;
-    margin-inline: auto;
-  }
-  
-  .deals-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: var(--space-10);
-    margin-bottom: var(--space-16);
-  }
-  
-  .deal-wrapper {
-    animation: fadeIn var(--transition-slow) ease-out;
-  }
-  
-  .deals-footer {
-    padding-top: var(--space-10);
-    border-top: 1px solid var(--color-border);
-  }
-  
-  .disclaimer {
-    font-size: var(--text-sm);
-    color: var(--color-text-tertiary);
-    text-align: center;
-    max-width: 70ch;
-    margin-inline: auto;
-    line-height: 1.6;
-  }
-  
-  .no-deals {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: var(--space-20);
-    background: var(--gradient-card);
-    backdrop-filter: var(--glass-blur);
-    border-radius: var(--radius-2xl);
-    border: 2px dashed var(--color-border);
-  }
-  
-  .no-deals-icon {
-    font-size: 5rem;
-    margin-bottom: var(--space-6);
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  .no-deals h3 {
-    font-size: var(--text-2xl);
-    margin-bottom: var(--space-3);
-  }
-  
-  .no-deals p {
-    font-size: var(--text-base);
-    color: var(--color-text-secondary);
-  }
-  
-  /* Features Section - Split Layout */
-  .features-section {
-    padding: var(--space-24) 0;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  }
-  
-  .features-section .section-eyebrow {
-    color: var(--color-primary);
-  }
-  
-  .features-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-16);
-    align-items: center;
-  }
-  
-  .features-content {
-    color: white;
-  }
-  
-  .section-title-large {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
-    color: white;
-    margin-bottom: var(--space-4);
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-  }
-  
-  .features-intro {
-    font-size: var(--text-xl);
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: var(--space-10);
-    line-height: 1.6;
-  }
-  
-  .features-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-6);
-  }
-  
-  .feature-item {
-    display: flex;
-    gap: var(--space-4);
-    align-items: flex-start;
-  }
-  
-  .feature-item svg {
-    flex-shrink: 0;
-    color: var(--color-primary);
-    margin-top: 2px;
-  }
-  
-  .feature-item h4 {
-    font-size: var(--text-lg);
-    font-weight: 700;
-    color: white;
-    margin-bottom: var(--space-1);
-  }
-  
-  .feature-item p {
-    font-size: var(--text-base);
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0;
-  }
-  
-  .features-visual {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
-  }
-  
-  .features-stat-card {
-    padding: var(--space-8);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-xl);
-    text-align: center;
-  }
-  
-  .stat-large {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 800;
-    color: var(--color-primary);
-    line-height: 1;
-    margin-bottom: var(--space-2);
-  }
-  
-  .stat-label {
-    font-size: var(--text-base);
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 600;
-  }
-  
-  /* Categories Section - Showcase Layout */
-  .categories-section {
-    padding: var(--space-24) 0;
-    background: var(--color-bg);
-  }
-  
-  .container-wide {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 var(--space-6);
-  }
-  
-  .categories-showcase {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: var(--space-6);
-    margin-top: var(--space-12);
-  }
-  
-  .category-large {
-    background: linear-gradient(135deg, var(--color-primary) 0%, #e85a2a 100%);
-    border-radius: var(--radius-2xl);
-    padding: var(--space-12);
-    text-decoration: none;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 400px;
-    transition: transform var(--transition-base);
-  }
-  
-  .category-large:hover {
-    transform: scale(1.02);
-    text-decoration: none;
-  }
-  
-  .category-large-content {
-    text-align: center;
-  }
-  
-  .category-large svg {
-    margin-bottom: var(--space-6);
-  }
-  
-  .category-large h3 {
-    font-size: var(--text-3xl);
-    font-weight: 800;
-    margin-bottom: var(--space-3);
-    color: white;
-  }
-  
-  .category-large p {
-    font-size: var(--text-lg);
-    margin-bottom: var(--space-6);
-    opacity: 0.9;
-  }
-  
-  .category-link {
-    display: inline-block;
-    font-size: var(--text-base);
-    font-weight: 700;
-    padding: var(--space-3) var(--space-6);
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: var(--radius-lg);
-    transition: background var(--transition-base);
-  }
-  
-  .category-large:hover .category-link {
-    background: rgba(255, 255, 255, 0.3);
-  }
-  
-  .categories-grid-compact {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
-  }
-  
-  .category-compact {
-    display: flex;
-    align-items: center;
-    gap: var(--space-4);
-    padding: var(--space-6);
-    background: var(--color-surface);
-    border: 2px solid var(--color-border);
-    border-radius: var(--radius-xl);
-    text-decoration: none;
-    transition: all var(--transition-base);
-  }
-  
-  .category-compact:hover {
-    border-color: var(--color-primary);
-    background: var(--color-surface-elevated);
-    transform: translateX(8px);
-    text-decoration: none;
-  }
-  
-  .category-compact svg {
-    color: var(--color-primary);
-    flex-shrink: 0;
-  }
-  
-  .category-compact div {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .category-compact h4 {
-    font-size: var(--text-lg);
-    font-weight: 700;
-    color: var(--color-text);
-    margin: 0;
-  }
-  
-  .category-compact span {
-    color: var(--color-primary);
-    font-size: var(--text-xl);
-    font-weight: 700;
-  }
-  
-  /* Value Props Section - Timeline Layout */
-  .value-props-section {
-    padding: var(--space-24) 0;
-    background: var(--color-bg-secondary);
-    position: relative;
-  }
-  
-  .value-props-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      radial-gradient(ellipse at top left, rgba(255, 107, 53, 0.05) 0%, transparent 50%),
-      radial-gradient(ellipse at bottom right, rgba(0, 78, 137, 0.05) 0%, transparent 50%);
-    pointer-events: none;
-  }
-  
-  .value-props-section .section-eyebrow {
-    color: var(--color-primary);
-  }
-  
-  .value-props-section .section-title-modern,
-  .value-props-section h3 {
-    color: var(--color-text);
-  }
-  
-  .value-props-section p {
-    color: var(--color-text-secondary);
-  }
-  
-  .value-props-timeline {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  .timeline-header {
-    text-align: center;
-    margin-bottom: var(--space-16);
-  }
-  
-  .timeline {
-    position: relative;
-    padding-left: var(--space-12);
-  }
-  
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(180deg, var(--color-primary) 0%, rgba(255, 107, 53, 0.2) 100%);
-  }
-  
-  .timeline-item {
-    position: relative;
-    margin-bottom: var(--space-12);
-  }
-  
-  .timeline-item:last-child {
-    margin-bottom: 0;
-  }
-  
-  .timeline-marker {
-    position: absolute;
-    left: -32px;
-    top: 0;
-    width: 42px;
-    height: 42px;
-    background: var(--color-primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: var(--text-lg);
-    font-weight: 800;
-    color: white;
-    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
-  }
-  
-  .timeline-content {
-    background: var(--color-surface);
-    padding: var(--space-8);
-    border-radius: var(--radius-xl);
-    border: 2px solid var(--color-border);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: all var(--transition-base);
-  }
-  
-  .timeline-item:hover .timeline-content {
-    border-color: var(--color-primary);
-    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.15);
-    transform: translateX(8px);
-  }
-  
-  .timeline-content h3 {
-    font-size: var(--text-xl);
-    font-weight: 700;
-    color: var(--color-text);
-    margin-bottom: var(--space-3);
-  }
-  
-  .timeline-content p {
-    font-size: var(--text-base);
-    line-height: 1.6;
-    color: var(--color-text-secondary);
-    margin: 0;
-  }
-  
-  /* CTA Section */
-  .cta-section {
-    padding: var(--space-20) 0;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  }
-  
-  .cta-content-modern {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-12);
-    padding: var(--space-12);
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: var(--radius-2xl);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .cta-text {
-    flex: 1;
-  }
-  
-  .cta-title-modern {
-    font-size: clamp(1.75rem, 3vw, 2.5rem);
-    font-weight: 800;
-    color: white;
-    margin-bottom: var(--space-3);
-    letter-spacing: -0.02em;
-  }
-  
-  .cta-description-modern {
-    font-size: var(--text-lg);
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0;
-    line-height: 1.6;
-  }
-  
-  .cta-actions {
-    display: flex;
-    gap: var(--space-4);
-    flex-shrink: 0;
-  }
-  
-  .cta-button-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-4) var(--space-8);
-    background: var(--color-primary);
-    color: white;
-    font-size: var(--text-base);
-    font-weight: 700;
-    border-radius: var(--radius-lg);
-    text-decoration: none;
-    transition: all var(--transition-base);
-    white-space: nowrap;
-  }
-  
-  .cta-button-primary:hover {
-    background: #e85a2a;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
-  }
-  
-  .cta-button-primary svg {
-    transition: transform var(--transition-base);
-  }
-  
-  .cta-button-primary:hover svg {
-    transform: translateX(4px);
-  }
-  
-  .cta-button-secondary {
-    display: inline-flex;
-    align-items: center;
-    padding: var(--space-4) var(--space-8);
-    background: transparent;
-    color: white;
-    font-size: var(--text-base);
-    font-weight: 600;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: var(--radius-lg);
-    text-decoration: none;
-    transition: all var(--transition-base);
-    white-space: nowrap;
-  }
-  
-  .cta-button-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.4);
-  }
-  
+<style>
   /* Responsive Design */
   @media (max-width: 1024px) {
     .hero {
-      min-height: auto;
-      padding: var(--space-24) 0 var(--space-20);
+      @apply min-h-0 py-24 pb-20;
     }
     
     .hero-visual {
-      width: 40%;
+      @apply w-2/5;
       clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
     }
   }
   
   @media (max-width: 768px) {
     .hero {
-      padding: var(--space-20) 0 var(--space-16);
+      @apply py-20 pb-16;
     }
     
     .hero-visual {
-      display: none;
+      @apply hidden;
     }
     
     .hero-content {
-      max-width: 100%;
+      @apply max-w-full;
     }
     
     .hero-title {
-      font-size: var(--text-3xl);
+      @apply text-3xl;
     }
     
     .hero-stats {
-      gap: var(--space-4);
+      @apply gap-4;
     }
     
     .hero-stat-divider {
-      height: 30px;
+      @apply h-[30px];
     }
     
     .hero-cta {
-      flex-direction: column;
-      align-items: stretch;
+      @apply flex-col items-stretch;
     }
     
     .hero-cta-primary {
-      justify-content: center;
+      @apply justify-center;
     }
     
     .trust-grid {
-      grid-template-columns: repeat(2, 1fr);
+      @apply grid-cols-2;
     }
     
     .process-grid {
-      grid-template-columns: 1fr;
+      @apply grid-cols-1;
     }
     
     .deals-grid {
-      grid-template-columns: 1fr;
-      gap: var(--space-8);
+      @apply grid-cols-1 gap-8;
     }
     
     .features-split {
-      grid-template-columns: 1fr;
-      gap: var(--space-12);
+      @apply grid-cols-1 gap-12;
     }
     
     .categories-showcase {
-      grid-template-columns: 1fr;
-    }
-    
-    .timeline {
-      padding-left: var(--space-8);
-    }
-    
-    .timeline::before {
-      left: 16px;
-    }
-    
-    .timeline-marker {
-      left: -28px;
-      width: 36px;
-      height: 36px;
-      font-size: var(--text-base);
+      @apply grid-cols-1;
     }
     
     .cta-content-modern {
-      flex-direction: column;
-      text-align: center;
-      padding: var(--space-10);
+      @apply flex-col text-center p-10;
     }
     
     .cta-actions {
-      flex-direction: column;
-      width: 100%;
+      @apply flex-col w-full;
     }
     
     .cta-button-primary,
     .cta-button-secondary {
-      width: 100%;
-      justify-content: center;
+      @apply w-full justify-center;
     }
   }
   
   @media (max-width: 480px) {
     .hero-label {
-      font-size: var(--text-xs);
+      @apply text-xs;
     }
     
     .hero-description {
-      font-size: var(--text-base);
+      @apply text-base;
     }
     
     .hero-stats {
-      justify-content: space-between;
-      width: 100%;
+      @apply justify-between w-full;
     }
     
     .hero-stat-value {
-      font-size: var(--text-xl);
+      @apply text-xl;
     }
-  }
-
-  .affiliate-disclosure-banner {
-    background: rgba(255, 107, 53, 0.1);
-    border: 1px solid rgba(255, 107, 53, 0.2);
-    border-radius: var(--radius-lg);
-    padding: var(--space-4);
-    margin-bottom: var(--space-8);
-    text-align: center;
-  }
-
-  .affiliate-disclosure-banner p {
-    margin: 0;
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-2);
-    flex-wrap: wrap;
-  }
-  
-  .affiliate-disclosure-banner svg {
-    flex-shrink: 0;
-  }
-
-  .affiliate-disclosure-banner a {
-    color: var(--color-primary);
-    text-decoration: underline;
-    font-weight: 600;
-  }
-
-  .affiliate-disclosure-banner a:hover {
-    color: var(--color-secondary);
-  }
-  
-  .disclaimer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-2);
-  }
-  
-  .disclaimer svg {
-    flex-shrink: 0;
-    color: var(--color-primary);
   }
 </style>

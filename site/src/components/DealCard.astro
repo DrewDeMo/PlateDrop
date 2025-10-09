@@ -59,56 +59,56 @@ const productSchema = {
 };
 ---
 
-<article class="deal-card">
-  <div class="card-glow"></div>
+<article class="deal-card flex flex-col bg-gradient-card backdrop-blur-glass border border-glass-border rounded-2xl overflow-hidden transition-all duration-[500ms] ease-spring h-full relative animate-fade-in group">
+  <div class="card-glow absolute inset-[-2px] bg-gradient-primary rounded-2xl opacity-0 blur-[20px] transition-opacity duration-[400ms] ease-out -z-10"></div>
   
   {image_url && (
-    <div class="deal-image">
-      <img src={image_url} alt={title} loading="lazy" />
-      <div class="image-overlay"></div>
+    <div class="deal-image relative aspect-[4/3] bg-gradient-to-br from-bg-secondary to-bg-tertiary overflow-hidden">
+      <img src={image_url} alt={title} loading="lazy" class="w-full h-full object-cover transition-transform duration-[600ms] ease-spring group-hover:scale-[1.15] group-hover:rotate-[3deg]" />
+      <div class="image-overlay absolute inset-0 bg-gradient-to-b from-transparent to-bg/80 opacity-0 transition-opacity duration-[400ms] ease-out group-hover:opacity-100"></div>
       {discount_pct > 0 && (
-        <span class="discount-badge">
-          <span class="badge-icon">🔥</span>
-          <span class="badge-text">{Math.round(discount_pct)}% OFF</span>
+        <span class="discount-badge absolute top-4 right-4 flex items-center gap-2 bg-gradient-primary text-white px-5 py-3 rounded-full text-sm font-extrabold tracking-wider shadow-glow animate-pulse-slow z-[2]">
+          <span class="badge-icon text-[1.2em] animate-float">🔥</span>
+          <span class="badge-text uppercase">{Math.round(discount_pct)}% OFF</span>
         </span>
       )}
-      <div class="quick-view">
+      <div class="quick-view absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-5 bg-glass-bg backdrop-blur-glass text-text px-6 py-3 rounded-full text-sm font-bold opacity-0 transition-all duration-[450ms] ease-spring border border-glass-border z-[2] group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-[1.08]">
         <span>Quick View</span>
       </div>
     </div>
   )}
   
-  <div class="deal-content">
-    <div class="deal-header">
-      <span class="deal-brand">{brand}</span>
-      <span class="deal-retailer">
-        <span class="retailer-icon">🏪</span>
+  <div class="deal-content flex flex-col gap-4 p-6 flex-1">
+    <div class="deal-header flex items-center justify-between gap-3">
+      <span class="deal-brand text-sm font-bold bg-gradient-primary bg-clip-text text-transparent uppercase tracking-[0.1em]">{brand}</span>
+      <span class="deal-retailer flex items-center gap-1 text-xs text-text-tertiary px-3 py-2 bg-surface-elevated rounded-full border border-border transition-all duration-[400ms] ease-spring group-hover:scale-[1.08] group-hover:border-primary">
+        <span class="retailer-icon text-[1.1em] transition-transform duration-[400ms] ease-spring group-hover:rotate-[20deg]">🏪</span>
         {retailer}
       </span>
     </div>
     
-    <h3 class="deal-title">{title}</h3>
+    <h3 class="deal-title text-lg font-bold text-text leading-tight m-0 line-clamp-2 min-h-[2.8em]">{title}</h3>
     
-    <div class="deal-pricing">
-      <div class="price-wrapper">
-        <div class="price-current">{formatPrice(price_current)}</div>
+    <div class="deal-pricing flex flex-col gap-3 p-4 bg-surface-elevated rounded-lg border border-border">
+      <div class="price-wrapper flex items-baseline gap-3">
+        <div class="price-current text-3xl font-extrabold bg-gradient-primary bg-clip-text text-transparent leading-none">{formatPrice(price_current)}</div>
         {price_prev && (
-          <div class="price-badge">
-            <span class="price-prev">{formatPrice(price_prev)}</span>
+          <div class="price-badge flex items-center">
+            <span class="price-prev text-base text-text-tertiary line-through opacity-70">{formatPrice(price_prev)}</span>
           </div>
         )}
       </div>
       {savings > 0 && (
-        <div class="savings-badge">
-          <span class="savings-icon">💰</span>
+        <div class="savings-badge inline-flex items-center gap-2 px-4 py-2 bg-gradient-accent text-bg rounded-full text-sm font-bold self-start shadow-glow-accent transition-all duration-[450ms] ease-spring group-hover:scale-[1.12]">
+          <span class="savings-icon text-[1.2em] transition-transform duration-[450ms] ease-spring group-hover:scale-[1.3] group-hover:rotate-[20deg]">💰</span>
           <span>Save {formatPrice(savings)}</span>
         </div>
       )}
     </div>
     
     {rating && (
-      <div class="deal-rating">
-        <div class="stars" aria-label={`${rating} out of 5 stars`}>
+      <div class="deal-rating flex items-center gap-2 py-2">
+        <div class="stars flex gap-1 text-accent" aria-label={`${rating} out of 5 stars`}>
           {Array.from({ length: 5 }, (_, i) => (
             <svg
               width="18"
@@ -119,28 +119,29 @@ const productSchema = {
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="star"
+              class="star transition-transform duration-[400ms] ease-spring group-hover:scale-[1.2] group-hover:rotate-[12deg]"
+              style={`transition-delay: ${i * 60}ms`}
             >
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
             </svg>
           ))}
         </div>
         {reviews_count && (
-          <span class="review-count">({reviews_count.toLocaleString()})</span>
+          <span class="review-count text-xs text-text-tertiary font-semibold">({reviews_count.toLocaleString()})</span>
         )}
       </div>
     )}
     
-    <a href={url} class="deal-link btn btn-primary" target="_blank" rel="noopener noreferrer">
-      <span>{retailer === 'Amazon' ? 'View on Amazon' : 'View Deal'}</span>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="link-icon">
+    <a href={url} class="deal-link btn btn-primary mt-auto w-full text-base px-6 py-4 relative overflow-hidden" target="_blank" rel="noopener noreferrer">
+      <span class="relative z-[1]">{retailer === 'Amazon' ? 'View on Amazon' : 'View Deal'}</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="link-icon relative z-[1] transition-transform duration-[450ms] ease-spring group-hover:translate-x-[6px] group-hover:-translate-y-[6px] group-hover:rotate-[8deg]">
         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
         <polyline points="15 3 21 3 21 9"></polyline>
         <line x1="10" y1="14" x2="21" y2="3"></line>
       </svg>
     </a>
 
-    <p class="affiliate-notice">
+    <p class="affiliate-notice text-xs text-text-tertiary text-center mt-2 italic leading-relaxed m-0">
       {retailer === 'Amazon'
         ? 'As an Amazon Associate, we earn from qualifying purchases.'
         : 'We may earn a commission from this purchase.'}
@@ -152,343 +153,39 @@ const productSchema = {
 <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
 
 <style>
-  .deal-card {
-    display: flex;
-    flex-direction: column;
-    background: var(--gradient-card);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-2xl);
-    overflow: hidden;
-    transition: all 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
-    height: 100%;
-    position: relative;
-    animation: fadeIn 500ms ease-out;
-  }
-  
-  .card-glow {
-    position: absolute;
-    inset: -2px;
-    background: var(--gradient-primary);
-    border-radius: var(--radius-2xl);
-    opacity: 0;
-    filter: blur(20px);
-    transition: opacity 400ms ease-out;
-    z-index: -1;
-  }
-  
   .deal-card:hover {
-    transform: translateY(-16px) scale(1.03);
-    border-color: var(--color-primary);
+    @apply -translate-y-4 scale-[1.03] border-primary;
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 60px rgba(255, 107, 53, 0.3);
   }
   
   .deal-card:hover .card-glow {
-    opacity: 0.6;
+    @apply opacity-60;
   }
   
   .deal-card:active {
-    transform: translateY(-12px) scale(1.01);
+    @apply -translate-y-3 scale-[1.01];
     transition: transform 150ms ease-out;
   }
   
-  .deal-image {
-    position: relative;
-    aspect-ratio: 4 / 3;
-    background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-tertiary) 100%);
-    overflow: hidden;
-  }
-  
-  .deal-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  
-  .deal-card:hover .deal-image img {
-    transform: scale(1.15) rotate(3deg);
-  }
-  
-  .image-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, transparent 0%, rgba(10, 14, 39, 0.8) 100%);
-    opacity: 0;
-    transition: opacity 400ms ease-out;
-  }
-  
-  .deal-card:hover .image-overlay {
-    opacity: 1;
-  }
-  
-  .discount-badge {
-    position: absolute;
-    top: var(--space-4);
-    right: var(--space-4);
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    background: var(--gradient-primary);
-    color: white;
-    padding: var(--space-3) var(--space-5);
-    border-radius: var(--radius-full);
-    font-size: var(--text-sm);
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    box-shadow: var(--shadow-glow);
-    animation: pulse 2s ease-in-out infinite;
-    z-index: 2;
-  }
-  
-  .badge-icon {
-    font-size: 1.2em;
-    animation: float 2s ease-in-out infinite;
-  }
-  
-  .badge-text {
-    text-transform: uppercase;
-  }
-  
-  .quick-view {
-    position: absolute;
-    bottom: var(--space-4);
-    left: 50%;
-    transform: translateX(-50%) translateY(20px);
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    color: var(--color-text);
-    padding: var(--space-3) var(--space-6);
-    border-radius: var(--radius-full);
-    font-size: var(--text-sm);
-    font-weight: 700;
-    opacity: 0;
-    transition: all 450ms cubic-bezier(0.34, 1.56, 0.64, 1);
-    border: 1px solid var(--glass-border);
-    z-index: 2;
-  }
-  
-  .deal-card:hover .quick-view {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0) scale(1.08);
-  }
-  
-  .deal-content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
-    padding: var(--space-6);
-    flex: 1;
-  }
-  
-  .deal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-3);
-  }
-  
-  .deal-brand {
-    font-size: var(--text-sm);
-    font-weight: 700;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-  
-  .deal-retailer {
-    display: flex;
-    align-items: center;
-    gap: var(--space-1);
-    font-size: var(--text-xs);
-    color: var(--color-text-tertiary);
-    padding: var(--space-2) var(--space-3);
-    background: var(--color-surface-elevated);
-    border-radius: var(--radius-full);
-    border: 1px solid var(--color-border);
-    transition: all 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  
-  .deal-card:hover .deal-retailer {
-    transform: scale(1.08);
-    border-color: var(--color-primary);
-  }
-  
-  .retailer-icon {
-    font-size: 1.1em;
-    transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  
-  .deal-card:hover .retailer-icon {
-    transform: rotate(20deg);
-  }
-  
-  .deal-title {
-    font-size: var(--text-lg);
-    font-weight: 700;
-    color: var(--color-text);
-    line-height: 1.4;
-    margin: 0;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    min-height: 2.8em;
-  }
-  
-  .deal-pricing {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-    padding: var(--space-4);
-    background: var(--color-surface-elevated);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--color-border);
-  }
-  
-  .price-wrapper {
-    display: flex;
-    align-items: baseline;
-    gap: var(--space-3);
-  }
-  
-  .price-current {
-    font-size: var(--text-3xl);
-    font-weight: 800;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1;
-  }
-  
-  .price-badge {
-    display: flex;
-    align-items: center;
-  }
-  
-  .price-prev {
-    font-size: var(--text-base);
-    color: var(--color-text-tertiary);
-    text-decoration: line-through;
-    opacity: 0.7;
-  }
-  
-  .savings-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-2) var(--space-4);
-    background: var(--gradient-accent);
-    color: var(--color-bg);
-    border-radius: var(--radius-full);
-    font-size: var(--text-sm);
-    font-weight: 700;
-    align-self: flex-start;
-    box-shadow: 0 0 24px rgba(255, 210, 63, 0.4);
-    transition: all 450ms cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  
   .deal-card:hover .savings-badge {
-    transform: scale(1.12);
     box-shadow: 0 0 35px rgba(255, 210, 63, 0.6), 0 10px 40px rgba(0, 0, 0, 0.3);
-  }
-  
-  .savings-icon {
-    font-size: 1.2em;
-    transition: transform 450ms cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  
-  .deal-card:hover .savings-icon {
-    transform: scale(1.3) rotate(20deg);
-  }
-  
-  .deal-rating {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-2) 0;
-  }
-  
-  .stars {
-    display: flex;
-    gap: var(--space-1);
-    color: var(--color-accent);
-  }
-  
-  .star {
-    transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  
-  .deal-card:hover .star {
-    transform: scale(1.2) rotate(12deg);
-  }
-  
-  .deal-card:hover .star:nth-child(1) { transition-delay: 0ms; }
-  .deal-card:hover .star:nth-child(2) { transition-delay: 60ms; }
-  .deal-card:hover .star:nth-child(3) { transition-delay: 120ms; }
-  .deal-card:hover .star:nth-child(4) { transition-delay: 180ms; }
-  .deal-card:hover .star:nth-child(5) { transition-delay: 240ms; }
-  
-  .review-count {
-    font-size: var(--text-xs);
-    color: var(--color-text-tertiary);
-    font-weight: 600;
-  }
-  
-  .deal-link {
-    margin-top: auto;
-    width: 100%;
-    font-size: var(--text-base);
-    padding: var(--space-4) var(--space-6);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .deal-link span {
-    position: relative;
-    z-index: 1;
-  }
-  
-  .link-icon {
-    position: relative;
-    z-index: 1;
-    transition: transform 450ms cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  
-  .deal-link:hover .link-icon {
-    transform: translate(6px, -6px) rotate(8deg);
   }
   
   @media (max-width: 640px) {
     .deal-content {
-      padding: var(--space-5);
-      gap: var(--space-3);
+      @apply p-5 gap-3;
     }
     
     .price-current {
-      font-size: var(--text-2xl);
+      @apply text-2xl;
     }
     
     .deal-title {
-      font-size: var(--text-base);
+      @apply text-base;
     }
     
     .discount-badge {
-      padding: var(--space-2) var(--space-4);
-      font-size: var(--text-xs);
+      @apply px-4 py-2 text-xs;
     }
-  }
-
-  .affiliate-notice {
-    font-size: var(--text-xs);
-    color: var(--color-text-tertiary);
-    text-align: center;
-    margin-top: var(--space-2);
-    font-style: italic;
-    line-height: 1.4;
   }
 </style>

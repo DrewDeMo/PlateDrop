@@ -3,384 +3,171 @@ import { Flame, BookOpen, HelpCircle, Info, Mail, Menu, X, Dumbbell } from 'luci
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="site-header" id="site-header">
-  <div class="header-progress"></div>
-  <div class="header-glow"></div>
+<header class="site-header sticky top-0 z-[1000] bg-glass-bg backdrop-blur-glass border-b border-glass-border shadow-lg transition-all duration-smooth" id="site-header">
+  <div class="header-progress absolute top-0 left-0 h-[3px] bg-gradient-primary w-0 transition-[width] duration-100 ease-out z-[2] shadow-[0_0_10px_rgba(255,107,53,0.5)]"></div>
+  <div class="header-glow absolute top-0 left-1/2 -translate-x-1/2 w-4/5 h-full pointer-events-none opacity-0 transition-opacity duration-smooth" style="background: radial-gradient(ellipse at center, rgba(255, 107, 53, 0.15) 0%, transparent 70%);"></div>
   <div class="container">
-    <nav class="nav-wrapper">
-      <a href="/" class="logo">
-        <div class="logo-icon">
-          <img src="/svgs/logo.svg" alt="PlateDrop Logo" width="40" height="40" />
+    <nav class="nav-wrapper flex items-center justify-between py-5 gap-8 relative transition-all duration-smooth">
+      <a href="/" class="logo flex items-center gap-3 text-2xl font-extrabold text-text no-underline transition-transform duration-spring relative z-[2] hover:scale-[1.08] hover:no-underline active:scale-[1.02] active:transition-transform active:duration-100">
+        <div class="logo-icon relative flex items-center justify-center w-12 h-12 transition-all duration-smooth">
+          <div class="absolute inset-[-4px] bg-gradient-primary rounded-full opacity-0 blur-[12px] transition-opacity duration-smooth logo-icon-glow"></div>
+          <img src="/svgs/logo.svg" alt="PlateDrop Logo" width="40" height="40" class="w-full h-full object-contain transition-transform duration-spring relative z-[1]" />
         </div>
-        <span class="logo-text">
-          <span class="logo-main">Plate</span><span class="logo-accent">Drop</span>
+        <span class="logo-text flex tracking-tight">
+          <span class="logo-main bg-gradient-primary bg-clip-text text-transparent">Plate</span><span class="logo-accent text-text font-bold">Drop</span>
         </span>
       </a>
       
-      <ul class="nav-links">
+      <ul class="nav-links flex items-center gap-2 list-none m-0 p-0">
         <li>
-          <a href="/" class={currentPath === '/' ? 'active' : ''}>
-            <Flame class="nav-icon" size={20} />
-            <span>Deals</span>
+          <a href="/" class={`nav-link flex items-center gap-2 text-base font-semibold text-text-secondary no-underline px-5 py-3 rounded-full transition-all duration-base relative overflow-hidden hover:text-primary hover:-translate-y-[3px] hover:scale-105 hover:no-underline active:-translate-y-[1px] active:scale-[1.02] active:transition-transform active:duration-100 ${currentPath === '/' ? 'active text-text bg-gradient-primary shadow-glow' : ''}`}>
+            <div class="nav-link-bg absolute inset-0 bg-gradient-primary opacity-0 transition-opacity duration-smooth rounded-full"></div>
+            <Flame class="nav-icon relative z-[1] transition-all duration-spring stroke-[2.5]" size={20} />
+            <span class="relative z-[1]">Deals</span>
           </a>
         </li>
         <li>
-          <a href="/workouts" class={currentPath.startsWith('/workouts') ? 'active' : ''}>
-            <Dumbbell class="nav-icon" size={20} />
-            <span>Workouts</span>
+          <a href="/workouts" class={`nav-link flex items-center gap-2 text-base font-semibold text-text-secondary no-underline px-5 py-3 rounded-full transition-all duration-base relative overflow-hidden hover:text-primary hover:-translate-y-[3px] hover:scale-105 hover:no-underline active:-translate-y-[1px] active:scale-[1.02] active:transition-transform active:duration-100 ${currentPath.startsWith('/workouts') ? 'active text-text bg-gradient-primary shadow-glow' : ''}`}>
+            <div class="nav-link-bg absolute inset-0 bg-gradient-primary opacity-0 transition-opacity duration-smooth rounded-full"></div>
+            <Dumbbell class="nav-icon relative z-[1] transition-all duration-spring stroke-[2.5]" size={20} />
+            <span class="relative z-[1]">Workouts</span>
           </a>
         </li>
         <li>
-          <a href="/guides" class={currentPath.startsWith('/guides') ? 'active' : ''}>
-            <BookOpen class="nav-icon" size={20} />
-            <span>Guides</span>
+          <a href="/guides" class={`nav-link flex items-center gap-2 text-base font-semibold text-text-secondary no-underline px-5 py-3 rounded-full transition-all duration-base relative overflow-hidden hover:text-primary hover:-translate-y-[3px] hover:scale-105 hover:no-underline active:-translate-y-[1px] active:scale-[1.02] active:transition-transform active:duration-100 ${currentPath.startsWith('/guides') ? 'active text-text bg-gradient-primary shadow-glow' : ''}`}>
+            <div class="nav-link-bg absolute inset-0 bg-gradient-primary opacity-0 transition-opacity duration-smooth rounded-full"></div>
+            <BookOpen class="nav-icon relative z-[1] transition-all duration-spring stroke-[2.5]" size={20} />
+            <span class="relative z-[1]">Guides</span>
           </a>
         </li>
         <li>
-          <a href="/faq" class={currentPath === '/faq' ? 'active' : ''}>
-            <HelpCircle class="nav-icon" size={20} />
-            <span>FAQ</span>
+          <a href="/faq" class={`nav-link flex items-center gap-2 text-base font-semibold text-text-secondary no-underline px-5 py-3 rounded-full transition-all duration-base relative overflow-hidden hover:text-primary hover:-translate-y-[3px] hover:scale-105 hover:no-underline active:-translate-y-[1px] active:scale-[1.02] active:transition-transform active:duration-100 ${currentPath === '/faq' ? 'active text-text bg-gradient-primary shadow-glow' : ''}`}>
+            <div class="nav-link-bg absolute inset-0 bg-gradient-primary opacity-0 transition-opacity duration-smooth rounded-full"></div>
+            <HelpCircle class="nav-icon relative z-[1] transition-all duration-spring stroke-[2.5]" size={20} />
+            <span class="relative z-[1]">FAQ</span>
           </a>
         </li>
         <li>
-          <a href="/about" class={currentPath === '/about' ? 'active' : ''}>
-            <Info class="nav-icon" size={20} />
-            <span>About</span>
+          <a href="/about" class={`nav-link flex items-center gap-2 text-base font-semibold text-text-secondary no-underline px-5 py-3 rounded-full transition-all duration-base relative overflow-hidden hover:text-primary hover:-translate-y-[3px] hover:scale-105 hover:no-underline active:-translate-y-[1px] active:scale-[1.02] active:transition-transform active:duration-100 ${currentPath === '/about' ? 'active text-text bg-gradient-primary shadow-glow' : ''}`}>
+            <div class="nav-link-bg absolute inset-0 bg-gradient-primary opacity-0 transition-opacity duration-smooth rounded-full"></div>
+            <Info class="nav-icon relative z-[1] transition-all duration-spring stroke-[2.5]" size={20} />
+            <span class="relative z-[1]">About</span>
           </a>
         </li>
         <li>
-          <a href="/contact" class={currentPath === '/contact' ? 'active' : ''}>
-            <Mail class="nav-icon" size={20} />
-            <span>Contact</span>
+          <a href="/contact" class={`nav-link flex items-center gap-2 text-base font-semibold text-text-secondary no-underline px-5 py-3 rounded-full transition-all duration-base relative overflow-hidden hover:text-primary hover:-translate-y-[3px] hover:scale-105 hover:no-underline active:-translate-y-[1px] active:scale-[1.02] active:transition-transform active:duration-100 ${currentPath === '/contact' ? 'active text-text bg-gradient-primary shadow-glow' : ''}`}>
+            <div class="nav-link-bg absolute inset-0 bg-gradient-primary opacity-0 transition-opacity duration-smooth rounded-full"></div>
+            <Mail class="nav-icon relative z-[1] transition-all duration-spring stroke-[2.5]" size={20} />
+            <span class="relative z-[1]">Contact</span>
           </a>
         </li>
       </ul>
       
-      <button class="mobile-menu-toggle" aria-label="Toggle menu">
-        <Menu class="menu-icon" size={24} />
-        <X class="close-icon" size={24} />
+      <button class="mobile-menu-toggle hidden md:hidden items-center justify-center bg-transparent border-none cursor-pointer p-2 z-[2] relative w-11 h-11 rounded-md transition-all duration-base hover:bg-primary/15 hover:scale-110 active:scale-95 active:transition-transform active:duration-100" aria-label="Toggle menu">
+        <Menu class="menu-icon absolute transition-all duration-smooth text-primary" size={24} />
+        <X class="close-icon absolute opacity-0 -rotate-90 scale-[0.8] transition-all duration-spring text-primary" size={24} />
       </button>
     </nav>
   </div>
 </header>
 
 <style>
-  .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    border-bottom: 1px solid var(--glass-border);
-    box-shadow: var(--shadow-lg);
-    transition: box-shadow var(--transition-smooth), border-color var(--transition-base);
-  }
-  
-  /* Scroll progress indicator */
-  .header-progress {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 3px;
-    background: var(--gradient-primary);
-    width: 0%;
-    transition: width 100ms ease-out;
-    z-index: 2;
-    box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
-  }
-  
-  /* Header shrinks on scroll */
+  /* Scrolled state */
   .site-header.scrolled {
-    box-shadow: var(--shadow-2xl);
+    @apply shadow-2xl;
     border-bottom-color: rgba(255, 107, 53, 0.2);
   }
   
   .site-header.scrolled .nav-wrapper {
-    padding-block: var(--space-3);
+    @apply py-3;
   }
   
   .site-header.scrolled .logo {
-    font-size: var(--text-xl);
+    @apply text-xl;
   }
   
   .site-header.scrolled .logo-icon {
-    width: 40px;
-    height: 40px;
+    @apply w-10 h-10;
   }
   
-  .header-glow {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 100%;
-    background: radial-gradient(ellipse at center, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity var(--transition-smooth);
-  }
-  
+  /* Header glow on hover/scroll */
   .site-header:hover .header-glow,
   .site-header.scrolled .header-glow {
-    opacity: 1;
+    @apply opacity-100;
   }
   
-  .nav-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-block: var(--space-5);
-    gap: var(--space-8);
-    position: relative;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
-    font-size: var(--text-2xl);
-    font-weight: 800;
-    color: var(--color-text);
-    text-decoration: none;
-    transition: transform var(--transition-spring);
-    position: relative;
-    z-index: 2;
-  }
-  
-  .logo:hover {
-    transform: scale(1.08);
-    text-decoration: none;
-  }
-  
-  .logo:active {
-    transform: scale(1.02);
-    transition: transform 100ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .logo-icon {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-  }
-  
-  .logo-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: transform var(--transition-spring);
-  }
-  
-  .logo-icon::before {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    background: var(--gradient-primary);
-    border-radius: 50%;
-    opacity: 0;
-    filter: blur(12px);
-    transition: opacity var(--transition-smooth);
-  }
-  
-  .logo:hover .logo-icon::before {
-    opacity: 0.7;
+  /* Logo hover effects */
+  .logo:hover .logo-icon-glow {
+    @apply opacity-70;
   }
   
   .logo:hover .logo-icon img {
-    transform: scale(1.1) rotate(5deg);
+    @apply scale-110 rotate-[5deg];
   }
   
-  .logo-text {
-    display: flex;
-    letter-spacing: -0.02em;
+  /* Nav link hover effects */
+  .nav-link:not(.active):hover .nav-link-bg {
+    @apply opacity-15;
   }
   
-  .logo-main {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .logo-accent {
-    color: var(--color-text);
-    font-weight: 700;
-  }
-  
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-links a {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    font-size: var(--text-base);
-    font-weight: 600;
-    color: var(--color-text-secondary);
-    text-decoration: none;
-    padding: var(--space-3) var(--space-5);
-    border-radius: var(--radius-full);
-    transition: color var(--transition-base), transform var(--transition-spring);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .nav-links a::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--gradient-primary);
-    opacity: 0;
-    transition: opacity var(--transition-smooth);
-    border-radius: var(--radius-full);
-  }
-  
-  .nav-links a:hover::before {
-    opacity: 0.15;
-  }
-  
-  .nav-links a:hover {
-    color: var(--color-primary);
-    transform: translateY(-3px) scale(1.05);
-    text-decoration: none;
-  }
-  
-  .nav-links a:active {
-    transform: translateY(-1px) scale(1.02);
-    transition: transform 100ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .nav-icon {
-    transition: transform var(--transition-spring), filter var(--transition-base);
-    stroke-width: 2.5;
-  }
-  
-  .nav-links a:hover .nav-icon {
-    transform: scale(1.2) rotate(-8deg);
+  .nav-link:hover .nav-icon {
+    @apply scale-[1.2] -rotate-[8deg];
     filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.7));
   }
   
-  .nav-links a.active {
-    color: var(--color-text);
-    background: var(--gradient-primary);
-    box-shadow: var(--shadow-glow);
+  .nav-link.active .nav-link-bg {
+    @apply opacity-0;
   }
   
-  .nav-links a.active::before {
-    opacity: 0;
-  }
-  
-  .nav-links a.active .nav-icon {
+  .nav-link.active .nav-icon {
     filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
     animation: pulse 2s ease-in-out infinite;
   }
   
-  .mobile-menu-toggle {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: var(--space-2);
-    z-index: 2;
-    position: relative;
-    width: 44px;
-    height: 44px;
-    border-radius: var(--radius-md);
-    transition: background var(--transition-base), transform var(--transition-spring);
-  }
-  
-  .mobile-menu-toggle:hover {
-    background: rgba(255, 107, 53, 0.15);
-    transform: scale(1.1);
-  }
-  
-  .mobile-menu-toggle:active {
-    transform: scale(0.95);
-    transition: transform 100ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .mobile-menu-toggle .menu-icon,
-  .mobile-menu-toggle .close-icon {
-    position: absolute;
-    transition: opacity var(--transition-smooth), transform var(--transition-spring);
-    color: var(--color-primary);
-  }
-  
-  .mobile-menu-toggle .close-icon {
-    opacity: 0;
-    transform: rotate(-90deg) scale(0.8);
-  }
-  
+  /* Mobile menu toggle active state */
   .mobile-menu-toggle.active .menu-icon {
-    opacity: 0;
-    transform: rotate(90deg) scale(0.8);
+    @apply opacity-0 rotate-90 scale-[0.8];
   }
   
   .mobile-menu-toggle.active .close-icon {
-    opacity: 1;
-    transform: rotate(0) scale(1);
+    @apply opacity-100 rotate-0 scale-100;
   }
   
+  /* Mobile styles */
   @media (max-width: 768px) {
     .nav-wrapper {
-      padding-block: var(--space-4);
+      @apply py-4;
     }
     
     .mobile-menu-toggle {
-      display: flex;
+      @apply flex;
     }
     
     .nav-links {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 280px;
-      height: 100vh;
-      background: var(--gradient-card);
-      backdrop-filter: var(--glass-blur);
-      flex-direction: column;
-      padding: var(--space-20) var(--space-6);
-      gap: var(--space-4);
-      border-left: 1px solid var(--glass-border);
-      box-shadow: var(--shadow-2xl);
-      transition: right var(--transition-elastic);
+      @apply fixed top-0 -right-full w-[280px] h-screen bg-gradient-card backdrop-blur-glass flex-col p-6 pt-20 gap-4 border-l border-glass-border shadow-2xl;
+      transition: right 500ms cubic-bezier(0.68, -0.6, 0.32, 1.6);
     }
     
     .nav-links.active {
-      right: 0;
+      @apply right-0;
     }
     
     .nav-links a {
-      width: 100%;
-      justify-content: flex-start;
-      padding: var(--space-4) var(--space-5);
-      font-size: var(--text-lg);
+      @apply w-full justify-start px-5 py-4 text-lg;
     }
     
     .logo-text {
-      font-size: var(--text-xl);
+      @apply text-xl;
     }
   }
   
   @media (max-width: 480px) {
     .logo-text span {
-      font-size: var(--text-lg);
+      @apply text-lg;
     }
     
     .nav-links {
-      width: 100%;
-      right: -100%;
+      @apply w-full -right-full;
     }
   }
 </style>
