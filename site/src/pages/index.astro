@@ -1,3 +1,4 @@
+
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import DealCard from '@components/DealCard.astro';
@@ -57,72 +58,83 @@ const formattedDate = today.toLocaleDateString('en-US', {
   description="Daily curated deals on home gym equipment including power racks, barbells, dumbbells, and cardio machines. Save on quality fitness gear."
 >
   <div class="hero">
+    <div class="hero-bg-animation"></div>
     <div class="container">
       <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-icon">⚡</span>
+          <span>Updated Daily</span>
+        </div>
         <h1 class="hero-title">
-          Today's Best Home Gym Deals
+          Elite Fitness Deals
+          <span class="hero-subtitle-inline">Delivered Daily</span>
         </h1>
-        <p class="hero-subtitle">
+        <p class="hero-date">
+          <span class="date-icon">📅</span>
           {formattedDate}
         </p>
         <p class="hero-description">
-          Curated daily deals on quality home gym equipment. We track prices across major retailers
-          so you don't have to. All deals verified and updated daily.
+          Premium home gym equipment at unbeatable prices. We track thousands of deals across top retailers, 
+          bringing you only the best discounts on quality fitness gear.
         </p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="stat-value">$2.4M+</div>
+            <div class="stat-label">Saved</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-value">15K+</div>
+            <div class="stat-label">Daily Deals</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-value">98%</div>
+            <div class="stat-label">Accuracy</div>
+          </div>
+        </div>
       </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll to explore</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M19 12l-7 7-7-7"/>
+      </svg>
     </div>
   </div>
 
   <section class="deals-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Featured Deals</h2>
+        <div class="section-badge">
+          <span>🔥</span>
+          <span>Hot Deals</span>
+        </div>
+        <h2 class="section-title">Today's Featured Deals</h2>
         <p class="section-description">
-          Hand-picked deals with the best discounts and value
+          Hand-picked deals with the best discounts and value. Updated every 24 hours.
         </p>
       </div>
       
       <div class="deals-grid">
         {deals.length > 0 ? 
-          deals.map((deal) => (
-            <DealCard {...deal} />
+          deals.map((deal, index) => (
+            <div class="deal-wrapper" style={`animation-delay: ${index * 100}ms`}>
+              <DealCard {...deal} />
+            </div>
           ))
          : 
           <div class="no-deals">
-            <p>No deals available yet. Check back soon!</p>
-            <p class="text-sm">The automated system runs daily at 2 AM UTC to fetch the latest deals.</p>
+            <div class="no-deals-icon">🏋️</div>
+            <h3>No deals available yet</h3>
+            <p>Check back soon! Our automated system runs daily at 2 AM UTC to fetch the latest deals.</p>
           </div>
         }
       </div>
       
       <div class="deals-footer">
         <p class="disclaimer">
-          <strong>Price Disclaimer:</strong> Prices and availability are accurate as of the time of posting
-          but may change. We earn from qualifying purchases through affiliate links.
+          <strong>💡 Price Disclaimer:</strong> Prices and availability are accurate as of posting time but may change. 
+          We earn from qualifying purchases through affiliate links.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="stats-section">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">$2.4M+</div>
-          <div class="stat-label">Saved by Our Community</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">15K+</div>
-          <div class="stat-label">Deals Tracked Daily</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">98%</div>
-          <div class="stat-label">Price Accuracy Rate</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">24/7</div>
-          <div class="stat-label">Automated Monitoring</div>
-        </div>
       </div>
     </div>
   </section>
@@ -130,7 +142,11 @@ const formattedDate = today.toLocaleDateString('en-US', {
   <section class="features-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Why Choose PlateDrop?</h2>
+        <div class="section-badge">
+          <span>✨</span>
+          <span>Why Choose Us</span>
+        </div>
+        <h2 class="section-title">Elite Deal Hunting</h2>
         <p class="section-description">
           We do the heavy lifting so you can focus on your workouts
         </p>
@@ -138,69 +154,81 @@ const formattedDate = today.toLocaleDateString('en-US', {
       
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22 4 12 14.01 9 11.01"></polyline>
-            </svg>
+          <div class="feature-icon-wrapper">
+            <div class="feature-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
           </div>
           <h3>Verified Deals Only</h3>
-          <p>Every deal is validated against historical pricing data. No fake discounts or inflated "savings."</p>
+          <p>Every deal validated against historical pricing. No fake discounts or inflated "savings."</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>
+          <div class="feature-icon-wrapper">
+            <div class="feature-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
           </div>
           <h3>Updated Daily</h3>
-          <p>Our automated system checks prices every 24 hours, ensuring you always see the latest deals.</p>
+          <p>Automated system checks prices every 24 hours, ensuring you always see the latest deals.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-            </svg>
+          <div class="feature-icon-wrapper">
+            <div class="feature-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
           </div>
           <h3>Best Price Guarantee</h3>
-          <p>We track prices across all major retailers to ensure you're getting the absolute best deal available.</p>
+          <p>We track prices across all major retailers to ensure you're getting the absolute best deal.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
+          <div class="feature-icon-wrapper">
+            <div class="feature-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
           </div>
           <h3>Expert Curation</h3>
-          <p>Not just any deal makes the cut. We focus on quality brands and equipment that actually delivers value.</p>
+          <p>Not just any deal makes the cut. We focus on quality brands and equipment that delivers value.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-            </svg>
+          <div class="feature-icon-wrapper">
+            <div class="feature-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
           </div>
           <h3>Privacy First</h3>
           <p>No tracking, no data selling, no spam. Just honest deal curation and helpful content.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
+          <div class="feature-icon-wrapper">
+            <div class="feature-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </div>
           </div>
           <h3>Free Forever</h3>
-          <p>No subscriptions, no paywalls, no hidden fees. Quality deal hunting should be accessible to everyone.</p>
+          <p>No subscriptions, no paywalls, no hidden fees. Quality deal hunting accessible to everyone.</p>
         </div>
       </div>
     </div>
@@ -209,6 +237,10 @@ const formattedDate = today.toLocaleDateString('en-US', {
   <section class="categories-section">
     <div class="container">
       <div class="section-header">
+        <div class="section-badge">
+          <span>🎯</span>
+          <span>Categories</span>
+        </div>
         <h2 class="section-title">Shop by Category</h2>
         <p class="section-description">
           Find exactly what you need for your home gym
@@ -220,36 +252,42 @@ const formattedDate = today.toLocaleDateString('en-US', {
           <div class="category-icon">🏋️</div>
           <h3>Power Racks</h3>
           <p>Squat racks, cages & rigs</p>
+          <div class="category-arrow">→</div>
         </a>
 
         <a href="/deals?category=barbells" class="category-card">
           <div class="category-icon">💪</div>
           <h3>Barbells</h3>
           <p>Olympic & specialty bars</p>
+          <div class="category-arrow">→</div>
         </a>
 
         <a href="/deals?category=plates" class="category-card">
           <div class="category-icon">⚫</div>
           <h3>Weight Plates</h3>
           <p>Bumpers, iron & calibrated</p>
+          <div class="category-arrow">→</div>
         </a>
 
         <a href="/deals?category=dumbbells" class="category-card">
           <div class="category-icon">🔩</div>
           <h3>Dumbbells</h3>
           <p>Fixed & adjustable sets</p>
+          <div class="category-arrow">→</div>
         </a>
 
         <a href="/deals?category=benches" class="category-card">
           <div class="category-icon">🪑</div>
           <h3>Benches</h3>
           <p>Flat, adjustable & specialty</p>
+          <div class="category-arrow">→</div>
         </a>
 
         <a href="/deals?category=cardio" class="category-card">
           <div class="category-icon">🚴</div>
           <h3>Cardio</h3>
           <p>Bikes, rowers & treadmills</p>
+          <div class="category-arrow">→</div>
         </a>
       </div>
     </div>
@@ -258,7 +296,11 @@ const formattedDate = today.toLocaleDateString('en-US', {
   <section class="testimonials-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Trusted by Home Gym Enthusiasts</h2>
+        <div class="section-badge">
+          <span>⭐</span>
+          <span>Testimonials</span>
+        </div>
+        <h2 class="section-title">Trusted by Fitness Enthusiasts</h2>
         <p class="section-description">
           Join thousands who've built their dream gyms with our help
         </p>
@@ -272,8 +314,13 @@ const formattedDate = today.toLocaleDateString('en-US', {
           <p class="testimonial-text">
             "Saved over $800 on my home gym setup thanks to PlateDrop. The deals are legit and the price tracking is spot-on."
           </p>
-          <div class="testimonial-author">Mike Chen</div>
-          <div class="testimonial-role">Home Gym Enthusiast</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">MC</div>
+            <div>
+              <div class="author-name">Mike Chen</div>
+              <div class="author-role">Home Gym Enthusiast</div>
+            </div>
+          </div>
         </div>
 
         <div class="testimonial-card">
@@ -283,8 +330,13 @@ const formattedDate = today.toLocaleDateString('en-US', {
           <p class="testimonial-text">
             "Finally, a deals site that doesn't spam me with fake discounts. Every deal I've clicked has been the real deal."
           </p>
-          <div class="testimonial-author">Sarah Johnson</div>
-          <div class="testimonial-role">Fitness Coach</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">SJ</div>
+            <div>
+              <div class="author-name">Sarah Johnson</div>
+              <div class="author-role">Fitness Coach</div>
+            </div>
+          </div>
         </div>
 
         <div class="testimonial-card">
@@ -294,26 +346,36 @@ const formattedDate = today.toLocaleDateString('en-US', {
           <p class="testimonial-text">
             "The daily updates are perfect. I check every morning and have scored some incredible deals on quality equipment."
           </p>
-          <div class="testimonial-author">David Martinez</div>
-          <div class="testimonial-role">Powerlifter</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">DM</div>
+            <div>
+              <div class="author-name">David Martinez</div>
+              <div class="author-role">Powerlifter</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <section class="cta-section">
+    <div class="cta-glow"></div>
     <div class="container">
       <div class="cta-content">
+        <div class="cta-icon">🎯</div>
         <h2 class="cta-title">Never Miss a Deal</h2>
         <p class="cta-description">
           Get notified when we find exceptional deals on the equipment you want
         </p>
         <div class="cta-buttons">
           <a href="/guides" class="btn btn-primary">
-            Browse Buying Guides
+            <span>Browse Buying Guides</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
           </a>
           <a href="/about" class="btn btn-secondary">
-            Learn More
+            <span>Learn More</span>
           </a>
         </div>
       </div>
@@ -322,73 +384,178 @@ const formattedDate = today.toLocaleDateString('en-US', {
 </BaseLayout>
 
 <style>
+  /* Hero Section */
   .hero {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-    color: white;
-    padding-block: var(--space-20) var(--space-16);
     position: relative;
+    background: var(--gradient-hero);
+    color: white;
+    padding-block: var(--space-32) var(--space-24);
     overflow: hidden;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
-  .hero::before {
-    content: '';
+  .hero-bg-animation {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.1;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(0, 78, 137, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 40% 20%, rgba(255, 210, 63, 0.15) 0%, transparent 50%);
+    animation: pulse 8s ease-in-out infinite;
   }
   
   .hero-content {
     position: relative;
     z-index: 1;
-    max-width: 800px;
+    max-width: 900px;
     margin-inline: auto;
     text-align: center;
   }
   
-  .hero-title {
-    font-size: var(--text-4xl);
-    font-weight: 800;
-    margin-bottom: var(--space-3);
-    color: white;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    margin-bottom: var(--space-6);
+    animation: slideIn var(--transition-slow) ease-out;
   }
   
-  .hero-subtitle {
+  .badge-icon {
+    font-size: 1.2em;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  .hero-title {
+    font-size: var(--text-5xl);
+    font-weight: 900;
+    margin-bottom: var(--space-4);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    animation: fadeIn var(--transition-slow) ease-out 0.2s backwards;
+  }
+  
+  .hero-subtitle-inline {
+    display: block;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-date {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
     font-size: var(--text-lg);
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: var(--space-6);
     opacity: 0.9;
+    animation: fadeIn var(--transition-slow) ease-out 0.4s backwards;
+  }
+  
+  .date-icon {
+    font-size: 1.3em;
   }
   
   .hero-description {
-    font-size: var(--text-lg);
-    line-height: 1.6;
+    font-size: var(--text-xl);
+    line-height: 1.7;
     opacity: 0.95;
-    max-width: 60ch;
+    max-width: 70ch;
     margin-inline: auto;
+    margin-bottom: var(--space-10);
+    animation: fadeIn var(--transition-slow) ease-out 0.6s backwards;
   }
   
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-12);
+    flex-wrap: wrap;
+    animation: fadeIn var(--transition-slow) ease-out 0.8s backwards;
+  }
+  
+  .hero-stat {
+    text-align: center;
+  }
+  
+  .stat-value {
+    font-size: var(--text-4xl);
+    font-weight: 900;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-2);
+  }
+  
+  .stat-label {
+    font-size: var(--text-base);
+    opacity: 0.9;
+    font-weight: 600;
+  }
+  
+  .hero-scroll-indicator {
+    position: absolute;
+    bottom: var(--space-8);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    opacity: 0.7;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* Sections */
   .deals-section {
-    padding-block: var(--space-20);
+    padding-block: var(--space-24);
+    position: relative;
   }
   
   .section-header {
     text-align: center;
-    margin-bottom: var(--space-12);
+    margin-bottom: var(--space-16);
+  }
+  
+  .section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-5);
+    background: var(--gradient-card);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
   }
   
   .section-title {
-    font-size: var(--text-3xl);
-    font-weight: 700;
-    margin-bottom: var(--space-3);
+    font-size: var(--text-4xl);
+    font-weight: 900;
+    margin-bottom: var(--space-4);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   
   .section-description {
-    font-size: var(--text-lg);
+    font-size: var(--text-xl);
     color: var(--color-text-secondary);
     max-width: 60ch;
     margin-inline: auto;
@@ -396,13 +563,17 @@ const formattedDate = today.toLocaleDateString('en-US', {
   
   .deals-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: var(--space-8);
-    margin-bottom: var(--space-12);
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--space-10);
+    margin-bottom: var(--space-16);
+  }
+  
+  .deal-wrapper {
+    animation: fadeIn var(--transition-slow) ease-out;
   }
   
   .deals-footer {
-    padding-top: var(--space-8);
+    padding-top: var(--space-10);
     border-top: 1px solid var(--color-border);
   }
   
@@ -412,121 +583,124 @@ const formattedDate = today.toLocaleDateString('en-US', {
     text-align: center;
     max-width: 70ch;
     margin-inline: auto;
+    line-height: 1.6;
   }
   
   .no-deals {
     grid-column: 1 / -1;
     text-align: center;
-    padding: var(--space-16);
-    background-color: var(--color-bg-secondary);
-    border-radius: var(--radius-xl);
+    padding: var(--space-20);
+    background: var(--gradient-card);
+    backdrop-filter: var(--glass-blur);
+    border-radius: var(--radius-2xl);
     border: 2px dashed var(--color-border);
   }
   
+  .no-deals-icon {
+    font-size: 5rem;
+    margin-bottom: var(--space-6);
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .no-deals h3 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-3);
+  }
+  
   .no-deals p {
-    font-size: var(--text-lg);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-2);
-  }
-  
-  .no-deals .text-sm {
-    font-size: var(--text-sm);
-    color: var(--color-text-tertiary);
-  }
-  
-  .stats-section {
-    padding-block: var(--space-16);
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-    color: white;
-  }
-  
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--space-8);
-  }
-  
-  .stat-card {
-    text-align: center;
-    padding: var(--space-6);
-  }
-  
-  .stat-number {
-    font-size: var(--text-4xl);
-    font-weight: 800;
-    margin-bottom: var(--space-2);
-    background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.8));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .stat-label {
     font-size: var(--text-base);
-    opacity: 0.95;
-    font-weight: 500;
+    color: var(--color-text-secondary);
   }
   
+  /* Features Section */
   .features-section {
-    padding-block: var(--space-20);
-    background-color: var(--color-bg);
+    padding-block: var(--space-24);
+    background: var(--color-bg-secondary);
   }
   
   .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--space-8);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-10);
   }
   
   .feature-card {
-    padding: var(--space-8);
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
+    padding: var(--space-10);
+    background: var(--gradient-card);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-2xl);
     transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-base);
   }
   
   .feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
     border-color: var(--color-primary);
+    box-shadow: var(--shadow-2xl);
+  }
+  
+  .feature-card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .feature-icon-wrapper {
+    margin-bottom: var(--space-6);
   }
   
   .feature-icon {
-    width: 64px;
-    height: 64px;
+    width: 80px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    background: var(--gradient-primary);
     border-radius: var(--radius-xl);
     color: white;
-    margin-bottom: var(--space-4);
+    box-shadow: var(--shadow-glow);
+    transition: transform var(--transition-base);
+  }
+  
+  .feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
   }
   
   .feature-card h3 {
-    font-size: var(--text-xl);
-    font-weight: 700;
+    font-size: var(--text-2xl);
+    font-weight: 800;
     margin-bottom: var(--space-3);
-    color: var(--color-text);
   }
   
   .feature-card p {
     font-size: var(--text-base);
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--color-text-secondary);
     margin: 0;
   }
   
+  /* Categories Section */
   .categories-section {
-    padding-block: var(--space-20);
-    background-color: var(--color-bg-secondary);
+    padding-block: var(--space-24);
   }
   
   .categories-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: var(--space-6);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-8);
   }
   
   .category-card {
@@ -534,195 +708,275 @@ const formattedDate = today.toLocaleDateString('en-US', {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: var(--space-8);
-    background-color: var(--color-surface);
-    border: 2px solid var(--color-border);
-    border-radius: var(--radius-xl);
+    padding: var(--space-10);
+    background: var(--gradient-card);
+    backdrop-filter: var(--glass-blur);
+    border: 2px solid var(--glass-border);
+    border-radius: var(--radius-2xl);
     text-decoration: none;
     transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .category-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity var(--transition-base);
   }
   
   .category-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-2xl);
     border-color: var(--color-primary);
     text-decoration: none;
   }
   
+  .category-card:hover::before {
+    opacity: 0.1;
+  }
+  
   .category-icon {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: var(--space-4);
-    filter: grayscale(0.3);
-    transition: filter var(--transition-base);
+    transition: transform var(--transition-base);
+    position: relative;
+    z-index: 1;
   }
   
   .category-card:hover .category-icon {
-    filter: grayscale(0);
+    transform: scale(1.2) rotate(10deg);
   }
   
   .category-card h3 {
-    font-size: var(--text-lg);
-    font-weight: 700;
-    color: var(--color-text);
+    font-size: var(--text-xl);
+    font-weight: 800;
     margin-bottom: var(--space-2);
+    position: relative;
+    z-index: 1;
   }
   
   .category-card p {
     font-size: var(--text-sm);
     color: var(--color-text-tertiary);
     margin: 0;
+    position: relative;
+    z-index: 1;
   }
   
+  .category-arrow {
+    margin-top: var(--space-4);
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--color-primary);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all var(--transition-base);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .category-card:hover .category-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Testimonials Section */
   .testimonials-section {
-    padding-block: var(--space-20);
-    background-color: var(--color-bg);
+    padding-block: var(--space-24);
+    background: var(--color-bg-secondary);
   }
   
   .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-8);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-10);
   }
   
   .testimonial-card {
-    padding: var(--space-8);
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-md);
+    padding: var(--space-10);
+    background: var(--gradient-card);
+blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-lg);
     transition: all var(--transition-base);
   }
   
   .testimonial-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-2xl);
+    border-color: var(--color-primary);
   }
   
   .testimonial-rating {
-    font-size: var(--text-lg);
-    margin-bottom: var(--space-4);
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-5);
   }
   
   .testimonial-text {
-    font-size: var(--text-base);
-    line-height: 1.6;
+    font-size: var(--text-lg);
+    line-height: 1.7;
     color: var(--color-text);
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-6);
     font-style: italic;
   }
   
   .testimonial-author {
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
   }
   
-  .testimonial-role {
+  .author-avatar {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    font-size: var(--text-lg);
+    font-weight: 800;
+    color: white;
+    flex-shrink: 0;
+  }
+  
+  .author-name {
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-1);
+  }
+  
+  .author-role {
     font-size: var(--text-sm);
     color: var(--color-text-tertiary);
   }
   
+  /* CTA Section */
   .cta-section {
-    padding-block: var(--space-20);
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    padding-block: var(--space-32);
+    background: var(--gradient-hero);
     color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cta-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255, 107, 53, 0.3) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
   }
   
   .cta-content {
-    max-width: 600px;
+    max-width: 700px;
     margin-inline: auto;
     text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .cta-icon {
+    font-size: 5rem;
+    margin-bottom: var(--space-6);
+    animation: float 3s ease-in-out infinite;
   }
   
   .cta-title {
-    font-size: var(--text-3xl);
-    font-weight: 700;
+    font-size: var(--text-4xl);
+    font-weight: 900;
     margin-bottom: var(--space-4);
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   
   .cta-description {
-    font-size: var(--text-lg);
-    margin-bottom: var(--space-6);
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-10);
     opacity: 0.95;
+    line-height: 1.7;
   }
   
   .cta-buttons {
     display: flex;
-    gap: var(--space-4);
+    gap: var(--space-6);
     justify-content: center;
     flex-wrap: wrap;
   }
   
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-3) var(--space-6);
-    font-size: var(--text-base);
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: var(--radius-lg);
-    transition: all var(--transition-base);
-    border: 2px solid transparent;
-  }
-  
-  .btn-primary {
-    background-color: white;
-    color: var(--color-primary);
-  }
-  
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-  }
-  
-  .btn-secondary {
-    background-color: transparent;
-    color: white;
-    border-color: white;
-  }
-  
-  .btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .hero {
+      min-height: 80vh;
+      padding-block: var(--space-24) var(--space-20);
+    }
+    
+    .hero-stats {
+      gap: var(--space-8);
+    }
   }
   
   @media (max-width: 768px) {
     .hero {
-      padding-block: var(--space-16) var(--space-12);
+      min-height: auto;
+      padding-block: var(--space-20) var(--space-16);
     }
     
     .hero-title {
       font-size: var(--text-3xl);
     }
     
-    .stats-grid {
-      grid-template-columns: repeat(2, 1fr);
+    .hero-stats {
+      gap: var(--space-6);
+    }
+    
+    .stat-value {
+      font-size: var(--text-3xl);
+    }
+    
+    .deals-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
     }
     
     .features-grid,
     .categories-grid,
     .testimonials-grid {
       grid-template-columns: 1fr;
+      gap: var(--space-8);
     }
     
     .cta-buttons {
       flex-direction: column;
+      gap: var(--space-4);
     }
     
     .btn {
       width: 100%;
-      justify-content: center;
     }
   }
   
-  .container {
-    max-width: 1200px;
-    margin-inline: auto;
-    padding-inline: var(--space-6);
-  }
-  
-  .text-sm {
-    font-size: var(--text-sm);
+  @media (max-width: 480px) {
+    .hero-badge {
+      font-size: var(--text-xs);
+      padding: var(--space-2) var(--space-4);
+    }
+    
+    .hero-description {
+      font-size: var(--text-base);
+    }
+    
+    .hero-stats {
+      flex-direction: column;
+      gap: var(--space-4);
+    }
   }
 </style>
+    backdrop-filter: var(--glass-

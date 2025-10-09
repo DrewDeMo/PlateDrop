@@ -3,43 +3,65 @@ const currentPath = Astro.url.pathname;
 ---
 
 <header class="site-header">
+  <div class="header-glow"></div>
   <div class="container">
     <nav class="nav-wrapper">
       <a href="/" class="logo">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
-          <path d="M12 16L16 20L20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span class="logo-text">PlateDrop</span>
+        <div class="logo-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#ffa575;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <circle cx="20" cy="20" r="18" stroke="url(#logoGradient)" stroke-width="3" fill="none"/>
+            <path d="M14 20L18 24L26 14" stroke="url(#logoGradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="logo-text">
+          <span class="logo-main">Plate</span><span class="logo-accent">Drop</span>
+        </span>
       </a>
       
       <ul class="nav-links">
         <li>
           <a href="/" class={currentPath === '/' ? 'active' : ''}>
-            Deals
+            <span class="nav-icon">🔥</span>
+            <span>Deals</span>
           </a>
         </li>
         <li>
           <a href="/guides" class={currentPath.startsWith('/guides') ? 'active' : ''}>
-            Guides
+            <span class="nav-icon">📚</span>
+            <span>Guides</span>
           </a>
         </li>
         <li>
           <a href="/faq" class={currentPath === '/faq' ? 'active' : ''}>
-            FAQ
+            <span class="nav-icon">❓</span>
+            <span>FAQ</span>
           </a>
         </li>
         <li>
           <a href="/about" class={currentPath === '/about' ? 'active' : ''}>
-            About
+            <span class="nav-icon">ℹ️</span>
+            <span>About</span>
           </a>
         </li>
         <li>
           <a href="/contact" class={currentPath === '/contact' ? 'active' : ''}>
-            Contact
+            <span class="nav-icon">✉️</span>
+            <span>Contact</span>
           </a>
         </li>
       </ul>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </nav>
   </div>
 </header>
@@ -48,112 +70,264 @@ const currentPath = Astro.url.pathname;
   .site-header {
     position: sticky;
     top: 0;
-    z-index: 100;
-    background-color: var(--color-surface);
-    border-bottom: 1px solid var(--color-border);
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 1000;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-lg);
   }
   
-  @media (prefers-color-scheme: dark) {
-    .site-header {
-      background-color: rgba(15, 23, 42, 0.95);
-    }
+  .header-glow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--transition-slow);
+  }
+  
+  .site-header:hover .header-glow {
+    opacity: 1;
   }
   
   .nav-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-block: var(--space-4);
+    padding-block: var(--space-5);
     gap: var(--space-8);
+    position: relative;
   }
   
   .logo {
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    font-size: var(--text-xl);
-    font-weight: 700;
+    font-size: var(--text-2xl);
+    font-weight: 800;
     color: var(--color-text);
     text-decoration: none;
-    transition: color var(--transition-fast);
+    transition: all var(--transition-base);
+    position: relative;
+    z-index: 2;
   }
   
   .logo:hover {
-    color: var(--color-primary);
+    transform: scale(1.05);
     text-decoration: none;
   }
   
-  .logo svg {
-    color: var(--color-primary);
+  .logo-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo-icon::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    opacity: 0;
+    filter: blur(12px);
+    transition: opacity var(--transition-base);
+  }
+  
+  .logo:hover .logo-icon::before {
+    opacity: 0.6;
   }
   
   .logo-text {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    display: flex;
+    letter-spacing: -0.02em;
+  }
+  
+  .logo-main {
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
+  .logo-accent {
+    color: var(--color-text);
+    font-weight: 700;
+  }
+  
   .nav-links {
     display: flex;
     align-items: center;
-    gap: var(--space-6);
+    gap: var(--space-2);
     list-style: none;
     margin: 0;
     padding: 0;
   }
   
   .nav-links a {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
     font-size: var(--text-base);
-    font-weight: 500;
+    font-weight: 600;
     color: var(--color-text-secondary);
     text-decoration: none;
-    padding: var(--space-2) var(--space-3);
-    border-radius: var(--radius-md);
-    transition: all var(--transition-fast);
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-base);
     position: relative;
+    overflow: hidden;
+  }
+  
+  .nav-links a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    border-radius: var(--radius-full);
+  }
+  
+  .nav-links a:hover::before {
+    opacity: 0.1;
   }
   
   .nav-links a:hover {
     color: var(--color-primary);
-    background-color: var(--color-bg-tertiary);
+    transform: translateY(-2px);
     text-decoration: none;
   }
   
+  .nav-icon {
+    font-size: 1.2em;
+    transition: transform var(--transition-base);
+  }
+  
+  .nav-links a:hover .nav-icon {
+    transform: scale(1.2) rotate(5deg);
+  }
+  
   .nav-links a.active {
-    color: var(--color-primary);
-    font-weight: 600;
+    color: var(--color-text);
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-glow);
   }
   
-  .nav-links a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 4px;
-    background-color: var(--color-primary);
-    border-radius: 50%;
+  .nav-links a.active::before {
+    opacity: 0;
   }
   
-  @media (max-width: 640px) {
+  .nav-links a.active .nav-icon {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+  }
+  
+  .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-2);
+    z-index: 2;
+  }
+  
+  .mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-base);
+  }
+  
+  .mobile-menu-toggle:hover span {
+    background: var(--color-primary-light);
+  }
+  
+  @media (max-width: 768px) {
     .nav-wrapper {
-      flex-direction: column;
-      gap: var(--space-4);
-      padding-block: var(--space-3);
+      padding-block: var(--space-4);
+    }
+    
+    .mobile-menu-toggle {
+      display: flex;
     }
     
     .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 280px;
+      height: 100vh;
+      background: var(--gradient-card);
+      backdrop-filter: var(--glass-blur);
+      flex-direction: column;
+      padding: var(--space-20) var(--space-6);
       gap: var(--space-4);
-      width: 100%;
-      justify-content: center;
+      border-left: 1px solid var(--glass-border);
+      box-shadow: var(--shadow-2xl);
+      transition: right var(--transition-slow);
     }
     
-    .nav-links a.active::after {
-      bottom: -0.5rem;
+    .nav-links.active {
+      right: 0;
+    }
+    
+    .nav-links a {
+      width: 100%;
+      justify-content: flex-start;
+      padding: var(--space-4) var(--space-5);
+      font-size: var(--text-lg);
+    }
+    
+    .logo-text {
+      font-size: var(--text-xl);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo-text span {
+      font-size: var(--text-lg);
+    }
+    
+    .nav-links {
+      width: 100%;
+      right: -100%;
     }
   }
 </style>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!menuToggle.contains(e.target as Node) && !navLinks.contains(e.target as Node)) {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+    
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      });
+    });
+  }
+</script>

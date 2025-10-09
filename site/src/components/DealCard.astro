@@ -61,31 +61,48 @@ const productSchema = {
 ---
 
 <article class="deal-card">
+  <div class="card-glow"></div>
+  
   {image_url && (
     <div class="deal-image">
       <img src={image_url} alt={title} loading="lazy" />
+      <div class="image-overlay"></div>
       {discount_pct > 0 && (
         <span class="discount-badge">
-          {Math.round(discount_pct)}% OFF
+          <span class="badge-icon">🔥</span>
+          <span class="badge-text">{Math.round(discount_pct)}% OFF</span>
         </span>
       )}
+      <div class="quick-view">
+        <span>Quick View</span>
+      </div>
     </div>
   )}
   
   <div class="deal-content">
     <div class="deal-header">
       <span class="deal-brand">{brand}</span>
-      <span class="deal-retailer">{retailer}</span>
+      <span class="deal-retailer">
+        <span class="retailer-icon">🏪</span>
+        {retailer}
+      </span>
     </div>
     
     <h3 class="deal-title">{title}</h3>
     
     <div class="deal-pricing">
-      <div class="price-current">{formatPrice(price_current)}</div>
-      {price_prev && (
-        <div class="price-details">
-          <span class="price-prev">{formatPrice(price_prev)}</span>
-          <span class="price-savings">Save {formatPrice(savings)}</span>
+      <div class="price-wrapper">
+        <div class="price-current">{formatPrice(price_current)}</div>
+        {price_prev && (
+          <div class="price-badge">
+            <span class="price-prev">{formatPrice(price_prev)}</span>
+          </div>
+        )}
+      </div>
+      {savings > 0 && (
+        <div class="savings-badge">
+          <span class="savings-icon">💰</span>
+          <span>Save {formatPrice(savings)}</span>
         </div>
       )}
     </div>
@@ -95,28 +112,29 @@ const productSchema = {
         <div class="stars" aria-label={`${rating} out of 5 stars`}>
           {Array.from({ length: 5 }, (_, i) => (
             <svg
-              width="16"
-              height="16"
+              width="18"
+              height="18"
               viewBox="0 0 24 24"
               fill={i < Math.floor(rating) ? 'currentColor' : 'none'}
               stroke="currentColor"
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
+              class="star"
             >
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
             </svg>
           ))}
         </div>
         {reviews_count && (
-          <span class="review-count">({reviews_count.toLocaleString()} reviews)</span>
+          <span class="review-count">({reviews_count.toLocaleString()})</span>
         )}
       </div>
     )}
     
     <a href={url} class="deal-link btn btn-primary" target="_blank" rel="noopener noreferrer">
-      View Deal
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <span>View Deal</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="link-icon">
         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
         <polyline points="15 3 21 3 21 9"></polyline>
         <line x1="10" y1="14" x2="21" y2="3"></line>
@@ -132,24 +150,42 @@ const productSchema = {
   .deal-card {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
+    background: var(--gradient-card);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-2xl);
     overflow: hidden;
     transition: all var(--transition-base);
     height: 100%;
+    position: relative;
+    animation: fadeIn var(--transition-slow) ease-out;
+  }
+  
+  .card-glow {
+    position: absolute;
+    inset: -2px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-2xl);
+    opacity: 0;
+    filter: blur(20px);
+    transition: opacity var(--transition-base);
+    z-index: -1;
   }
   
   .deal-card:hover {
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-4px);
+    transform: translateY(-12px) scale(1.02);
     border-color: var(--color-primary);
+    box-shadow: var(--shadow-2xl);
+  }
+  
+  .deal-card:hover .card-glow {
+    opacity: 0.4;
   }
   
   .deal-image {
     position: relative;
     aspect-ratio: 4 / 3;
-    background-color: var(--color-bg-tertiary);
+    background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-tertiary) 100%);
     overflow: hidden;
   }
   
@@ -161,28 +197,77 @@ const productSchema = {
   }
   
   .deal-card:hover .deal-image img {
-    transform: scale(1.05);
+    transform: scale(1.1) rotate(2deg);
+  }
+  
+  .image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(10, 14, 39, 0.8) 100%);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+  
+  .deal-card:hover .image-overlay {
+    opacity: 1;
   }
   
   .discount-badge {
     position: absolute;
-    top: var(--space-3);
-    right: var(--space-3);
-    background-color: var(--color-error);
+    top: var(--space-4);
+    right: var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: var(--gradient-primary);
     color: white;
-    padding: var(--space-2) var(--space-3);
+    padding: var(--space-3) var(--space-5);
     border-radius: var(--radius-full);
-    font-size: var(--text-xs);
-    font-weight: 700;
+    font-size: var(--text-sm);
+    font-weight: 800;
     letter-spacing: 0.05em;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-glow);
+    animation: pulse 2s ease-in-out infinite;
+    z-index: 2;
+  }
+  
+  .badge-icon {
+    font-size: 1.2em;
+    animation: float 2s ease-in-out infinite;
+  }
+  
+  .badge-text {
+    text-transform: uppercase;
+  }
+  
+  .quick-view {
+    position: absolute;
+    bottom: var(--space-4);
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    color: var(--color-text);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    opacity: 0;
+    transition: all var(--transition-base);
+    border: 1px solid var(--glass-border);
+    z-index: 2;
+  }
+  
+  .deal-card:hover .quick-view {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
   
   .deal-content {
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
-    padding: var(--space-5);
+    gap: var(--space-4);
+    padding: var(--space-6);
     flex: 1;
   }
   
@@ -190,73 +275,110 @@ const productSchema = {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-2);
+    gap: var(--space-3);
   }
   
   .deal-brand {
     font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--color-primary);
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
   }
   
   .deal-retailer {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
     font-size: var(--text-xs);
     color: var(--color-text-tertiary);
-    padding: var(--space-1) var(--space-2);
-    background-color: var(--color-bg-tertiary);
-    border-radius: var(--radius-sm);
+    padding: var(--space-2) var(--space-3);
+    background: var(--color-surface-elevated);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-border);
+  }
+  
+  .retailer-icon {
+    font-size: 1.1em;
   }
   
   .deal-title {
     font-size: var(--text-lg);
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-text);
-    line-height: 1.3;
+    line-height: 1.4;
     margin: 0;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    min-height: 2.8em;
   }
   
   .deal-pricing {
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
-    padding-block: var(--space-2);
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: var(--color-surface-elevated);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+  }
+  
+  .price-wrapper {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
   }
   
   .price-current {
     font-size: var(--text-3xl);
-    font-weight: 700;
-    color: var(--color-text);
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     line-height: 1;
   }
   
-  .price-details {
+  .price-badge {
     display: flex;
     align-items: center;
-    gap: var(--space-3);
   }
   
   .price-prev {
     font-size: var(--text-base);
     color: var(--color-text-tertiary);
     text-decoration: line-through;
+    opacity: 0.7;
   }
   
-  .price-savings {
+  .savings-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: var(--gradient-accent);
+    color: var(--color-bg);
+    border-radius: var(--radius-full);
     font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--color-success);
+    font-weight: 700;
+    align-self: flex-start;
+    box-shadow: var(--shadow-glow-accent);
+  }
+  
+  .savings-icon {
+    font-size: 1.2em;
   }
   
   .deal-rating {
     display: flex;
     align-items: center;
     gap: var(--space-2);
+    padding: var(--space-2) 0;
   }
   
   .stars {
@@ -265,23 +387,61 @@ const productSchema = {
     color: var(--color-accent);
   }
   
+  .star {
+    transition: transform var(--transition-fast);
+  }
+  
+  .deal-card:hover .star {
+    transform: scale(1.1);
+  }
+  
   .review-count {
     font-size: var(--text-xs);
     color: var(--color-text-tertiary);
+    font-weight: 600;
   }
   
   .deal-link {
     margin-top: auto;
     width: 100%;
+    font-size: var(--text-base);
+    padding: var(--space-4) var(--space-6);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .deal-link span {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .link-icon {
+    position: relative;
+    z-index: 1;
+    transition: transform var(--transition-base);
+  }
+  
+  .deal-link:hover .link-icon {
+    transform: translate(4px, -4px);
   }
   
   @media (max-width: 640px) {
     .deal-content {
-      padding: var(--space-4);
+      padding: var(--space-5);
+      gap: var(--space-3);
     }
     
     .price-current {
       font-size: var(--text-2xl);
+    }
+    
+    .deal-title {
+      font-size: var(--text-base);
+    }
+    
+    .discount-badge {
+      padding: var(--space-2) var(--space-4);
+      font-size: var(--text-xs);
     }
   }
 </style>
