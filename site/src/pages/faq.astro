@@ -1,0 +1,1153 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Frequently Asked Questions - PlateDrop"
+  description="Common questions about home gym equipment, deals, and building your perfect training space. Get expert answers to your fitness equipment questions."
+>
+  <div class="faq-page">
+    <section class="faq-hero">
+      <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <p class="subtitle">Everything you need to know about building your home gym</p>
+        <div class="search-box">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          <input type="search" id="faq-search" placeholder="Search FAQs..." aria-label="Search FAQs" />
+        </div>
+      </div>
+    </section>
+
+    <nav class="faq-nav" id="faq-nav">
+      <div class="container">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#equipment" class="nav-link">Equipment</a>
+        <a href="#specific" class="nav-link">Specific</a>
+        <a href="#buying" class="nav-link">Buying</a>
+        <a href="#setup" class="nav-link">Setup</a>
+        <a href="#training" class="nav-link">Training</a>
+        <a href="#technical" class="nav-link">Technical</a>
+        <a href="#returns" class="nav-link">Returns</a>
+      </div>
+    </nav>
+
+    <div class="faq-content container">
+      <section class="faq-category" id="about">
+        <h2>About PlateDrop</h2>
+        
+        <details class="faq-item">
+          <summary>What is PlateDrop?</summary>
+          <div class="answer">
+            <p>PlateDrop is a curated deals platform for home gym equipment. We track prices across major retailers and highlight the best deals on quality fitness gear. Our AI-powered system updates daily to ensure you never miss a great deal.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How do you find deals?</summary>
+          <div class="answer">
+            <p>We use automated systems to monitor prices across Amazon, Rogue Fitness, REP Fitness, and other major retailers. Our algorithms identify genuine discounts by comparing current prices to historical data, ensuring we only feature real deals.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Are the deals legitimate?</summary>
+          <div class="answer">
+            <p>Yes! We verify all deals against historical pricing data. We don't feature fake "discounts" where retailers inflate the original price. If we list a deal, it's a genuine price reduction.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How often do you update deals?</summary>
+          <div class="answer">
+            <p>Our system runs daily at 2 AM UTC (10 PM EST / 9 PM EDT). New deals are posted every morning, and expired deals are removed automatically.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do you make money from these deals?</summary>
+          <div class="answer">
+            <p>Yes, we participate in affiliate programs with retailers. When you purchase through our links, we earn a small commission at no extra cost to you. This helps us keep the site running and free for everyone. See our <a href="/affiliate-disclosure">Affiliate Disclosure</a> for full details.</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="faq-category" id="equipment">
+        <h2>Home Gym Equipment</h2>
+        
+        <details class="faq-item">
+          <summary>How much does it cost to build a home gym?</summary>
+          <div class="answer">
+            <div class="price-grid">
+              <div class="price-card">
+                <h4>Minimalist</h4>
+                <p class="price">$800-1,000</p>
+                <p class="desc">Squat stands, barbell, plates, bench</p>
+              </div>
+              <div class="price-card featured">
+                <h4>Standard</h4>
+                <p class="price">$2,000-3,000</p>
+                <p class="desc">Power rack, barbell, plates, bench, dumbbells</p>
+              </div>
+              <div class="price-card">
+                <h4>Premium</h4>
+                <p class="price">$5,000-8,000</p>
+                <p class="desc">Multiple bars, specialty equipment, cardio</p>
+              </div>
+            </div>
+            <p>Most people start with $1,500-2,500 and expand over time. See our <a href="/guides/home-gym-setup">Home Gym Setup Guide</a> for detailed breakdowns.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What equipment do I need to start?</summary>
+          <div class="answer">
+            <p>The essentials are:</p>
+            <ol class="essentials-list">
+              <li><strong>Power rack or squat stands</strong> — $200-800</li>
+              <li><strong>Olympic barbell</strong> — $150-400</li>
+              <li><strong>Weight plates</strong> — $300-600 for starter set</li>
+              <li><strong>Adjustable bench</strong> — $150-300</li>
+              <li><strong>Flooring</strong> — $150-300</li>
+            </ol>
+            <p class="highlight"><strong>Total: $950-2,400</strong> for a complete basic setup.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Should I buy new or used equipment?</summary>
+          <div class="answer">
+            <div class="comparison">
+              <div class="comp-col">
+                <h4 class="badge success">Best to Buy Used</h4>
+                <ul>
+                  <li>Weight plates (iron lasts forever)</li>
+                  <li>Power racks (simple, durable)</li>
+                  <li>Benches (if in good condition)</li>
+                </ul>
+              </div>
+              <div class="comp-col">
+                <h4 class="badge warning">Best to Buy New</h4>
+                <ul>
+                  <li>Barbells (bearings/bushings wear out)</li>
+                  <li>Adjustable dumbbells (complex mechanisms)</li>
+                  <li>Cardio equipment (motors and electronics)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How much space do I need?</summary>
+          <div class="answer">
+            <div class="space-grid">
+              <div class="space-card">
+                <span class="label">Minimum</span>
+                <span class="value">8' × 8'</span>
+                <span class="sqft">(64 sq ft)</span>
+              </div>
+              <div class="space-card">
+                <span class="label">Comfortable</span>
+                <span class="value">10' × 10'</span>
+                <span class="sqft">(100 sq ft)</span>
+              </div>
+              <div class="space-card">
+                <span class="label">Ideal</span>
+                <span class="value">12' × 12'</span>
+                <span class="sqft">(144 sq ft)</span>
+              </div>
+            </div>
+            <p>You also need 7-8 feet of clearance in front of your rack for barbell exercises.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What about ceiling height?</summary>
+          <div class="answer">
+            <ul>
+              <li><strong>Minimum:</strong> 8 feet (limits some exercises)</li>
+              <li><strong>Comfortable:</strong> 9 feet (works for most people)</li>
+              <li><strong>Ideal:</strong> 10+ feet (no limitations)</li>
+            </ul>
+            <p>Consider your height plus 12-18 inches for overhead movements and pull-ups.</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="faq-category" id="specific">
+        <h2>Specific Equipment</h2>
+        
+        <details class="faq-item">
+          <summary>Power Rack vs Squat Stands?</summary>
+          <div class="answer">
+            <div class="comparison">
+              <div class="comp-col">
+                <h4>Power Rack (4-post)</h4>
+                <ul>
+                  <li>✓ More stable</li>
+                  <li>✓ Better safety features</li>
+                  <li>✓ More attachment options</li>
+                  <li>✗ Larger footprint</li>
+                  <li><strong>$400-2,000</strong></li>
+                </ul>
+              </div>
+              <div class="comp-col">
+                <h4>Squat Stands (2-post)</h4>
+                <ul>
+                  <li>✓ Smaller footprint</li>
+                  <li>✓ More affordable</li>
+                  <li>✗ Less stable (needs bolting)</li>
+                  <li>✗ Fewer attachments</li>
+                  <li><strong>$200-800</strong></li>
+                </ul>
+              </div>
+            </div>
+            <p>For most home gyms, a power rack is worth the investment. See our <a href="/guides/power-racks">Power Rack Guide</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Olympic vs Standard Barbell?</summary>
+          <div class="answer">
+            <p class="highlight">Always choose Olympic (7 feet, 45 lbs, 2" sleeves). Standard barbells (1" sleeves) limit your options and have poor resale value. Olympic bars are the industry standard for good reason.</p>
+            <p>See our <a href="/guides/barbells">Barbell Guide</a> for detailed comparisons.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Iron vs Bumper Plates?</summary>
+          <div class="answer">
+            <div class="comparison">
+              <div class="comp-col">
+                <h4>Iron Plates</h4>
+                <ul>
+                  <li>✓ Cheaper ($1-2/lb)</li>
+                  <li>✓ More compact</li>
+                  <li>✗ Cannot drop</li>
+                </ul>
+                <p><strong>Best for:</strong> Powerlifting, budget setups</p>
+              </div>
+              <div class="comp-col">
+                <h4>Bumper Plates</h4>
+                <ul>
+                  <li>✓ Can drop safely</li>
+                  <li>✗ More expensive ($2-4/lb)</li>
+                  <li>✗ Take more bar space</li>
+                </ul>
+                <p><strong>Best for:</strong> Olympic lifting, CrossFit, beginners</p>
+              </div>
+            </div>
+            <p>Many people use bumper 45s with iron change plates for the best of both worlds. See our <a href="/guides/weight-plates">Weight Plates Guide</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do I need a bench?</summary>
+          <div class="answer">
+            <p>Yes, if you want to bench press or do many accessory exercises. An adjustable bench ($150-300) is more versatile than a flat bench and worth the extra cost.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What about dumbbells?</summary>
+          <div class="answer">
+            <p><strong>Adjustable dumbbells</strong> ($300-500) save space and money compared to a full fixed dumbbell set ($1,000-3,000). Popular options include PowerBlock, Bowflex SelectTech, and Ironmaster.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Should I get a folding rack?</summary>
+          <div class="answer">
+            <p>Folding racks ($600-1,500) are great if you need to share space (garage gym where you park cars). They're more expensive than standard racks but save significant floor space when folded.</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="faq-category" id="buying">
+        <h2>Buying & Shopping</h2>
+        
+        <details class="faq-item">
+          <summary>When is the best time to buy?</summary>
+          <div class="answer">
+            <div class="timing-grid">
+              <div>
+                <h4>Best Sales</h4>
+                <ul>
+                  <li>Black Friday/Cyber Monday (15-30% off)</li>
+                  <li>New Year (January sales)</li>
+                  <li>Memorial Day/July 4th</li>
+                  <li>End of month (sales quotas)</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Best for Used Equipment</h4>
+                <ul>
+                  <li>January (failed New Year's resolutions)</li>
+                  <li>Spring (people moving)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Where should I buy equipment?</summary>
+          <div class="answer">
+            <div class="timing-grid">
+              <div>
+                <h4>Online Retailers</h4>
+                <ul>
+                  <li><strong>Rogue Fitness</strong> — Premium quality</li>
+                  <li><strong>REP Fitness</strong> — Excellent value</li>
+                  <li><strong>Titan Fitness</strong> — Budget-friendly</li>
+                  <li><strong>Amazon</strong> — Convenient, verify sellers</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Used Equipment</h4>
+                <ul>
+                  <li>Facebook Marketplace</li>
+                  <li>Craigslist</li>
+                  <li>Play It Again Sports</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How do I know if a deal is good?</summary>
+          <div class="answer">
+            <p>Compare to:</p>
+            <ol>
+              <li>Historical prices (we track this)</li>
+              <li>Competitor prices</li>
+              <li>Used market prices</li>
+            </ol>
+            <div class="deal-tiers">
+              <span class="tier good">15%+ off = Good</span>
+              <span class="tier great">25%+ off = Excellent</span>
+              <span class="tier amazing">30%+ off = Jump on it!</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What brands are reputable?</summary>
+          <div class="answer">
+            <div class="brand-grid">
+              <div><h4>Premium</h4><p>Rogue, Eleiko, Sorinex, American Barbell</p></div>
+              <div><h4>Mid-range</h4><p>REP Fitness, Fringe Sport, Titan Fitness</p></div>
+              <div><h4>Budget</h4><p>CAP Barbell, Yes4All, Fitness Reality</p></div>
+            </div>
+            <p>All of these brands make quality equipment at their price points.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Should I wait for a sale?</summary>
+          <div class="answer">
+            <p>For big purchases (rack, barbell), yes—wait for a sale if you can. For smaller items or if you're ready to start training, buy now. <strong>The best time to start training is today.</strong></p>
+          </div>
+        </details>
+      </section>
+
+      <section class="faq-category" id="setup">
+        <h2>Setup & Installation</h2>
+        
+        <details class="faq-item">
+          <summary>Do I need to bolt my rack down?</summary>
+          <div class="answer">
+            <div class="comparison">
+              <div class="comp-col">
+                <h4 class="badge error">Must Bolt</h4>
+                <ul>
+                  <li>Half racks (2-post)</li>
+                  <li>Folding racks</li>
+                  <li>Any rack that feels unstable</li>
+                </ul>
+              </div>
+              <div class="comp-col">
+                <h4 class="badge success">Usually Don't Need</h4>
+                <ul>
+                  <li>Full racks with flat feet</li>
+                  <li>Racks with weight storage loaded</li>
+                  <li>Heavy-duty racks on rubber flooring</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What flooring should I use?</summary>
+          <div class="answer">
+            <div class="info-box">
+              <p><strong>Best option:</strong> 3/4" rubber mats (horse stall mats from Tractor Supply are popular)</p>
+              <p><strong>Cost:</strong> $40-60 per 4'×6' mat</p>
+              <p><strong>Coverage:</strong> 8'×8' area needs 3 mats ($120-180)</p>
+            </div>
+            <p>Rubber flooring protects your floor, reduces noise, and provides stable footing.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can I set up a gym in my apartment?</summary>
+          <div class="answer">
+            <p>Yes, but consider:</p>
+            <ul>
+              <li><strong>Noise</strong> — Use rubber flooring, don't drop weights</li>
+              <li><strong>Floor loading</strong> — Check building specs</li>
+              <li><strong>Space constraints</strong> — Folding rack, adjustable dumbbells</li>
+              <li><strong>Neighbors</strong> — Train during reasonable hours</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How do I maintain equipment?</summary>
+          <div class="answer">
+            <div class="maintenance-grid">
+              <div><strong>Weekly:</strong> Wipe down, remove chalk</div>
+              <div><strong>Monthly:</strong> Oil barbell sleeves, check bolts</div>
+              <div><strong>Quarterly:</strong> Inspect for damage, deep clean</div>
+              <div><strong>Annually:</strong> Full inspection, touch up paint</div>
+            </div>
+            <p>Proper maintenance makes equipment last decades.</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="faq-category" id="training">
+        <h2>Training & Programming</h2>
+        
+        <details class="faq-item">
+          <summary>What program should I follow?</summary>
+          <div class="answer">
+            <p>Popular beginner programs:</p>
+            <ul>
+              <li>Starting Strength</li>
+              <li>StrongLifts 5x5</li>
+              <li>5/3/1 for Beginners</li>
+              <li>GZCLP</li>
+            </ul>
+            <p>All are effective. Choose one and stick with it for 3-6 months.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How long until I see results?</summary>
+          <div class="answer">
+            <ul>
+              <li><strong>Strength gains:</strong> 2-4 weeks (neural adaptations)</li>
+              <li><strong>Visible muscle:</strong> 8-12 weeks (with proper nutrition)</li>
+              <li><strong>Significant transformation:</strong> 6-12 months</li>
+            </ul>
+            <p>Consistency is more important than the perfect program or equipment.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can I build muscle at home?</summary>
+          <div class="answer">
+            <p>Absolutely! A barbell, plates, rack, and bench are all you need for effective muscle building. Many professional bodybuilders train in home gyms.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do I need cardio equipment?</summary>
+          <div class="answer">
+            <p>Not necessarily. You can:</p>
+            <ul>
+              <li>Run/walk outside</li>
+              <li>Jump rope ($10-30)</li>
+              <li>Do conditioning with barbell complexes</li>
+              <li>Add cardio equipment later if desired</li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <section class="faq-category" id="technical">
+        <h2>Technical Questions</h2>
+        
+        <details class="faq-item">
+          <summary>What's the difference between bushings and bearings?</summary>
+          <div class="answer">
+            <p><strong>Bushings:</strong> Bronze or composite sleeves, slower rotation, more durable, less maintenance</p>
+            <p><strong>Bearings:</strong> Needle or ball bearings, faster rotation, smoother, requires maintenance</p>
+            <p>For power bars, bushings are fine. For Olympic lifting, bearings are preferred.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What does PSI mean for barbells?</summary>
+          <div class="answer">
+            <p>PSI (pounds per square inch) measures the tensile strength of the steel:</p>
+            <ul>
+              <li>130,000 PSI: Budget bars</li>
+              <li>150,000-180,000 PSI: Mid-range</li>
+              <li>190,000-210,000 PSI: Premium</li>
+              <li>220,000+ PSI: Elite</li>
+            </ul>
+            <p>Higher PSI = stronger, more durable bar.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What's the difference between 2x3 and 3x3 tubing?</summary>
+          <div class="answer">
+            <p>Refers to the steel tubing dimensions on racks:</p>
+            <ul>
+              <li><strong>2x3":</strong> Lighter, less stable, adequate for shorter racks</li>
+              <li><strong>3x3":</strong> Heavier, more stable, better for tall racks</li>
+            </ul>
+            <p>3x3" is the standard for quality home gym racks.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What's Westside hole spacing?</summary>
+          <div class="answer">
+            <p>1" hole spacing in the bench press zone (24-48" from floor) and 2" spacing elsewhere. Allows precise safety bar positioning for bench press.</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="faq-category" id="returns">
+        <h2>Returns & Warranties</h2>
+        
+        <details class="faq-item">
+          <summary>What if equipment arrives damaged?</summary>
+          <div class="answer">
+            <p>Contact the retailer immediately with photos. Most reputable companies will replace damaged items or provide partial refunds for minor damage.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What's a good warranty?</summary>
+          <div class="answer">
+            <ul>
+              <li><strong>Lifetime warranty:</strong> Best (Rogue, REP, American Barbell)</li>
+              <li><strong>10+ years:</strong> Good</li>
+              <li><strong>5 years:</strong> Adequate</li>
+              <li><strong>1-2 years:</strong> Budget equipment</li>
+            </ul>
+            <p>Longer warranties indicate manufacturer confidence in quality.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can I return equipment?</summary>
+          <div class="answer">
+            <p>Policies vary by retailer:</p>
+            <ul>
+              <li><strong>Rogue:</strong> 30 days, customer pays return shipping</li>
+              <li><strong>REP:</strong> 30 days, customer pays return shipping</li>
+              <li><strong>Amazon:</strong> 30 days, often free returns</li>
+              <li><strong>Titan:</strong> 30 days, customer pays return shipping</li>
+            </ul>
+            <p>Always check return policy before buying.</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="cta-section">
+        <h2>Still Have Questions?</h2>
+        <p>Check out our comprehensive buying guides:</p>
+        <div class="guide-links">
+          <a href="/guides/power-racks" class="guide-link">Power Rack Guide</a>
+          <a href="/guides/barbells" class="guide-link">Barbell Guide</a>
+          <a href="/guides/weight-plates" class="guide-link">Weight Plates Guide</a>
+          <a href="/guides/home-gym-setup" class="guide-link">Home Gym Setup Guide</a>
+        </div>
+        <p>Or browse our <a href="/">daily deals</a> to see what's currently on sale!</p>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .faq-page {
+    background: var(--color-bg);
+    min-height: 100vh;
+  }
+
+  .faq-hero {
+    background: var(--gradient-hero);
+    padding: var(--space-20) 0 var(--space-16);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .faq-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .faq-hero h1 {
+    font-size: var(--text-5xl);
+    font-weight: var(--font-black);
+    margin-bottom: var(--space-4);
+    background: linear-gradient(135deg, #fff 0%, #ffa575 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle {
+    font-size: var(--text-xl);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-8);
+  }
+
+  .search-box {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: var(--space-4);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-tertiary);
+    pointer-events: none;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: var(--space-4) var(--space-4) var(--space-4) var(--space-12);
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    color: var(--color-text);
+    font-size: var(--text-base);
+    transition: all var(--transition-base);
+  }
+
+  .search-box input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+  }
+
+  .faq-nav {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+  }
+
+  .faq-nav .container {
+    display: flex;
+    gap: var(--space-2);
+    overflow-x: auto;
+    padding: var(--space-4) var(--container-padding);
+    scrollbar-width: none;
+  }
+
+  .faq-nav .container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-link {
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-full);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    white-space: nowrap;
+    font-weight: var(--font-medium);
+    transition: all var(--transition-base);
+  }
+
+  .nav-link:hover {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text);
+  }
+
+  .faq-content {
+    padding: var(--space-16) var(--container-padding);
+    max-width: 900px;
+  }
+
+  .faq-category {
+    margin-bottom: var(--space-16);
+  }
+
+  .faq-category h2 {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-8);
+    color: var(--color-primary);
+    scroll-margin-top: 100px;
+  }
+
+  .faq-item {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+    overflow: hidden;
+    transition: all var(--transition-base);
+  }
+
+  .faq-item:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+  }
+
+  .faq-item summary {
+    padding: var(--space-6);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    cursor: pointer;
+    list-
+
+style: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all var(--transition-base);
+  }
+
+  .faq-item summary:hover {
+    background: var(--color-bg-tertiary);
+  }
+
+  .faq-item summary::marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: '+';
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-primary);
+    transition: transform var(--transition-base);
+  }
+
+  .faq-item[open] summary::after {
+    content: '−';
+    transform: rotate(180deg);
+  }
+
+  .answer {
+    padding: 0 var(--space-6) var(--space-6);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+  .answer p {
+    margin-bottom: var(--space-4);
+  }
+
+  .answer ul, .answer ol {
+    margin: var(--space-4) 0;
+    padding-left: var(--space-6);
+  }
+
+  .answer li {
+    margin-bottom: var(--space-2);
+  }
+
+  .answer a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: var(--font-medium);
+    transition: color var(--transition-base);
+  }
+
+  .answer a:hover {
+    color: var(--color-primary-light);
+    text-decoration: underline;
+  }
+
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-4);
+    margin: var(--space-6) 0;
+  }
+
+  .price-card {
+    background: var(--color-bg-tertiary);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 2px solid var(--color-border);
+    transition: all var(--transition-base);
+  }
+
+  .price-card.featured {
+    border-color: var(--color-primary);
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, var(--color-bg-tertiary) 100%);
+  }
+
+  .price-card h4 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-2);
+    color: var(--color-text);
+  }
+
+  .price {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-black);
+    color: var(--color-primary);
+    margin: var(--space-2) 0;
+  }
+
+  .desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+  }
+
+  .comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-6);
+    margin: var(--space-6) 0;
+  }
+
+  .comp-col {
+    background: var(--color-bg-tertiary);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+  }
+
+  .comp-col h4 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+
+  .badge {
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-4);
+  }
+
+  .badge.success {
+    background: rgba(0, 217, 163, 0.2);
+    color: var(--color-success);
+  }
+
+  .badge.warning {
+    background: rgba(255, 184, 0, 0.2);
+    color: var(--color-warning);
+  }
+
+  .badge.error {
+    background: rgba(255, 71, 87, 0.2);
+    color: var(--color-error);
+  }
+
+  .space-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-4);
+    margin: var(--space-6) 0;
+  }
+
+  .space-card {
+    background: var(--color-bg-tertiary);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 1px solid var(--color-border);
+  }
+
+  .space-card .label {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--space-2);
+  }
+
+  .space-card .value {
+    display: block;
+    font-size: var(--text-2xl);
+    font-weight: var(--font-black);
+    color: var(--color-primary);
+    margin: var(--space-2) 0;
+  }
+
+  .space-card .sqft {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+
+  .highlight {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 107, 53, 0.05) 100%);
+    padding: var(--space-4);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    margin: var(--space-4) 0;
+  }
+
+  .essentials-list {
+    counter-reset: item;
+    list-style: none;
+    padding: 0;
+  }
+
+  .essentials-list li {
+    counter-increment: item;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .essentials-list li:last-child {
+    border-bottom: none;
+  }
+
+  .essentials-list li::before {
+    content: counter(item);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 50%;
+    font-weight: var(--font-bold);
+    margin-right: var(--space-3);
+    font-size: var(--text-sm);
+  }
+
+  .timing-grid, .brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-6);
+    margin: var(--space-6) 0;
+  }
+
+  .timing-grid h4, .brand-grid h4 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-3);
+    color: var(--color-primary);
+  }
+
+  .deal-tiers {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin: var(--space-6) 0;
+  }
+
+  .tier {
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-semibold);
+    text-align: center;
+  }
+
+  .tier.good {
+    background: rgba(79, 172, 254, 0.2);
+    color: var(--color-info);
+  }
+
+  .tier.great {
+    background: rgba(0, 217, 163, 0.2);
+    color: var(--color-success);
+  }
+
+  .tier.amazing {
+    background: rgba(255, 107, 53, 0.2);
+    color: var(--color-primary);
+  }
+
+  .info-box {
+    background: var(--color-bg-tertiary);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--color-info);
+    margin: var(--space-4) 0;
+  }
+
+  .maintenance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-4);
+    margin: var(--space-6) 0;
+  }
+
+  .maintenance-grid div {
+    background: var(--color-bg-tertiary);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+  }
+
+  .maintenance-grid strong {
+    display: block;
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .cta-section {
+    background: var(--gradient-card);
+    padding: var(--space-12);
+    border-radius: var(--radius-2xl);
+    text-align: center;
+    margin-top: var(--space-16);
+    border: 1px solid var(--color-border);
+  }
+
+  .cta-section h2 {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+
+  .cta-section > p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-6);
+  }
+
+  .guide-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    justify-content: center;
+    margin: var(--space-8) 0;
+  }
+
+  .guide-link {
+    padding: var(--space-4) var(--space-8);
+    background: var(--gradient-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-full);
+    font-weight: var(--font-semibold);
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-md);
+  }
+
+  .guide-link:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  @media (max-width: 768px) {
+    .faq-hero {
+      padding: var(--space-12) 0 var(--space-8);
+    }
+
+    .faq-hero h1 {
+      font-size: var(--text-3xl);
+    }
+
+    .subtitle {
+      font-size: var(--text-lg);
+    }
+
+    .faq-content {
+      padding: var(--space-8) var(--container-padding);
+    }
+
+    .price-grid, .comparison, .space-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .guide-links {
+      flex-direction: column;
+    }
+
+    .guide-link {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  // Search functionality
+  const searchInput = document.getElementById('faq-search') as HTMLInputElement;
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = (e.target as HTMLInputElement).value.toLowerCase();
+      
+      faqItems.forEach((item) => {
+        const summary = item.querySelector('summary');
+        const answer = item.querySelector('.answer');
+        const text = (summary?.textContent + ' ' + answer?.textContent).toLowerCase();
+        
+        if (text.includes(searchTerm)) {
+          (item as HTMLElement).style.display = 'block';
+        } else {
+          (item as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  }
+
+  // Sticky nav highlight
+  const sections = document.querySelectorAll('.faq-category');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  const observerOptions = {
+    threshold: 0.3,
+    rootMargin: '-100px 0px -50% 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => observer.observe(section));
+
+  // Smooth scroll for nav links
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
+      if (targetSection) {
+        const offset = 100;
+        const elementPosition = targetSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>
