@@ -18,26 +18,27 @@
     "format": "prettier --write \"**/*.{js,astro,md,json}\""
   },
   "dependencies": {
-    "astro": "^4.15.0",
+    "@astrojs/mdx": "^3.1.5",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
-    "@astrojs/mdx": "^3.1.5",
-    "openai": "^4.58.1",
-    "dotenv": "^16.4.5",
-    "zod": "^3.23.8",
+    "astro": "^4.15.0",
     "cheerio": "^1.0.0",
-    "node-fetch": "^3.3.2",
     "date-fns": "^3.6.0",
+    "dotenv": "^16.4.5",
     "gray-matter": "^4.0.3",
-    "sharp": "^0.33.5"
+    "lucide-astro": "^0.545.0",
+    "node-fetch": "^3.3.2",
+    "openai": "^4.58.1",
+    "sharp": "^0.33.5",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^20.16.5",
-    "typescript": "^5.6.2",
+    "eslint": "^8.57.0",
+    "eslint-plugin-astro": "^1.2.3",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
-    "eslint": "^8.57.0",
-    "eslint-plugin-astro": "^1.2.3"
+    "typescript": "^5.6.2"
   },
   "engines": {
     "node": ">=20.0.0",

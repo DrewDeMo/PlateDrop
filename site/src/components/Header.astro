@@ -1,8 +1,10 @@
 ---
+import { Flame, BookOpen, HelpCircle, Info, Mail, Menu, X } from 'lucide-astro';
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="site-header">
+<header class="site-header" id="site-header">
+  <div class="header-progress"></div>
   <div class="header-glow"></div>
   <div class="container">
     <nav class="nav-wrapper">
@@ -27,40 +29,39 @@ const currentPath = Astro.url.pathname;
       <ul class="nav-links">
         <li>
           <a href="/" class={currentPath === '/' ? 'active' : ''}>
-            <span class="nav-icon">🔥</span>
+            <Flame class="nav-icon" size={20} />
             <span>Deals</span>
           </a>
         </li>
         <li>
           <a href="/guides" class={currentPath.startsWith('/guides') ? 'active' : ''}>
-            <span class="nav-icon">📚</span>
+            <BookOpen class="nav-icon" size={20} />
             <span>Guides</span>
           </a>
         </li>
         <li>
           <a href="/faq" class={currentPath === '/faq' ? 'active' : ''}>
-            <span class="nav-icon">❓</span>
+            <HelpCircle class="nav-icon" size={20} />
             <span>FAQ</span>
           </a>
         </li>
         <li>
           <a href="/about" class={currentPath === '/about' ? 'active' : ''}>
-            <span class="nav-icon">ℹ️</span>
+            <Info class="nav-icon" size={20} />
             <span>About</span>
           </a>
         </li>
         <li>
           <a href="/contact" class={currentPath === '/contact' ? 'active' : ''}>
-            <span class="nav-icon">✉️</span>
+            <Mail class="nav-icon" size={20} />
             <span>Contact</span>
           </a>
         </li>
       </ul>
       
       <button class="mobile-menu-toggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <Menu class="menu-icon" size={24} />
+        <X class="close-icon" size={24} />
       </button>
     </nav>
   </div>
@@ -75,6 +76,39 @@ const currentPath = Astro.url.pathname;
     backdrop-filter: var(--glass-blur);
     border-bottom: 1px solid var(--glass-border);
     box-shadow: var(--shadow-lg);
+    transition: all var(--transition-base);
+  }
+  
+  /* Scroll progress indicator */
+  .header-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    width: 0%;
+    transition: width 100ms ease-out;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+  }
+  
+  /* Header shrinks on scroll */
+  .site-header.scrolled {
+    box-shadow: var(--shadow-2xl);
+    border-bottom-color: rgba(255, 107, 53, 0.2);
+  }
+  
+  .site-header.scrolled .nav-wrapper {
+    padding-block: var(--space-3);
+  }
+  
+  .site-header.scrolled .logo {
+    font-size: var(--text-xl);
+  }
+  
+  .site-header.scrolled .logo-icon svg {
+    width: 32px;
+    height: 32px;
   }
   
   .header-glow {
@@ -90,7 +124,8 @@ const currentPath = Astro.url.pathname;
     transition: opacity var(--transition-slow);
   }
   
-  .site-header:hover .header-glow {
+  .site-header:hover .header-glow,
+  .site-header.scrolled .header-glow {
     opacity: 1;
   }
   
@@ -205,12 +240,13 @@ const currentPath = Astro.url.pathname;
   }
   
   .nav-icon {
-    font-size: 1.2em;
-    transition: transform var(--transition-base);
+    transition: all var(--transition-base);
+    stroke-width: 2.5;
   }
   
   .nav-links a:hover .nav-icon {
-    transform: scale(1.2) rotate(5deg);
+    transform: scale(1.15) rotate(-5deg);
+    filter: drop-shadow(0 0 8px rgba(255, 107, 53, 0.6));
   }
   
   .nav-links a.active {
@@ -224,30 +260,50 @@ const currentPath = Astro.url.pathname;
   }
   
   .nav-links a.active .nav-icon {
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
+    animation: pulse 2s ease-in-out infinite;
   }
   
   .mobile-menu-toggle {
     display: none;
-    flex-direction: column;
-    gap: 5px;
+    align-items: center;
+    justify-content: center;
     background: none;
     border: none;
     cursor: pointer;
     padding: var(--space-2);
     z-index: 2;
-  }
-  
-  .mobile-menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background: var(--gradient-primary);
-    border-radius: var(--radius-full);
+    position: relative;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
     transition: all var(--transition-base);
   }
   
-  .mobile-menu-toggle:hover span {
-    background: var(--color-primary-light);
+  .mobile-menu-toggle:hover {
+    background: rgba(255, 107, 53, 0.1);
+  }
+  
+  .mobile-menu-toggle .menu-icon,
+  .mobile-menu-toggle .close-icon {
+    position: absolute;
+    transition: all var(--transition-base);
+    color: var(--color-primary);
+  }
+  
+  .mobile-menu-toggle .close-icon {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.8);
+  }
+  
+  .mobile-menu-toggle.active .menu-icon {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.8);
+  }
+  
+  .mobile-menu-toggle.active .close-icon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
   }
   
   @media (max-width: 768px) {
@@ -304,6 +360,45 @@ const currentPath = Astro.url.pathname;
 </style>
 
 <script>
+  // Header scroll effects
+  const header = document.getElementById('site-header');
+  const headerProgress = document.querySelector('.header-progress') as HTMLElement;
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+  
+  function updateHeader() {
+    const scrollY = window.scrollY;
+    
+    // Add scrolled class when scrolled down
+    if (scrollY > 50) {
+      header?.classList.add('scrolled');
+    } else {
+      header?.classList.remove('scrolled');
+    }
+    
+    // Update progress bar
+    if (headerProgress) {
+      const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollY / windowHeight) * 100;
+      headerProgress.style.width = `${Math.min(scrollPercent, 100)}%`;
+    }
+    
+    lastScrollY = scrollY;
+    ticking = false;
+  }
+  
+  function requestTick() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  }
+  
+  window.addEventListener('scroll', requestTick, { passive: true });
+  
+  // Initial update
+  updateHeader();
+  
   // Mobile menu toggle
   const menuToggle = document.querySelector('.mobile-menu-toggle');
   const navLinks = document.querySelector('.nav-links');
@@ -330,4 +425,10 @@ const currentPath = Astro.url.pathname;
       });
     });
   }
+  
+  // Add stagger animation to nav items on load
+  const navItems = document.querySelectorAll('.nav-links li');
+  navItems.forEach((item, index) => {
+    (item as HTMLElement).style.animation = `slideIn 0.5s ease-out ${index * 0.1}s both`;
+  });
 </script>
