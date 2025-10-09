@@ -1,11 +1,11 @@
+/* Font imports - must be at the top */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    /* Font imports */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
     html {
         @apply antialiased scroll-smooth overflow-x-hidden;
         font-size: 16px;
@@ -136,7 +136,8 @@
     }
 
     .btn:active {
-        @apply scale-[0.97] transition-transform duration-100;
+        transform: scale(0.97);
+        transition: transform 100ms ease-out;
     }
 
     .btn-primary {
@@ -144,8 +145,10 @@
     }
 
     .btn-primary:hover {
-        @apply -translate-y-1 scale-105 brightness-[1.15] no-underline text-white;
+        transform: translateY(-4px) scale(1.05);
+        filter: brightness(1.15);
         box-shadow: 0 0 40px rgba(255, 107, 53, 0.4), 0 20px 60px rgba(0, 0, 0, 0.5);
+        @apply no-underline text-white;
     }
 
     .btn-secondary {
@@ -153,8 +156,9 @@
     }
 
     .btn-secondary:hover {
-        @apply bg-surface-elevated border-primary -translate-y-1 scale-105 no-underline;
+        transform: translateY(-4px) scale(1.05);
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        @apply bg-surface-elevated border-primary no-underline;
     }
 
     .btn-accent {
@@ -162,8 +166,10 @@
     }
 
     .btn-accent:hover {
-        @apply -translate-y-1 scale-105 brightness-[1.15] text-bg;
+        transform: translateY(-4px) scale(1.05);
+        filter: brightness(1.15);
         box-shadow: 0 0 30px rgba(255, 210, 63, 0.5), 0 20px 60px rgba(0, 0, 0, 0.5);
+        @apply text-bg;
     }
 
     /* Cards */
@@ -180,13 +186,15 @@
 
     .card::after {
         content: '';
-        @apply absolute inset-0 opacity-0 transition-opacity duration-[400ms] pointer-events-none;
+        @apply absolute inset-0 opacity-0 pointer-events-none;
         background: radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+        transition: opacity 400ms ease-out;
     }
 
     .card:hover {
-        @apply -translate-y-3 scale-[1.02] border-primary;
+        transform: translateY(-12px) scale(1.02);
         box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5), 0 0 50px rgba(255, 107, 53, 0.25);
+        @apply border-primary;
     }
 
     .card:hover::before {
@@ -207,6 +215,77 @@
         @apply bg-gradient-primary bg-clip-text text-transparent;
     }
 
+    /* Section Headers - Modern Style */
+    .section-header-modern {
+        @apply text-center mb-16;
+    }
+
+    .section-eyebrow {
+        @apply inline-block text-sm font-bold text-primary uppercase tracking-wider mb-3;
+    }
+
+    .section-title-modern {
+        @apply text-4xl font-black mb-4 bg-gradient-primary bg-clip-text text-transparent;
+    }
+
+    .section-description-modern {
+        @apply text-xl text-text-secondary max-w-[60ch] mx-auto;
+    }
+
+    /* Value Props */
+    .value-props-grid {
+        @apply grid gap-8 mt-12;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .value-prop-card {
+        @apply bg-surface p-8 rounded-xl border border-border relative;
+        transition: all 450ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .value-prop-card::before {
+        content: '';
+        @apply absolute inset-0 rounded-xl bg-gradient-primary opacity-0 -z-10;
+        transition: opacity 350ms ease-out;
+    }
+
+    .value-prop-card:hover {
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(255, 107, 53, 0.2);
+        @apply border-primary;
+    }
+
+    .value-prop-card:hover::before {
+        @apply opacity-5;
+    }
+
+    .value-prop-icon {
+        @apply w-16 h-16 flex items-center justify-center bg-primary/10 rounded-lg mb-4 text-primary;
+        transition: all 450ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .value-prop-card:hover .value-prop-icon {
+        transform: scale(1.15) rotate(8deg);
+        @apply bg-primary/20;
+    }
+
+    .value-prop-card h3 {
+        @apply text-xl font-bold text-text mb-3;
+    }
+
+    .value-prop-card p {
+        @apply text-base leading-relaxed text-text-secondary m-0;
+    }
+
+    /* Process Steps */
+    .process-step {
+        @apply relative;
+    }
+
+    .process-number {
+        @apply text-4xl font-extrabold text-primary/20 leading-none mb-4;
+    }
+
     /* Utility classes */
     .glow {
         @apply shadow-glow;
@@ -224,6 +303,23 @@
 
     .skip-link:focus {
         @apply top-0;
+    }
+
+    /* Animations */
+    .animate-fade-in {
+        animation: fadeIn 500ms ease-out;
+    }
+
+    .animate-slide-in {
+        animation: slideIn 500ms ease-out;
+    }
+
+    .animate-pulse {
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
     }
 }
 
@@ -257,5 +353,54 @@
         .no-print {
             @apply hidden;
         }
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
     }
 }

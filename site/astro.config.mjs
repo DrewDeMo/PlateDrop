@@ -6,6 +6,9 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://platedrop.fit',
+  devToolbar: {
+    enabled: false
+  },
   integrations: [
     tailwind({
       applyBaseStyles: false, // We'll handle base styles ourselves
@@ -31,6 +34,14 @@ export default defineConfig({
   },
   scopedStyleStrategy: 'where',
   vite: {
+    server: {
+      fs: {
+        allow: ['..']
+      },
+      hmr: {
+        overlay: false
+      }
+    },
     resolve: {
       alias: {
         '@': '/src',
@@ -41,6 +52,19 @@ export default defineConfig({
     },
     ssr: {
       noExternal: ['lucide-astro']
+    },
+    optimizeDeps: {
+      exclude: ['lucide-astro']
+    },
+    build: {
+      cssCodeSplit: true,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'lucide': ['lucide-astro']
+          }
+        }
+      }
     }
   }
 });
