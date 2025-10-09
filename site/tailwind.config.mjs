@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: ['./src/**/*.{astro,html,js,jsx,ts,tsx,mdx}'],
+    content: ['./src/**/*.{astro,html,js,jsx,ts,tsx,md,mdx}'],
     darkMode: 'class',
     theme: {
         extend: {
@@ -115,7 +115,11 @@ export default {
             transitionDuration: {
                 'fast': '200ms',
                 'base': '350ms',
+                'smooth': '400ms',
                 'slow': '500ms',
+            },
+            opacity: {
+                15: '0.15',
             },
             animation: {
                 'fade-in': 'fadeIn 500ms ease-out',

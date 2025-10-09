@@ -331,12 +331,16 @@
             @apply scroll-auto;
         }
 
-        *,
-        *::before,
-        *::after {
+        :is([class*='animate-'], [data-animate]) {
+            /* Disable only keyframe-driven effects while preserving hover/focus transitions */
             animation-duration: 0.01ms !important;
             animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
+        }
+
+        :is([class*='animate-'], [data-animate])::before,
+        :is([class*='animate-'], [data-animate])::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
         }
     }
 
