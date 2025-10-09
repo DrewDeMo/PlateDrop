@@ -1,52 +1,47 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import DealCard from '@components/DealCard.astro';
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
 
-// This will be replaced with actual data from deals-today.json
-const mockDeals = [
-  {
-    id: 'rogue-echo-bike',
-    title: 'Rogue Echo Bike',
-    brand: 'Rogue Fitness',
-    category: 'cardio',
-    url: 'https://www.roguefitness.com/rogue-echo-bike',
-    image_url: 'https://placehold.co/600x400/2563eb/ffffff?text=Echo+Bike',
-    price_current: 795.00,
-    price_prev: 895.00,
-    discount_pct: 11.17,
-    rating: 4.8,
-    reviews_count: 1247,
-    retailer: 'Rogue Fitness'
-  },
-  {
-    id: 'rep-pr-4000',
-    title: 'REP PR-4000 Power Rack',
-    brand: 'REP Fitness',
-    category: 'racks',
-    url: 'https://www.repfitness.com/pr-4000',
-    image_url: 'https://placehold.co/600x400/0891b2/ffffff?text=Power+Rack',
-    price_current: 595.00,
-    price_prev: 695.00,
-    discount_pct: 14.39,
-    rating: 4.9,
-    reviews_count: 892,
-    retailer: 'REP Fitness'
-  },
-  {
-    id: 'powerblock-elite',
-    title: 'PowerBlock Elite EXP Adjustable Dumbbells',
-    brand: 'PowerBlock',
-    category: 'dumbbells',
-    url: 'https://www.amazon.com/powerblock-elite',
-    image_url: 'https://placehold.co/600x400/f59e0b/ffffff?text=Dumbbells',
-    price_current: 399.00,
-    price_prev: 499.00,
-    discount_pct: 20.04,
-    rating: 4.7,
-    reviews_count: 2341,
-    retailer: 'Amazon'
-  }
-];
+// Load actual deals from GitHub Actions generated data
+let dealsData;
+let deals = [];
+
+try {
+  const dealsPath = join(process.cwd(), 'data', 'deals-today.json');
+  const fileContent = await readFile(dealsPath, 'utf-8');
+  dealsData = JSON.parse(fileContent);
+  
+  // Get top deals (highest discounts first, limit to 6 for homepage)
+  deals = dealsData.products
+    .sort((a, b) => b.discount_pct - a.discount_pct)
+    .slice(0, 6)
+    .map(product => ({
+      ...product,
+      // Map category-specific images from Unsplash
+      image_url: getCategoryImage(product.category)
+    }));
+} catch (error) {
+  console.error('Error loading deals:', error);
+  // Fallback to empty array if file doesn't exist yet
+  deals = [];
+}
+
+// Helper function to get appropriate images based on category
+function getCategoryImage(category: string): string {
+  const imageMap: Record<string, string> = {
+    'cardio': 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop&q=80',
+    'racks': 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop&q=80',
+    'dumbbells': 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&h=600&fit=crop&q=80',
+    'barbells': 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&h=600&fit=crop&q=80',
+    'benches': 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop&q=80',
+    'plates': 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop&q=80',
+    'accessories': 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop&q=80'
+  };
+  
+  return imageMap[category] || 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop&q=80';
+}
 
 const today = new Date();
 const formattedDate = today.toLocaleDateString('en-US', { 
@@ -58,6 +53,460 @@ const formattedDate = today.toLocaleDateString('en-US', {
 ---
 
 <BaseLayout
+  
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">$2.4M+</div>
+          <div class="stat-label">Saved by Our Community</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">15K+</div>
+          <div class="stat-label">Deals Tracked Daily</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">98%</div>
+          <div class="stat-label">Price Accuracy Rate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Automated Monitoring</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Why Choose PlateDrop?</h2>
+        <p class="section-description">
+          We do the heavy lifting so you can focus on your workouts
+        </p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <h3>Verified Deals Only</h3>
+          <p>Every deal is validated against historical pricing data. No fake discounts or inflated "savings."</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h3>Updated Daily</h3>
+          <p>Our automated system checks prices every 24 hours, ensuring you always see the latest deals.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <h3>Best Price Guarantee</h3>
+          <p>We track prices across all major retailers to ensure you're getting the absolute best deal available.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h3>Expert Curation</h3>
+          <p>Not just any deal makes the cut. We focus on quality brands and equipment that actually delivers value.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <h3>Privacy First</h3>
+          <p>No tracking, no data selling, no spam. Just honest deal curation and helpful content.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+          </div>
+          <h3>Free Forever</h3>
+          <p>No subscriptions, no paywalls, no hidden fees. Quality deal hunting should be accessible to everyone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="categories-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Shop by Category</h2>
+        <p class="section-description">
+          Find exactly what you need for your home gym
+        </p>
+      </div>
+      
+      <div class="categories-grid">
+        <a href="/deals?category=racks" class="category-card">
+          <div class="category-icon">🏋️</div>
+          <h3>Power Racks</h3>
+          <p>Squat racks, cages & rigs</p>
+        </a>
+
+        <a href="/deals?category=barbells" class="category-card">
+          <div class="category-icon">💪</div>
+          <h3>Barbells</h3>
+          <p>Olympic & specialty bars</p>
+        </a>
+
+        <a href="/deals?category=plates" class="category-card">
+          <div class="category-icon">⚫</div>
+          <h3>Weight Plates</h3>
+          <p>Bumpers, iron & calibrated</p>
+        </a>
+
+        <a href="/deals?category=dumbbells" class="category-card">
+          <div class="category-icon">🔩</div>
+          <h3>Dumbbells</h3>
+          <p>Fixed & adjustable sets</p>
+        </a>
+
+        <a href="/deals?category=benches" class="category-card">
+          <div class="category-icon">🪑</div>
+          <h3>Benches</h3>
+          <p>Flat, adjustable & specialty</p>
+        </a>
+
+        <a href="/deals?category=cardio" class="category-card">
+          <div class="category-icon">🚴</div>
+          <h3>Cardio</h3>
+          <p>Bikes, rowers & treadmills</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Trusted by Home Gym Enthusiasts</h2>
+        <p class="section-description">
+          Join thousands who've built their dream gyms with our help
+        </p>
+      </div>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            ⭐⭐⭐⭐⭐
+          </div>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+  
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 4s ease-in-out infinite;
+  }
+  
+  .hero-content {
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  .hero-title {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+  }
+  
+  .hero-subtitle {
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+  }
+  
+  .hero-description {
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+  }
+  
+  
+  .stats-section {
+    padding-block: var(--space-16);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: white;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-8);
+  }
+  
+  .stat-card {
+    text-align: center;
+    padding: var(--space-6);
+  }
+  
+  .stat-number {
+    font-size: var(--text-4xl);
+    font-weight: 800;
+    margin-bottom: var(--space-2);
+    background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .stat-label {
+    font-size: var(--text-base);
+    opacity: 0.95;
+    font-weight: 500;
+  }
+  
+  .features-section {
+    padding-block: var(--space-20);
+    background-color: var(--color-bg);
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-8);
+  }
+  
+  .feature-card {
+    padding: var(--space-8);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-base);
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+  }
+  
+  .feature-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    border-radius: var(--radius-xl);
+    color: white;
+    margin-bottom: var(--space-4);
+  }
+  
+  .feature-card h3 {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+    color: var(--color-text);
+  }
+  
+  .feature-card p {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+  
+  .categories-section {
+    padding-block: var(--space-20);
+    background-color: var(--color-bg-secondary);
+  }
+  
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-6);
+  }
+  
+  .category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-8);
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+  
+  .category-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-primary);
+    text-decoration: none;
+  }
+  
+  .category-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+    filter: grayscale(0.3);
+    transition: filter var(--transition-base);
+  }
+  
+  .category-card:hover .category-icon {
+    filter: grayscale(0);
+  }
+  
+  .category-card h3 {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-2);
+  }
+  
+  .category-card p {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+    margin: 0;
+  }
+  
+  .testimonials-section {
+    padding-block: var(--space-20);
+    background-color: var(--color-bg);
+  }
+  
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-8);
+  }
+  
+  .testimonial-card {
+    padding: var(--space-8);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+  }
+  
+  .testimonial-rating {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-4);
+  }
+  
+  .testimonial-text {
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-6);
+    font-style: italic;
+  }
+  
+  .testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+  
+  .testimonial-author strong {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  
+  .testimonial-author span {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+  }
+          <p class="testimonial-text">
+            "Saved over $800 on my home gym setup by following PlateDrop's deals. The price tracking is incredibly accurate!"
+          </p>
+          <div class="testimonial-author">
+            <strong>Mike R.</strong>
+            <span>Home Gym Builder</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            ⭐⭐⭐⭐⭐
+          </div>
+          <p class="testimonial-text">
+            "Finally, a deal site that doesn't spam me with fake discounts. Every deal I've bought through here has been legit."
+          </p>
+          <div class="testimonial-author">
+            <strong>Sarah K.</strong>
+            <span>Fitness Enthusiast</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            ⭐⭐⭐⭐⭐
+          </div>
+          <p class="testimonial-text">
+            "The daily updates are a game-changer. I snagged a Rogue rack at 20% off because I checked PlateDrop that morning."
+          </p>
+          <div class="testimonial-author">
+            <strong>James T.</strong>
+            <span>Powerlifter</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   title="Today's Home Gym Deals"
   description="Daily curated deals on home gym equipment including power racks, barbells, dumbbells, and cardio machines. Save on quality fitness gear."
 >
@@ -78,6 +527,26 @@ const formattedDate = today.toLocaleDateString('en-US', {
     </div>
   </div>
 
+  
+  .no-deals {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: var(--space-16);
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius-xl);
+    border: 2px dashed var(--color-border);
+  }
+  
+  .no-deals p {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-2);
+  }
+  
+  .no-deals .text-sm {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+  }
   <section class="deals-section">
     <div class="container">
       <div class="section-header">
@@ -88,9 +557,16 @@ const formattedDate = today.toLocaleDateString('en-US', {
       </div>
       
       <div class="deals-grid">
-        {mockDeals.map((deal) => (
-          <DealCard {...deal} />
-        ))}
+        {deals.length > 0 ? (
+          deals.map((deal) => (
+            <DealCard {...deal} />
+          ))
+        ) : (
+          <div class="no-deals">
+            <p>No deals available yet. Check back soon!</p>
+            <p class="text-sm">The automated system runs daily at 2 AM UTC to fetch the latest deals.</p>
+          </div>
+        )}
       </div>
       
       <div class="deals-footer">

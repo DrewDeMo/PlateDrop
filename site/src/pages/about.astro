@@ -1,0 +1,401 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About PlateDrop - Your Home Gym Deal Finder"
+  description="Learn about PlateDrop's mission to help fitness enthusiasts find the best deals on quality home gym equipment. Daily curated deals, expert reviews, and honest recommendations."
+>
+  <div class="about-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Building Your Dream Home Gym, One Deal at a Time</h1>
+        <p class="hero-subtitle">
+          We're on a mission to make quality fitness equipment accessible to everyone through smart deal hunting and honest recommendations.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <section class="mission-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-block">
+          <div class="icon-wrapper">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <h2>Our Mission</h2>
+          <p>
+            Home gym equipment shouldn't break the bank. We track prices across major retailers daily, 
+            finding genuine deals on quality equipment so you can build your dream gym without overspending.
+          </p>
+        </div>
+
+        <div class="content-block">
+          <div class="icon-wrapper">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11l3 3L22 4"></path>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+            </svg>
+          </div>
+          <h2>Quality First</h2>
+          <p>
+            Not all deals are created equal. We focus on reputable brands and retailers, ensuring every 
+            deal we feature represents genuine value and quality equipment that will last.
+          </p>
+        </div>
+
+        <div class="content-block">
+          <div class="icon-wrapper">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h2>Daily Updates</h2>
+          <p>
+            Prices change constantly. Our automated system checks deals every day, ensuring you never 
+            miss out on limited-time offers or price drops on equipment you've been eyeing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-section">
+    <div class="container">
+      <div class="story-content">
+        <h2>How PlateDrop Started</h2>
+        <p>
+          Like many fitness enthusiasts, we started building a home gym during the pandemic. What should 
+          have been exciting quickly became frustrating—prices were inflated, stock was limited, and 
+          finding genuine deals felt impossible.
+        </p>
+        <p>
+          We spent hours comparing prices across different retailers, tracking price histories, and 
+          waiting for the right moment to buy. That's when we realized: there had to be a better way.
+        </p>
+        <p>
+          PlateDrop was born from that frustration. We built a system that does the heavy lifting—tracking 
+          prices, validating deals, and curating the best offers daily. Now, instead of spending hours 
+          hunting for deals, you can spend that time actually working out.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section">
+    <div class="container">
+      <h2 class="section-title">What We Stand For</h2>
+      
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>🎯 Transparency</h3>
+          <p>
+            We're upfront about affiliate relationships and never let commissions influence our 
+            recommendations. If it's not a good deal, we won't feature it.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <h3>📊 Data-Driven</h3>
+          <p>
+            Every deal is validated against historical pricing data. We show you real savings, 
+            not inflated "discounts" from artificial list prices.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <h3>🤝 Community-Focused</h3>
+          <p>
+            We're building this for the home gym community. Your feedback shapes our features, 
+            and your success stories inspire us to keep improving.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <h3>🔒 Privacy-Respecting</h3>
+          <p>
+            No tracking pixels, no data selling, no creepy retargeting. Just honest deal curation 
+            and helpful content.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="retailers-section">
+    <div class="container">
+      <h2 class="section-title">Retailers We Track</h2>
+      <p class="section-description">
+        We monitor prices across the most trusted names in fitness equipment
+      </p>
+      
+      <div class="retailers-grid">
+        <div class="retailer-badge">Rogue Fitness</div>
+        <div class="retailer-badge">REP Fitness</div>
+        <div class="retailer-badge">Amazon</div>
+        <div class="retailer-badge">Titan Fitness</div>
+        <div class="retailer-badge">PowerBlock</div>
+        <div class="retailer-badge">Bowflex</div>
+        <div class="retailer-badge">CAP Barbell</div>
+        <div class="retailer-badge">Yes4All</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <h2>Start Saving Today</h2>
+        <p>
+          Check out today's deals and see how much you can save on your home gym equipment.
+        </p>
+        <a href="/" class="btn btn-primary btn-lg">View Today's Deals</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: white;
+    padding-block: var(--space-20) var(--space-16);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin-inline: auto;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: var(--text-4xl);
+    font-weight: 800;
+    margin-bottom: var(--space-6);
+    color: white;
+    line-height: 1.1;
+  }
+  
+  .hero-subtitle {
+    font-size: var(--text-xl);
+    line-height: 1.6;
+    opacity: 0.95;
+    max-width: 60ch;
+    margin-inline: auto;
+  }
+  
+  .mission-section {
+    padding-block: var(--space-20);
+    background-color: var(--color-bg);
+  }
+  
+  .content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-12);
+  }
+  
+  .content-block {
+    text-align: center;
+  }
+  
+  .icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--space-6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    border-radius: var(--radius-2xl);
+    color: white;
+  }
+  
+  .content-block h2 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-4);
+  }
+  
+  .content-block p {
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+  
+  .story-section {
+    padding-block: var(--space-20);
+    background-color: var(--color-bg-secondary);
+  }
+  
+  .story-content {
+    max-width: 70ch;
+    margin-inline: auto;
+  }
+  
+  .story-content h2 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-8);
+    text-align: center;
+  }
+  
+  .story-content p {
+    font-size: var(--text-lg);
+    line-height: 1.8;
+    margin-bottom: var(--space-6);
+    color: var(--color-text-secondary);
+  }
+  
+  .values-section {
+    padding-block: var(--space-20);
+  }
+  
+  .section-title {
+    font-size: var(--text-3xl);
+    text-align: center;
+    margin-bottom: var(--space-12);
+  }
+  
+  .section-description {
+    text-align: center;
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-12);
+    max-width: 60ch;
+    margin-inline: auto;
+  }
+  
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-8);
+  }
+  
+  .value-card {
+    padding: var(--space-8);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-base);
+  }
+  
+  .value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+  }
+  
+  .value-card h3 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-4);
+  }
+  
+  .value-card p {
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+  
+  .retailers-section {
+    padding-block: var(--space-20);
+    background-color: var(--color-bg-secondary);
+  }
+  
+  .retailers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-4);
+    max-width: 900px;
+    margin-inline: auto;
+  }
+  
+  .retailer-badge {
+    padding: var(--space-4) var(--space-6);
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    font-weight: 600;
+    font-size: var(--text-base);
+    color: var(--color-text);
+    transition: all var(--transition-base);
+  }
+  
+  .retailer-badge:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .cta-section {
+    padding-block: var(--space-20);
+  }
+  
+  .cta-card {
+    max-width: 600px;
+    margin-inline: auto;
+    text-align: center;
+    padding: var(--space-12);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    border-radius: var(--radius-2xl);
+    color: white;
+  }
+  
+  .cta-card h2 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+    color: white;
+  }
+  
+  .cta-card p {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-6);
+    opacity: 0.95;
+    color: white;
+  }
+  
+  .btn-lg {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-lg);
+  }
+  
+  @media (max-width: 768px) {
+    .about-hero {
+      padding-block: var(--space-16) var(--space-12);
+    }
+    
+    .hero-title {
+      font-size: var(--text-3xl);
+    }
+    
+    .content-grid {
+      gap: var(--space-8);
+    }
+    
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .retailers-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

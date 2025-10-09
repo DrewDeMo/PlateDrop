@@ -27,6 +27,37 @@ const {
 
 const formatPrice = (price: number) => `$${price.toFixed(2)}`;
 const savings = price_prev ? price_prev - price_current : 0;
+
+// Product structured data for SEO
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: title,
+  brand: {
+    '@type': 'Brand',
+    name: brand
+  },
+  image: image_url,
+  description: `${title} - ${brand}`,
+  offers: {
+    '@type': 'Offer',
+    url: url,
+    priceCurrency: 'USD',
+    price: price_current,
+    availability: 'https://schema.org/InStock',
+    seller: {
+      '@type': 'Organization',
+      name: retailer
+    }
+  },
+  ...(rating && {
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: rating,
+      reviewCount: reviews_count || 0
+    }
+  })
+};
 ---
 
 <article class="deal-card">
@@ -93,6 +124,9 @@ const savings = price_prev ? price_prev - price_current : 0;
     </a>
   </div>
 </article>
+
+<!-- Product Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
 
 <style>
   .deal-card {
