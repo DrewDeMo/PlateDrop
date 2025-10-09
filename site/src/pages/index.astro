@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
 import HeroSection from '@components/home/HeroSection.astro';
 import TrustSection from '@components/home/TrustSection.astro';
 import ProcessSection from '@components/home/ProcessSection.astro';
@@ -9,6 +10,7 @@ import CategoriesSection from '@components/home/CategoriesSection.astro';
 import ValuePropsSection from '@components/home/ValuePropsSection.astro';
 import CtaSection from '@components/home/CtaSection.astro';
 import { buildItemListSchema, loadHomepageDeals } from '@utils/deals';
+import DealCard from '@components/DealCard.astro';
 
 const { deals, generatedAt } = await loadHomepageDeals(6);
 
@@ -29,7 +31,7 @@ const itemListSchema = buildItemListSchema(deals);
   schemaType="ItemList"
   structuredData={itemListSchema}
 >
-<<<<<<< ours
+
   <!-- Hero Section -->
   <div class="hero relative overflow-visible min-h-[600px] flex items-center -mt-[72px] pt-[72px]" style="background: linear-gradient(135deg, #3d2817 0%, #2d1f14 50%, #1a1614 100%);">
     <!-- Background Pattern -->
@@ -540,14 +542,4 @@ const itemListSchema = buildItemListSchema(deals);
     }
   }
 </style>
-=======
-  <HeroSection formattedDate={formattedDate} />
-  <TrustSection />
-  <ProcessSection />
-  <DealsSection deals={deals} />
-  <FeaturesSection />
-  <CategoriesSection />
-  <ValuePropsSection />
-  <CtaSection />
-</BaseLayout>
->>>>>>> theirs
+
