@@ -1,0 +1,198 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const workouts = await getCollection('workouts');
+  return workouts.map(workout => ({
+    params: { slug: workout.slug },
+    props: { workout },
+  }));
+}
+
+const { workout } = Astro.props;
+const { Content } = await workout.render();
+---
+
+<BaseLayout 
+  title={workout.data.title}
+  description={workout.data.description}
+>
+  <article class="workout-detail">
+    <header class="workout-header">
+      <h1>{workout.data.title}</h1>
+      <div class="workout-meta">
+        <span class="difficulty">{workout.data.difficulty}</span>
+        <span class="duration">{workout.data.duration}</span>
+        <span class="date">
+          {new Date(workout.data.publishDate).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}
+        </span>
+      </div>
+      {workout.data.equipment && workout.data.equipment.length > 0 && (
+        <div class="equipment-list">
+          <strong>Equipment needed:</strong>
+          {workout.data.equipment.map((item, index) => (
+            <span>
+              {item}{index < workout.data.equipment.length - 1 ? ', ' : ''}
+            </span>
+          ))}
+        </div>
+      )}
+    </header>
+    
+    <div class="workout-content">
+      <Content />
+    </div>
+
+    <footer class="workout-footer">
+      <a href="/workouts" class="back-link">← Back to all workouts</a>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .workout-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  .workout-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .workout-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #111827;
+    line-height: 1.2;
+  }
+
+  .workout-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .workout-meta span {
+    padding: 0.25rem 0.75rem;
+    background: #f3f4f6;
+    border-radius: 0.375rem;
+    color: #374151;
+  }
+
+  .difficulty {
+    font-weight: 600;
+    background: #dbeafe !important;
+    color: #1e40af !important;
+  }
+
+  .equipment-list {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .equipment-list strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #374151;
+  }
+
+  .workout-content {
+    line-height: 1.7;
+    color: #374151;
+  }
+
+  .workout-content :global(h2) {
+    font-size: 1.75rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #111827;
+  }
+
+  .workout-content :global(h3) {
+    font-size: 1.35rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1f2937;
+  }
+
+  .workout-content :global(p) {
+    margin-bottom: 1rem;
+  }
+
+  .workout-content :global(ul),
+  .workout-content :global(ol) {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .workout-content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .workout-content :global(a) {
+    color: #2563eb;
+    text-decoration: underline;
+  }
+
+  .workout-content :global(a:hover) {
+    color: #1d4ed8;
+  }
+
+  .workout-content :global(strong) {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  .workout-content :global(code) {
+    background: #f3f4f6;
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+  }
+
+  .workout-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .back-link {
+    display: inline-block;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .workout-header h1 {
+      font-size: 2rem;
+    }
+
+    .workout-content :global(h2) {
+      font-size: 1.5rem;
+    }
+
+    .workout-content :global(h3) {
+      font-size: 1.25rem;
+    }
+  }
+</style>

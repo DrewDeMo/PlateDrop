@@ -102,7 +102,7 @@ function generateFilename(date, workout) {
  * Save generated content
  */
 async function saveContent(content, filename) {
-    const contentDir = join(PROJECT_ROOT, 'content/workouts');
+    const contentDir = join(PROJECT_ROOT, 'site/src/content/workouts');
     await mkdir(contentDir, { recursive: true });
 
     const filepath = join(contentDir, filename);

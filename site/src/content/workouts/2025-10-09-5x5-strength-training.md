@@ -1,12 +1,11 @@
 ---
 title: "5x5 Strength Training Workout for Home Gym"
-date: "2025-10-09"
 description: "Get stronger with our beginner-friendly 5x5 strength training home gym workout. Learn proper form, prevent common mistakes and track your progress!"
-keywords: "5x5 workout, strength training home gym, beginner strength program"
-difficulty: "beginner"
+difficulty: "Beginner"
 duration: "45-60 minutes"
 equipment: ["barbell","power rack","bench","weight plates"]
-publishedTime: "2025-10-09T13:54:51.190Z"
+keywords: ["5x5 workout", "strength training home gym", "beginner strength program"]
+publishDate: "2025-10-09"
 ---
 
 # 5x5 Strength Training Workout for Home Gym
