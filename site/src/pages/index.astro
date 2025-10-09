@@ -9,7 +9,7 @@ let dealsData;
 let deals = [];
 
 try {
-  const dealsPath = join(process.cwd(), 'data', 'deals-today.json');
+  const dealsPath = join(process.cwd(), '..', 'data', 'deals-today.json');
   const fileContent = await readFile(dealsPath, 'utf-8');
   dealsData = JSON.parse(fileContent);
   

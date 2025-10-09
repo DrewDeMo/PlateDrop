@@ -53,8 +53,29 @@ jobs:
           git config user.name "PlateDrop Bot"
           git config user.email "bot@platedrop.fit"
           git add content/deals data/deals-today.json
-          git diff --staged --quiet || git commit -m "Daily deals: $(date +%Y-%m-%d)"
-          git push
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          
+          # Commit changes
+          git commit -m "Daily deals: $(date +%Y-%m-%d)"
+          
+          # Pull with rebase to handle any remote changes
+          git pull --rebase origin main || {
+            echo "Rebase failed, attempting to resolve..."
+            git rebase --abort
+            git pull --no-rebase origin main
+            git push origin main
+            exit 0
+          }
+          
+          # Push changes
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Create issue on failure
         if: failure()
