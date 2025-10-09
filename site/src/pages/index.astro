@@ -83,11 +83,11 @@ const formattedDate = today.toLocaleDateString('en-US', {
       </div>
       
       <div class="deals-grid">
-        {deals.length > 0 ?
+        {deals.length > 0 ? 
           deals.map((deal) => (
             <DealCard {...deal} />
           ))
-         :
+         : 
           <div class="no-deals">
             <p>No deals available yet. Check back soon!</p>
             <p class="text-sm">The automated system runs daily at 2 AM UTC to fetch the latest deals.</p>
@@ -269,63 +269,170 @@ const formattedDate = today.toLocaleDateString('en-US', {
           <div class="testimonial-rating">
             ⭐⭐⭐⭐⭐
           </div>
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+          <p class="testimonial-text">
+            "Saved over $800 on my home gym setup thanks to PlateDrop. The deals are legit and the price tracking is spot-on."
+          </p>
+          <div class="testimonial-author">Mike Chen</div>
+          <div class="testimonial-role">Home Gym Enthusiast</div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            ⭐⭐⭐⭐⭐
+          </div>
+          <p class="testimonial-text">
+            "Finally, a deals site that doesn't spam me with fake discounts. Every deal I've clicked has been the real deal."
+          </p>
+          <div class="testimonial-author">Sarah Johnson</div>
+          <div class="testimonial-role">Fitness Coach</div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            ⭐⭐⭐⭐⭐
+          </div>
+          <p class="testimonial-text">
+            "The daily updates are perfect. I check every morning and have scored some incredible deals on quality equipment."
+          </p>
+          <div class="testimonial-author">David Martinez</div>
+          <div class="testimonial-role">Powerlifter</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">Never Miss a Deal</h2>
+        <p class="cta-description">
+          Get notified when we find exceptional deals on the equipment you want
+        </p>
+        <div class="cta-buttons">
+          <a href="/guides" class="btn btn-primary">
+            Browse Buying Guides
+          </a>
+          <a href="/about" class="btn btn-secondary">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: white;
+    padding-block: var(--space-20) var(--space-16);
+    position: relative;
+    overflow: hidden;
   }
   
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-  
-  @keyframes pulse {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.8;
-    }
-  }
-  
-  .hero::after {
+  .hero::before {
     content: '';
     position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: pulse 4s ease-in-out infinite;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.1;
   }
   
   .hero-content {
-    animation: fadeInUp 0.8s ease-out;
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin-inline: auto;
+    text-align: center;
   }
   
   .hero-title {
-    animation: fadeInUp 0.8s ease-out 0.2s both;
+    font-size: var(--text-4xl);
+    font-weight: 800;
+    margin-bottom: var(--space-3);
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
   .hero-subtitle {
-    animation: fadeInUp 0.8s ease-out 0.4s both;
+    font-size: var(--text-lg);
+    font-weight: 500;
+    margin-bottom: var(--space-6);
+    opacity: 0.9;
   }
   
   .hero-description {
-    animation: fadeInUp 0.8s ease-out 0.6s both;
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    opacity: 0.95;
+    max-width: 60ch;
+    margin-inline: auto;
   }
   
+  .deals-section {
+    padding-block: var(--space-20);
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+  }
+  
+  .section-title {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+  }
+  
+  .section-description {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    max-width: 60ch;
+    margin-inline: auto;
+  }
+  
+  .deals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-8);
+    margin-bottom: var(--space-12);
+  }
+  
+  .deals-footer {
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--color-border);
+  }
+  
+  .disclaimer {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+    text-align: center;
+    max-width: 70ch;
+    margin-inline: auto;
+  }
+  
+  .no-deals {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: var(--space-16);
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius-xl);
+    border: 2px dashed var(--color-border);
+  }
+  
+  .no-deals p {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-2);
+  }
+  
+  .no-deals .text-sm {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+  }
   
   .stats-section {
     padding-block: var(--space-16);
@@ -498,263 +605,33 @@ const formattedDate = today.toLocaleDateString('en-US', {
   
   .testimonial-text {
     font-size: var(--text-base);
-    line-height: 1.7;
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-6);
+    line-height: 1.6;
+    color: var(--color-text);
+    margin-bottom: var(--space-4);
     font-style: italic;
   }
   
   .testimonial-author {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
-  }
-  
-  .testimonial-author strong {
-    font-size: var(--text-base);
+    font-size: var(--text-sm);
     font-weight: 600;
-    color: var(--color-text);
-  }
-  
-  .testimonial-author span {
-    font-size: var(--text-sm);
-    color: var(--color-text-tertiary);
-  }
-          <p class="testimonial-text">
-            "Saved over $800 on my home gym setup by following PlateDrop's deals. The price tracking is incredibly accurate!"
-          </p>
-          <div class="testimonial-author">
-            <strong>Mike R.</strong>
-            <span>Home Gym Builder</span>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-rating">
-            ⭐⭐⭐⭐⭐
-          </div>
-          <p class="testimonial-text">
-            "Finally, a deal site that doesn't spam me with fake discounts. Every deal I've bought through here has been legit."
-          </p>
-          <div class="testimonial-author">
-            <strong>Sarah K.</strong>
-            <span>Fitness Enthusiast</span>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-rating">
-            ⭐⭐⭐⭐⭐
-          </div>
-          <p class="testimonial-text">
-            "The daily updates are a game-changer. I snagged a Rogue rack at 20% off because I checked PlateDrop that morning."
-          </p>
-          <div class="testimonial-author">
-            <strong>James T.</strong>
-            <span>Powerlifter</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  title="Today's Home Gym Deals"
-  description="Daily curated deals on home gym equipment including power racks, barbells, dumbbells, and cardio machines. Save on quality fitness gear."
->
-  <div class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1 class="hero-title">
-          Today's Best Home Gym Deals
-        </h1>
-        <p class="hero-subtitle">
-          {formattedDate}
-        </p>
-        <p class="hero-description">
-          Curated daily deals on quality home gym equipment. We track prices across major retailers 
-          so you don't have to. All deals verified and updated daily.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  
-  .no-deals {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: var(--space-16);
-    background-color: var(--color-bg-secondary);
-    border-radius: var(--radius-xl);
-    border: 2px dashed var(--color-border);
-  }
-  
-  .no-deals p {
-    font-size: var(--text-lg);
     color: var(--color-text-secondary);
-    margin-bottom: var(--space-2);
   }
   
-  .no-deals .text-sm {
+  .testimonial-role {
     font-size: var(--text-sm);
     color: var(--color-text-tertiary);
-  }
-  <section class="deals-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Featured Deals</h2>
-        <p class="section-description">
-          Hand-picked deals with the best discounts and value
-        </p>
-      </div>
-      
-      <div class="deals-grid">
-        {deals.length > 0 ? (
-          deals.map((deal) => (
-            <DealCard {...deal} />
-          ))
-        ) : (
-          <div class="no-deals">
-            <p>No deals available yet. Check back soon!</p>
-            <p class="text-sm">The automated system runs daily at 2 AM UTC to fetch the latest deals.</p>
-          </div>
-        )}
-      </div>
-      
-      <div class="deals-footer">
-        <p class="disclaimer">
-          <strong>Price Disclaimer:</strong> Prices and availability are accurate as of the time of posting 
-          but may change. We earn from qualifying purchases through affiliate links.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-card">
-        <h2 class="cta-title">Never Miss a Deal</h2>
-        <p class="cta-description">
-          Subscribe to our RSS feed to get daily deals delivered automatically.
-        </p>
-        <a href="/rss.xml" class="btn btn-primary btn-lg">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 11a9 9 0 0 1 9 9"></path>
-            <path d="M4 4a16 16 0 0 1 16 16"></path>
-            <circle cx="5" cy="19" r="1"></circle>
-          </svg>
-          Subscribe to RSS Feed
-        </a>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
-
-<style>
-  .hero {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-    color: white;
-    padding-block: var(--space-20) var(--space-16);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.1;
-  }
-  
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    margin-inline: auto;
-    text-align: center;
-  }
-  
-  .hero-title {
-    font-size: var(--text-4xl);
-    font-weight: 800;
-    margin-bottom: var(--space-3);
-    color: white;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .hero-subtitle {
-    font-size: var(--text-lg);
-    font-weight: 500;
-    margin-bottom: var(--space-6);
-    opacity: 0.9;
-  }
-  
-  .hero-description {
-    font-size: var(--text-lg);
-    line-height: 1.6;
-    opacity: 0.95;
-    max-width: 60ch;
-    margin-inline: auto;
-  }
-  
-  .deals-section {
-    padding-block: var(--space-20);
-  }
-  
-  .section-header {
-    text-align: center;
-    margin-bottom: var(--space-12);
-  }
-  
-  .section-title {
-    font-size: var(--text-3xl);
-    font-weight: 700;
-    margin-bottom: var(--space-3);
-  }
-  
-  .section-description {
-    font-size: var(--text-lg);
-    color: var(--color-text-secondary);
-    max-width: 60ch;
-    margin-inline: auto;
-  }
-  
-  .deals-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: var(--space-8);
-    margin-bottom: var(--space-12);
-  }
-  
-  .deals-footer {
-    padding-top: var(--space-8);
-    border-top: 1px solid var(--color-border);
-  }
-  
-  .disclaimer {
-    font-size: var(--text-sm);
-    color: var(--color-text-tertiary);
-    text-align: center;
-    max-width: 70ch;
-    margin-inline: auto;
   }
   
   .cta-section {
     padding-block: var(--space-20);
-    background-color: var(--color-bg-secondary);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: white;
   }
   
-  .cta-card {
+  .cta-content {
     max-width: 600px;
     margin-inline: auto;
     text-align: center;
-    padding: var(--space-12);
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-2xl);
-    box-shadow: var(--shadow-lg);
   }
   
   .cta-title {
@@ -765,13 +642,49 @@ const formattedDate = today.toLocaleDateString('en-US', {
   
   .cta-description {
     font-size: var(--text-lg);
-    color: var(--color-text-secondary);
     margin-bottom: var(--space-6);
+    opacity: 0.95;
   }
   
-  .btn-lg {
-    padding: var(--space-4) var(--space-8);
-    font-size: var(--text-lg);
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-base);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+    border: 2px solid transparent;
+  }
+  
+  .btn-primary {
+    background-color: white;
+    color: var(--color-primary);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .btn-secondary {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+  }
+  
+  .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
   }
   
   @media (max-width: 768px) {
@@ -783,13 +696,33 @@ const formattedDate = today.toLocaleDateString('en-US', {
       font-size: var(--text-3xl);
     }
     
-    .deals-grid {
-      grid-template-columns: 1fr;
-      gap: var(--space-6);
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
     
-    .cta-card {
-      padding: var(--space-8);
+    .features-grid,
+    .categories-grid,
+    .testimonials-grid {
+      grid-template-columns: 1fr;
     }
+    
+    .cta-buttons {
+      flex-direction: column;
+    }
+    
+    .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: var(--space-6);
+  }
+  
+  .text-sm {
+    font-size: var(--text-sm);
   }
 </style>
