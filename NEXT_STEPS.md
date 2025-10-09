@@ -113,6 +113,20 @@ Every day at 2 AM UTC (10 PM EST):
 2. ✅ Add GitHub secrets
 3. ✅ Test workflow manually
 4. ✅ Set up Cloudflare Pages
+5. ✅ Configure DNS (Namecheap → Cloudflare)
+6. 🔄 **IN PROGRESS:** Fix Cloudflare build output path and deploy
+
+### Next: Complete Site Launch (30 minutes)
+1. ⏳ Fix Cloudflare Pages build configuration:
+   - Go to Cloudflare Pages → PlateDrop project
+   - Settings → Builds & deployments
+   - Change "Build output directory" to `dist`
+   - Retry deployment
+2. ⏳ Add custom domains in Cloudflare Pages:
+   - Custom domains → Add `platedrop.fit`
+   - Add `www.platedrop.fit`
+   - Wait for SSL (5-15 minutes)
+3. ⏳ Verify site is live at https://platedrop.fit
 
 ### This Week
 1. ⏳ Apply for affiliate programs:
@@ -123,11 +137,47 @@ Every day at 2 AM UTC (10 PM EST):
 3. ⏳ Create social media accounts
 4. ⏳ Submit sitemap to search engines
 
-### This Month
-1. ⏳ Monitor content quality
-2. ⏳ Gather initial traffic data
-3. ⏳ Apply for Google AdSense (need traffic first)
-4. ⏳ Add real retailer data sources
+### This Month - Build Out Content & Features
+1. ⏳ **Add Real Product Pages:**
+   - Create individual product review pages
+   - Add comparison pages (e.g., "Best Power Racks Under $500")
+   - Build category pages (barbells, plates, racks, etc.)
+
+2. ⏳ **Expand Content Types:**
+   - Add evergreen guide articles (workout routines, equipment guides)
+   - Create "Best of" roundup posts
+   - Add seasonal content (New Year deals, Black Friday prep)
+
+3. ⏳ **Implement Real Data Sources:**
+   - Replace mock data with actual retailer APIs/scraping
+   - Add Amazon Product Advertising API integration
+   - Set up Rogue Fitness affiliate data feed
+   - Add REP Fitness product tracking
+
+4. ⏳ **SEO & Analytics:**
+   - Set up Google Search Console
+   - Add Google Analytics 4
+   - Submit sitemap to search engines
+   - Create XML sitemap for all pages
+   - Add structured data (Schema.org) for products
+
+5. ⏳ **Monetization Setup:**
+   - Apply for Amazon Associates
+   - Apply for Rogue Fitness affiliate program
+   - Apply for REP Fitness affiliate program
+   - Set up affiliate link tracking
+
+6. ⏳ **Content Quality Improvements:**
+   - Review and refine LLM prompts
+   - Add product image optimization
+   - Implement price history tracking
+   - Add "deal score" algorithm
+
+7. ⏳ **User Engagement:**
+   - Add email newsletter signup
+   - Create social media accounts (Twitter, Instagram)
+   - Add comment system or community features
+   - Build "deal alerts" notification system
 
 ## 💡 Tips for Success
 
@@ -175,24 +225,72 @@ Every day at 2 AM UTC (10 PM EST):
 - Modify validation rules
 - Review LLM temperature setting
 
-## 📈 Success Metrics
+## 📈 Success Metrics & Growth Roadmap
 
-Track these in Google Analytics:
+### Month 1: Launch & Foundation
+**Goals:**
+- ✅ Site live and operational
+- ✅ Daily content generation working
+- 🎯 100 visitors/day
+- 🎯 First affiliate sale
+- 🎯 10+ indexed pages in Google
 
-**Traffic Goals:**
-- Month 1: 100 visitors/day
-- Month 3: 500 visitors/day
-- Month 6: 1,000+ visitors/day
+**Key Tasks:**
+- Complete Cloudflare deployment
+- Apply for all affiliate programs
+- Set up analytics and tracking
+- Submit to search engines
+- Share on Reddit r/homegym (carefully, follow rules)
 
-**Revenue Goals:**
-- Month 1: First affiliate sale
-- Month 3: $50-100/month
-- Month 6: $200-500/month
+### Month 2-3: Content Expansion
+**Goals:**
+- 🎯 500 visitors/day
+- 🎯 $50-100/month revenue
+- 🎯 50+ indexed pages
+- 🎯 5+ backlinks
 
-**Technical Goals:**
+**Key Tasks:**
+- Add 20+ evergreen guide articles
+- Create product comparison pages
+- Build category landing pages
+- Start email newsletter
+- Engage in fitness forums
+- Create social media presence
+
+### Month 4-6: Scale & Optimize
+**Goals:**
+- 🎯 1,000+ visitors/day
+- 🎯 $200-500/month revenue
+- 🎯 100+ indexed pages
+- 🎯 20+ quality backlinks
+
+**Key Tasks:**
+- Implement real-time price tracking
+- Add advanced product filters
+- Build deal alert system
+- Apply for Google AdSense
+- Create YouTube content (optional)
+- Partner with fitness influencers
+
+### Month 7-12: Monetization & Authority
+**Goals:**
+- 🎯 2,000+ visitors/day
+- 🎯 $1,000+/month revenue
+- 🎯 200+ indexed pages
+- 🎯 Domain Authority 20+
+
+**Key Tasks:**
+- Launch premium features (deal alerts, price tracking)
+- Create comprehensive buying guides
+- Build community features
+- Expand to related niches (nutrition, supplements)
+- Consider paid advertising (if profitable)
+
+**Technical Goals (Ongoing):**
 - 99%+ uptime
 - <2s page load time
 - 0 critical errors
+- Mobile-first responsive design
 
 ## 🎓 Learning Resources
 
