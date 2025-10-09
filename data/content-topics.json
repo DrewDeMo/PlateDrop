@@ -1,0 +1,638 @@
+{
+    "workouts": [
+        {
+            "id": "5x5-strength-training",
+            "title": "5x5 Strength Training Workout for Home Gym",
+            "keywords": [
+                "5x5 workout",
+                "strength training home gym",
+                "beginner strength program"
+            ],
+            "difficulty": "beginner",
+            "duration": "45-60 minutes",
+            "equipment": [
+                "barbell",
+                "power rack",
+                "bench",
+                "weight plates"
+            ],
+            "focus": "full body strength"
+        },
+        {
+            "id": "upper-lower-split",
+            "title": "Upper Lower Split Workout Routine",
+            "keywords": [
+                "upper lower split",
+                "4 day workout split",
+                "home gym routine"
+            ],
+            "difficulty": "intermediate",
+            "duration": "60 minutes",
+            "equipment": [
+                "barbell",
+                "dumbbells",
+                "bench",
+                "pull-up bar"
+            ],
+            "focus": "muscle building"
+        },
+        {
+            "id": "push-pull-legs",
+            "title": "Push Pull Legs Workout Program",
+            "keywords": [
+                "push pull legs",
+                "PPL routine",
+                "6 day workout split"
+            ],
+            "difficulty": "intermediate",
+            "duration": "60-75 minutes",
+            "equipment": [
+                "barbell",
+                "dumbbells",
+                "cable system",
+                "bench"
+            ],
+            "focus": "hypertrophy"
+        },
+        {
+            "id": "full-body-beginner",
+            "title": "Full Body Workout for Beginners",
+            "keywords": [
+                "full body workout",
+                "beginner home gym workout",
+                "3 day routine"
+            ],
+            "difficulty": "beginner",
+            "duration": "45 minutes",
+            "equipment": [
+                "barbell",
+                "dumbbells",
+                "bench"
+            ],
+            "focus": "general fitness"
+        },
+        {
+            "id": "hiit-home-gym",
+            "title": "HIIT Workout with Home Gym Equipment",
+            "keywords": [
+                "HIIT home gym",
+                "high intensity workout",
+                "cardio strength training"
+            ],
+            "difficulty": "intermediate",
+            "duration": "30 minutes",
+            "equipment": [
+                "dumbbells",
+                "kettlebell",
+                "jump rope"
+            ],
+            "focus": "fat loss"
+        },
+        {
+            "id": "powerlifting-beginner",
+            "title": "Beginner Powerlifting Program",
+            "keywords": [
+                "powerlifting for beginners",
+                "squat bench deadlift program",
+                "strength training"
+            ],
+            "difficulty": "beginner",
+            "duration": "60-90 minutes",
+            "equipment": [
+                "barbell",
+                "power rack",
+                "bench",
+                "weight plates"
+            ],
+            "focus": "powerlifting"
+        },
+        {
+            "id": "bodyweight-plus-weights",
+            "title": "Bodyweight and Weights Hybrid Workout",
+            "keywords": [
+                "bodyweight workout",
+                "calisthenics weights",
+                "minimal equipment workout"
+            ],
+            "difficulty": "beginner",
+            "duration": "40 minutes",
+            "equipment": [
+                "pull-up bar",
+                "dumbbells",
+                "resistance bands"
+            ],
+            "focus": "functional fitness"
+        },
+        {
+            "id": "deadlift-focused",
+            "title": "Deadlift Focused Strength Program",
+            "keywords": [
+                "deadlift program",
+                "increase deadlift",
+                "posterior chain workout"
+            ],
+            "difficulty": "intermediate",
+            "duration": "60 minutes",
+            "equipment": [
+                "barbell",
+                "weight plates",
+                "lifting straps"
+            ],
+            "focus": "deadlift strength"
+        },
+        {
+            "id": "squat-specialization",
+            "title": "Squat Specialization Workout Plan",
+            "keywords": [
+                "squat program",
+                "increase squat",
+                "leg strength workout"
+            ],
+            "difficulty": "intermediate",
+            "duration": "60 minutes",
+            "equipment": [
+                "barbell",
+                "power rack",
+                "weight plates"
+            ],
+            "focus": "squat strength"
+        },
+        {
+            "id": "bench-press-program",
+            "title": "Bench Press Strength Program",
+            "keywords": [
+                "bench press program",
+                "increase bench press",
+                "chest workout"
+            ],
+            "difficulty": "intermediate",
+            "duration": "50 minutes",
+            "equipment": [
+                "barbell",
+                "bench",
+                "power rack",
+                "weight plates"
+            ],
+            "focus": "bench press strength"
+        },
+        {
+            "id": "olympic-lifting-basics",
+            "title": "Olympic Lifting Basics for Home Gym",
+            "keywords": [
+                "olympic lifting",
+                "clean and jerk",
+                "snatch technique"
+            ],
+            "difficulty": "advanced",
+            "duration": "60 minutes",
+            "equipment": [
+                "barbell",
+                "bumper plates",
+                "lifting platform"
+            ],
+            "focus": "olympic lifting"
+        },
+        {
+            "id": "crossfit-style-wod",
+            "title": "CrossFit Style WOD for Home Gym",
+            "keywords": [
+                "crossfit workout",
+                "WOD home gym",
+                "functional fitness"
+            ],
+            "difficulty": "intermediate",
+            "duration": "30-45 minutes",
+            "equipment": [
+                "barbell",
+                "dumbbells",
+                "pull-up bar",
+                "jump rope"
+            ],
+            "focus": "conditioning"
+        },
+        {
+            "id": "dumbbell-only-workout",
+            "title": "Complete Dumbbell Only Workout",
+            "keywords": [
+                "dumbbell workout",
+                "dumbbell only routine",
+                "minimal equipment"
+            ],
+            "difficulty": "beginner",
+            "duration": "45 minutes",
+            "equipment": [
+                "dumbbells"
+            ],
+            "focus": "full body"
+        },
+        {
+            "id": "kettlebell-strength",
+            "title": "Kettlebell Strength and Conditioning",
+            "keywords": [
+                "kettlebell workout",
+                "kettlebell training",
+                "functional strength"
+            ],
+            "difficulty": "intermediate",
+            "duration": "40 minutes",
+            "equipment": [
+                "kettlebells"
+            ],
+            "focus": "functional fitness"
+        },
+        {
+            "id": "morning-quick-workout",
+            "title": "30 Minute Morning Home Gym Workout",
+            "keywords": [
+                "morning workout",
+                "quick home gym workout",
+                "30 minute routine"
+            ],
+            "difficulty": "beginner",
+            "duration": "30 minutes",
+            "equipment": [
+                "dumbbells",
+                "resistance bands"
+            ],
+            "focus": "general fitness"
+        },
+        {
+            "id": "evening-strength-session",
+            "title": "Evening Strength Training Session",
+            "keywords": [
+                "evening workout",
+                "after work workout",
+                "strength training"
+            ],
+            "difficulty": "intermediate",
+            "duration": "60 minutes",
+            "equipment": [
+                "barbell",
+                "power rack",
+                "bench"
+            ],
+            "focus": "strength"
+        },
+        {
+            "id": "weekend-warrior",
+            "title": "Weekend Warrior Full Body Blast",
+            "keywords": [
+                "weekend workout",
+                "full body workout",
+                "intense training"
+            ],
+            "difficulty": "intermediate",
+            "duration": "75 minutes",
+            "equipment": [
+                "barbell",
+                "dumbbells",
+                "cable system"
+            ],
+            "focus": "full body"
+        },
+        {
+            "id": "deload-week-workout",
+            "title": "Deload Week Recovery Workout",
+            "keywords": [
+                "deload workout",
+                "recovery week",
+                "active recovery"
+            ],
+            "difficulty": "beginner",
+            "duration": "30 minutes",
+            "equipment": [
+                "light dumbbells",
+                "resistance bands"
+            ],
+            "focus": "recovery"
+        },
+        {
+            "id": "garage-gym-essentials",
+            "title": "Essential Garage Gym Workout",
+            "keywords": [
+                "garage gym workout",
+                "basic equipment workout",
+                "simple routine"
+            ],
+            "difficulty": "beginner",
+            "duration": "45 minutes",
+            "equipment": [
+                "barbell",
+                "bench",
+                "weight plates"
+            ],
+            "focus": "full body"
+        },
+        {
+            "id": "basement-gym-routine",
+            "title": "Basement Gym Training Routine",
+            "keywords": [
+                "basement gym workout",
+                "home gym routine",
+                "space efficient workout"
+            ],
+            "difficulty": "intermediate",
+            "duration": "50 minutes",
+            "equipment": [
+                "power rack",
+                "barbell",
+                "dumbbells"
+            ],
+            "focus": "strength"
+        }
+    ],
+    "tips": [
+        {
+            "id": "choosing-first-barbell",
+            "title": "How to Choose Your First Barbell",
+            "keywords": [
+                "best barbell for beginners",
+                "barbell buying guide",
+                "home gym barbell"
+            ],
+            "category": "equipment-selection",
+            "related_equipment": [
+                "barbells"
+            ],
+            "related_guides": [
+                "/guides/barbells"
+            ]
+        },
+        {
+            "id": "power-rack-setup",
+            "title": "Power Rack Setup and Safety Tips",
+            "keywords": [
+                "power rack setup",
+                "squat rack safety",
+                "home gym safety"
+            ],
+            "category": "equipment-setup",
+            "related_equipment": [
+                "power racks"
+            ],
+            "related_guides": [
+                "/guides/power-racks"
+            ]
+        },
+        {
+            "id": "weight-plate-guide",
+            "title": "Weight Plates Buying Guide: Iron vs Bumper",
+            "keywords": [
+                "weight plates guide",
+                "bumper plates vs iron",
+                "best weight plates"
+            ],
+            "category": "equipment-selection",
+            "related_equipment": [
+                "weight plates"
+            ],
+            "related_guides": [
+                "/guides/weight-plates"
+            ]
+        },
+        {
+            "id": "bench-maintenance",
+            "title": "How to Maintain Your Weight Bench",
+            "keywords": [
+                "weight bench maintenance",
+                "bench care",
+                "equipment maintenance"
+            ],
+            "category": "maintenance",
+            "related_equipment": [
+                "benches"
+            ],
+            "related_guides": []
+        },
+        {
+            "id": "barbell-maintenance",
+            "title": "Barbell Maintenance: Keep Your Bar in Top Shape",
+            "keywords": [
+                "barbell maintenance",
+                "barbell care",
+                "prevent rust"
+            ],
+            "category": "maintenance",
+            "related_equipment": [
+                "barbells"
+            ],
+            "related_guides": [
+                "/guides/barbells"
+            ]
+        },
+        {
+            "id": "flooring-options",
+            "title": "Best Flooring Options for Home Gyms",
+            "keywords": [
+                "home gym flooring",
+                "rubber mats",
+                "gym floor"
+            ],
+            "category": "setup",
+            "related_equipment": [],
+            "related_guides": [
+                "/guides/home-gym-setup"
+            ]
+        },
+        {
+            "id": "space-planning",
+            "title": "Home Gym Space Planning Guide",
+            "keywords": [
+                "home gym layout",
+                "gym space planning",
+                "small home gym"
+            ],
+            "category": "setup",
+            "related_equipment": [],
+            "related_guides": [
+                "/guides/home-gym-setup"
+            ]
+        },
+        {
+            "id": "budget-home-gym",
+            "title": "Building a Home Gym on a Budget",
+            "keywords": [
+                "budget home gym",
+                "cheap home gym",
+                "affordable equipment"
+            ],
+            "category": "buying-guide",
+            "related_equipment": [],
+            "related_guides": [
+                "/guides/home-gym-setup"
+            ]
+        },
+        {
+            "id": "dumbbell-selection",
+            "title": "Adjustable vs Fixed Dumbbells: Which to Choose",
+            "keywords": [
+                "adjustable dumbbells",
+                "fixed dumbbells",
+                "dumbbell comparison"
+            ],
+            "category": "equipment-selection",
+            "related_equipment": [
+                "dumbbells"
+            ],
+            "related_guides": []
+        },
+        {
+            "id": "safety-equipment",
+            "title": "Essential Safety Equipment for Home Gyms",
+            "keywords": [
+                "home gym safety",
+                "safety equipment",
+                "training safety"
+            ],
+            "category": "safety",
+            "related_equipment": [
+                "power racks"
+            ],
+            "related_guides": [
+                "/guides/home-gym-setup"
+            ]
+        },
+        {
+            "id": "cable-system-benefits",
+            "title": "Benefits of Adding a Cable System",
+            "keywords": [
+                "cable system home gym",
+                "lat pulldown",
+                "cable exercises"
+            ],
+            "category": "equipment-selection",
+            "related_equipment": [
+                "cable systems"
+            ],
+            "related_guides": []
+        },
+        {
+            "id": "specialty-bars",
+            "title": "When to Invest in Specialty Barbells",
+            "keywords": [
+                "specialty barbells",
+                "trap bar",
+                "safety squat bar"
+            ],
+            "category": "equipment-selection",
+            "related_equipment": [
+                "barbells"
+            ],
+            "related_guides": [
+                "/guides/barbells"
+            ]
+        },
+        {
+            "id": "cardio-equipment",
+            "title": "Best Cardio Equipment for Home Gyms",
+            "keywords": [
+                "home gym cardio",
+                "assault bike",
+                "rowing machine"
+            ],
+            "category": "equipment-selection",
+            "related_equipment": [
+                "cardio"
+            ],
+            "related_guides": []
+        },
+        {
+            "id": "used-equipment",
+            "title": "Buying Used Home Gym Equipment: What to Look For",
+            "keywords": [
+                "used gym equipment",
+                "buying used weights",
+                "secondhand equipment"
+            ],
+            "category": "buying-guide",
+            "related_equipment": [],
+            "related_guides": []
+        },
+        {
+            "id": "climate-control",
+            "title": "Climate Control for Garage Gyms",
+            "keywords": [
+                "garage gym temperature",
+                "gym climate control",
+                "garage gym winter"
+            ],
+            "category": "setup",
+            "related_equipment": [],
+            "related_guides": [
+                "/guides/home-gym-setup"
+            ]
+        },
+        {
+            "id": "noise-reduction",
+            "title": "Reducing Noise in Your Home Gym",
+            "keywords": [
+                "home gym noise",
+                "quiet home gym",
+                "noise reduction"
+            ],
+            "category": "setup",
+            "related_equipment": [],
+            "related_guides": []
+        },
+        {
+            "id": "lighting-setup",
+            "title": "Optimal Lighting for Your Home Gym",
+            "keywords": [
+                "home gym lighting",
+                "gym lights",
+                "workout lighting"
+            ],
+            "category": "setup",
+            "related_equipment": [],
+            "related_guides": [
+                "/guides/home-gym-setup"
+            ]
+        },
+        {
+            "id": "mirror-placement",
+            "title": "Mirror Placement and Form Checking",
+            "keywords": [
+                "gym mirrors",
+                "form check",
+                "mirror placement"
+            ],
+            "category": "setup",
+            "related_equipment": [],
+            "related_guides": []
+        },
+        {
+            "id": "storage-solutions",
+            "title": "Smart Storage Solutions for Home Gyms",
+            "keywords": [
+                "gym storage",
+                "weight storage",
+                "equipment organization"
+            ],
+            "category": "setup",
+            "related_equipment": [],
+            "related_guides": []
+        },
+        {
+            "id": "progressive-overload",
+            "title": "Progressive Overload in Your Home Gym",
+            "keywords": [
+                "progressive overload",
+                "strength progression",
+                "training progression"
+            ],
+            "category": "training",
+            "related_equipment": [],
+            "related_guides": []
+        }
+    ],
+    "metadata": {
+        "version": "1.0",
+        "last_updated": "2025-01-09",
+        "total_workouts": 20,
+        "total_tips": 20,
+        "usage_tracking": {
+            "workouts_used": [],
+            "tips_used": []
+        }
+    }
+}

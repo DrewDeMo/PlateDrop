@@ -1,0 +1,156 @@
+name: Generate Daily Content
+
+on:
+  schedule:
+    # Run at 6:00 AM EST (10:00 AM UTC) Monday-Friday
+    - cron: '0 10 * * 1-5'
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+  issues: write
+
+env:
+  NODE_VERSION: '20'
+
+jobs:
+  generate-content:
+    runs-on: ubuntu-latest
+    environment: OPENAI_API_KEY
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Generate daily content
+        run: node scripts/generate/content-scheduler.js
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PRIMARY_SITE_URL: ${{ secrets.PRIMARY_SITE_URL }}
+          SITE_NAME: ${{ secrets.SITE_NAME }}
+      
+      - name: Validate generated content
+        run: |
+          echo "Checking for generated content..."
+          
+          # Check if workout directory exists and has files
+          if [ -d "content/workouts" ] && [ "$(ls -A content/workouts 2>/dev/null)" ]; then
+            echo "✓ Workout content found"
+            ls -lh content/workouts/*.md 2>/dev/null | tail -5
+          fi
+          
+          # Check if tips directory exists and has files
+          if [ -d "content/tips" ] && [ "$(ls -A content/tips 2>/dev/null)" ]; then
+            echo "✓ Tips content found"
+            ls -lh content/tips/*.md 2>/dev/null | tail -5
+          fi
+          
+          echo "Content validation complete"
+        continue-on-error: true
+      
+      - name: Commit and push changes
+        run: |
+          git config user.name "PlateDrop Bot"
+          git config user.email "bot@platedrop.fit"
+          
+          # Add generated content and updated topics database
+          git add content/workouts content/tips data/content-topics.json
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No new content generated (possibly weekend or already generated)"
+            exit 0
+          fi
+          
+          # Get current date for commit message
+          COMMIT_DATE=$(date +%Y-%m-%d)
+          
+          # Count new files
+          WORKOUT_COUNT=$(git diff --staged --name-only | grep -c "content/workouts" || echo "0")
+          TIP_COUNT=$(git diff --staged --name-only | grep -c "content/tips" || echo "0")
+          
+          # Create descriptive commit message
+          COMMIT_MSG="Daily content: $COMMIT_DATE"
+          if [ "$WORKOUT_COUNT" -gt 0 ]; then
+            COMMIT_MSG="$COMMIT_MSG - $WORKOUT_COUNT workout(s)"
+          fi
+          if [ "$TIP_COUNT" -gt 0 ]; then
+            COMMIT_MSG="$COMMIT_MSG - $TIP_COUNT tip(s)"
+          fi
+          
+          # Commit changes
+          git commit -m "$COMMIT_MSG"
+          
+          # Pull with rebase to handle any remote changes
+          git pull --rebase origin main || {
+            echo "Rebase failed, attempting to resolve..."
+            git rebase --abort
+            git pull --no-rebase origin main
+            git push origin main
+            exit 0
+          }
+          
+          # Push changes
+          git push origin main
+          
+          echo "✅ Content committed and pushed successfully"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Generate summary
+        if: success()
+        run: |
+          echo "## 📊 Content Generation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date +%Y-%m-%d)" >> $GITHUB_STEP_SUMMARY
+          echo "**Day:** $(date +%A)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Count files in each directory
+          if [ -d "content/workouts" ]; then
+            WORKOUT_TOTAL=$(ls -1 content/workouts/*.md 2>/dev/null | wc -l)
+            echo "**Workouts Generated:** $WORKOUT_TOTAL total" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          if [ -d "content/tips" ]; then
+            TIP_TOTAL=$(ls -1 content/tips/*.md 2>/dev/null | wc -l)
+            echo "**Tips Generated:** $TIP_TOTAL total" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Content generation completed successfully!" >> $GITHUB_STEP_SUMMARY
+      
+      - name: Create issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const date = new Date().toISOString().split('T')[0];
+            const dayName = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+            
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `❌ Daily content generation failed - ${date}`,
+              body: `The daily content generation workflow failed on ${dayName}, ${date}.
+              
+              **Workflow Run:** ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}
+              
+              **Possible causes:**
+              - OpenAI API key issue
+              - Rate limiting
+              - Network connectivity
+              - Content generation error
+              
+              Please check the logs and fix any issues.`,
+              labels: ['automation', 'content-generation', 'bug']
+            })
