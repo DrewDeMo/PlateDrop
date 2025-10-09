@@ -53,7 +53,57 @@ const formattedDate = today.toLocaleDateString('en-US', {
 ---
 
 <BaseLayout
-  
+  title="Today's Home Gym Deals"
+  description="Daily curated deals on home gym equipment including power racks, barbells, dumbbells, and cardio machines. Save on quality fitness gear."
+>
+  <div class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Today's Best Home Gym Deals
+        </h1>
+        <p class="hero-subtitle">
+          {formattedDate}
+        </p>
+        <p class="hero-description">
+          Curated daily deals on quality home gym equipment. We track prices across major retailers
+          so you don't have to. All deals verified and updated daily.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <section class="deals-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Deals</h2>
+        <p class="section-description">
+          Hand-picked deals with the best discounts and value
+        </p>
+      </div>
+      
+      <div class="deals-grid">
+        {deals.length > 0 ? (
+          deals.map((deal) => (
+            <DealCard {...deal} />
+          ))
+        ) : (
+          <div class="no-deals">
+            <p>No deals available yet. Check back soon!</p>
+            <p class="text-sm">The automated system runs daily at 2 AM UTC to fetch the latest deals.</p>
+          </div>
+        )}
+      </div>
+      
+      <div class="deals-footer">
+        <p class="disclaimer">
+          <strong>Price Disclaimer:</strong> Prices and availability are accurate as of the time of posting
+          but may change. We earn from qualifying purchases through affiliate links.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="stats-section">
     <div class="container">
       <div class="stats-grid">
