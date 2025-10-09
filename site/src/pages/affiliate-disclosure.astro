@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+import { marked } from 'marked';
+
+const markdownPath = join(process.cwd(), '../content/pages/affiliate-disclosure.md');
+const markdownContent = readFileSync(markdownPath, 'utf-8');
+
+// Extract frontmatter and content
+const frontmatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
+const match = markdownContent.match(frontmatterRegex);
+
+let title = 'Affiliate Disclosure';
+let description = 'PlateDrop affiliate disclosure and commission information';
+let content = markdownContent;
+
+if (match) {
+  const frontmatter = match[1];
+  content = match[2];
+  
+  const titleMatch = frontmatter.match(/title:\s*"([^"]*)"/);
+  const descMatch = frontmatter.match(/description:\s*"([^"]*)"/);
+  
+  if (titleMatch) title = titleMatch[1];
+  if (descMatch) description = descMatch[1];
+}
+
+const htmlContent = marked(content);
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="legal-page">
+    <div class="container">
+      <article class="legal-content" set:html={htmlContent} />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .legal-page {
+    padding: var(--space-16) 0;
+    min-height: 60vh;
+  }
+
+  .legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--gradient-card);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-12);
+  }
+
+  .legal-content :global(h1) {
+    font-size: var(--text-4xl);
+    font-weight: 800;
+    margin-bottom: var(--space-6);
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .legal-content :global(h2) {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-4);
+    color: var(--color-text-primary);
+  }
+
+  .legal-content :global(h3) {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-3);
+    color: var(--color-text-primary);
+  }
+
+  .legal-content :global(p) {
+    margin-bottom: var(--space-4);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+
+  .legal-content :global(ul),
+  .legal-content :global(ol) {
+    margin-bottom: var(--space-4);
+    padding-left: var(--space-6);
+    color: var(--color-text-secondary);
+  }
+
+  .legal-content :global(li) {
+    margin-bottom: var(--space-2);
+    line-height: 1.7;
+  }
+
+  .legal-content :global(a) {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .legal-content :global(a:hover) {
+    color: var(--color-secondary);
+  }
+
+  .legal-content :global(strong) {
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
+
+  .legal-content :global(hr) {
+    border: none;
+    border-top: 1px solid var(--glass-border);
+    margin: var(--space-8) 0;
+  }
+
+  @media (max-width: 768px) {
+    .legal-page {
+      padding: var(--space-8) 0;
+    }
+
+    .legal-content {
+      padding: var(--space-6);
+    }
+
+    .legal-content :global(h1) {
+      font-size: var(--text-3xl);
+    }
+  }
+</style>

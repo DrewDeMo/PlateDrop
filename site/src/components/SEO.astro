@@ -8,6 +8,8 @@ interface Props {
   modifiedTime?: string;
   author?: string;
   canonical?: string;
+  schemaType?: 'WebPage' | 'Article' | 'FAQPage' | 'ItemList';
+  structuredData?: any;
 }
 
 const {
@@ -18,7 +20,9 @@ const {
   publishedTime,
   modifiedTime,
   author = 'PlateDrop',
-  canonical
+  canonical,
+  schemaType,
+  structuredData
 } = Astro.props;
 
 const siteName = 'PlateDrop';
@@ -28,28 +32,55 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, siteUrl).href;
 const imageUrl = image?.startsWith('http') ? image : new URL(image, siteUrl).href;
 
 // JSON-LD structured data
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': article ? 'Article' : 'WebPage',
-  headline: title,
-  description: description,
-  image: imageUrl,
-  author: {
-    '@type': 'Organization',
-    name: author
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: siteName,
-    logo: {
-      '@type': 'ImageObject',
-      url: new URL('/images/logo.png', siteUrl).href
-    }
-  },
-  url: canonicalURL,
-  ...(publishedTime && { datePublished: publishedTime }),
-  ...(modifiedTime && { dateModified: modifiedTime })
-};
+let jsonLd: any;
+
+if (structuredData) {
+  // Use custom structured data if provided
+  jsonLd = structuredData;
+} else {
+  // Default structured data based on type
+  const baseSchema = {
+    '@context': 'https://schema.org',
+    '@type': schemaType || (article ? 'Article' : 'WebPage'),
+    headline: title,
+    description: description,
+    image: imageUrl,
+    url: canonicalURL,
+  };
+
+  if (article || schemaType === 'Article') {
+    jsonLd = {
+      ...baseSchema,
+      '@type': 'Article',
+      author: {
+        '@type': 'Organization',
+        name: author
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: siteName,
+        logo: {
+          '@type': 'ImageObject',
+          url: new URL('/images/logo.png', siteUrl).href
+        }
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': canonicalURL
+      },
+      ...(publishedTime && { datePublished: publishedTime }),
+      ...(modifiedTime && { dateModified: modifiedTime })
+    };
+  } else {
+    jsonLd = {
+      ...baseSchema,
+      publisher: {
+        '@type': 'Organization',
+        name: siteName
+      }
+    };
+  }
+}
 ---
 
 <!-- Primary Meta Tags -->

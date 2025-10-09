@@ -27,6 +27,7 @@
     "dotenv": "^16.4.5",
     "gray-matter": "^4.0.3",
     "lucide-astro": "^0.545.0",
+    "marked": "^16.4.0",
     "node-fetch": "^3.3.2",
     "openai": "^4.58.1",
     "sharp": "^0.33.5",

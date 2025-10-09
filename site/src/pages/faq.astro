@@ -1,10 +1,100 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Define FAQ structured data
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is PlateDrop?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'PlateDrop is a curated deals platform for home gym equipment. We track prices across major retailers and highlight the best deals on quality fitness gear. Our AI-powered system updates daily to ensure you never miss a great deal.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'How do you find deals?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We use automated systems to monitor prices across Amazon, Rogue Fitness, REP Fitness, and other major retailers. Our algorithms identify genuine discounts by comparing current prices to historical data, ensuring we only feature real deals.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Are the deals legitimate?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes! We verify all deals against historical pricing data. We don\'t feature fake "discounts" where retailers inflate the original price. If we list a deal, it\'s a genuine price reduction.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'How often do you update deals?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Our system runs daily at 2 AM UTC (10 PM EST / 9 PM EDT). New deals are posted every morning, and expired deals are removed automatically.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does it cost to build a home gym?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A minimalist setup costs $800-1,000 (squat stands, barbell, plates, bench). A standard setup costs $2,000-3,000 (power rack, barbell, plates, bench, dumbbells). A premium setup costs $5,000-8,000 (multiple bars, specialty equipment, cardio). Most people start with $1,500-2,500 and expand over time.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'What equipment do I need to start?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The essentials are: Power rack or squat stands ($200-800), Olympic barbell ($150-400), Weight plates ($300-600 for starter set), Adjustable bench ($150-300), and Flooring ($150-300). Total: $950-2,400 for a complete basic setup.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Should I buy new or used equipment?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Best to buy used: Weight plates (iron lasts forever), Power racks (simple, durable), Benches (if in good condition). Best to buy new: Barbells (bearings/bushings wear out), Adjustable dumbbells (complex mechanisms), Cardio equipment (motors and electronics).'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'How much space do I need?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Minimum: 8\' × 8\' (64 sq ft). Comfortable: 10\' × 10\' (100 sq ft). Ideal: 12\' × 12\' (144 sq ft). You also need 7-8 feet of clearance in front of your rack for barbell exercises.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Power Rack vs Squat Stands?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Power Rack (4-post): More stable, better safety features, more attachment options, larger footprint, $400-2,000. Squat Stands (2-post): Smaller footprint, more affordable, less stable (needs bolting), fewer attachments, $200-800. For most home gyms, a power rack is worth the investment.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Olympic vs Standard Barbell?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Always choose Olympic (7 feet, 45 lbs, 2" sleeves). Standard barbells (1" sleeves) limit your options and have poor resale value. Olympic bars are the industry standard for good reason.'
+      }
+    }
+  ]
+};
 ---
 
 <BaseLayout
   title="Frequently Asked Questions - PlateDrop"
   description="Common questions about home gym equipment, deals, and building your perfect training space. Get expert answers to your fitness equipment questions."
+  schemaType="FAQPage"
+  structuredData={faqSchema}
 >
   <div class="faq-page">
     <section class="faq-hero">

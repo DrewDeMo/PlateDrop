@@ -1,0 +1,9 @@
+# ads.txt for PlateDrop
+# This file lists authorized digital sellers for advertising inventory
+
+# Google AdSense
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+
+# Note: Replace pub-0000000000000000 with your actual Google AdSense publisher ID
+# Add additional advertising partners as needed following the format:
+# domain.com, publisher-id, RELATIONSHIP, certification-authority-id

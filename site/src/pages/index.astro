@@ -45,17 +45,45 @@ function getCategoryImage(category: string): string {
 }
 
 const today = new Date();
-const formattedDate = today.toLocaleDateString('en-US', { 
+const formattedDate = today.toLocaleDateString('en-US', {
   weekday: 'long',
-  year: 'numeric', 
-  month: 'long', 
-  day: 'numeric' 
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
 });
+
+const siteUrl = import.meta.env.PRIMARY_SITE_URL || 'https://platedrop.fit';
+
+// Create ItemList structured data for deals
+const itemListSchema = deals.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: deals.map((deal, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'Product',
+      name: deal.name,
+      description: `${deal.name} - ${deal.discount_pct}% off`,
+      image: deal.image_url,
+      offers: {
+        '@type': 'Offer',
+        price: deal.current_price,
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        url: deal.url,
+        priceValidUntil: new Date(Date.now() + 86400000).toISOString().split('T')[0]
+      }
+    }
+  }))
+} : null;
 ---
 
 <BaseLayout
   title="Today's Home Gym Deals"
   description="Daily curated deals on home gym equipment including power racks, barbells, dumbbells, and cardio machines. Save on quality fitness gear."
+  schemaType="ItemList"
+  structuredData={itemListSchema}
 >
   <div class="hero">
     <div class="hero-bg-animation"></div>
@@ -101,6 +129,47 @@ const formattedDate = today.toLocaleDateString('en-US', {
     </div>
   </div>
 
+  <section class="intro-section">
+    <div class="container">
+      <div class="intro-content">
+        <h2>Your Daily Source for Verified Home Gym Deals</h2>
+        <p>
+          Building a home gym shouldn't break the bank. Every day, we scan thousands of products across major fitness equipment retailers to bring you the most significant, verified discounts on quality gear. Our automated system tracks historical pricing data to ensure every deal represents genuine savings—no inflated "original" prices, no fake discounts.
+        </p>
+        <p>
+          Whether you're setting up your first home gym or upgrading existing equipment, finding legitimate deals can be time-consuming and frustrating. That's where PlateDrop comes in. We do the heavy lifting so you can focus on what matters: your training.
+        </p>
+        
+        <h3>How We Find and Verify Deals</h3>
+        <p>
+          Our system monitors prices 24/7 across Amazon, Rogue Fitness, REP Fitness, Titan Fitness, and other leading retailers. When a product's price drops significantly below its 30-90 day average, our algorithms flag it for inclusion. But we don't stop there—each deal is validated against multiple criteria:
+        </p>
+        <ul>
+          <li><strong>Historical Price Verification:</strong> We maintain extensive price history databases to confirm genuine discounts</li>
+          <li><strong>Brand Quality Assessment:</strong> Only equipment from reputable manufacturers makes our list</li>
+          <li><strong>Value Analysis:</strong> We consider not just the discount percentage, but the actual value proposition</li>
+          <li><strong>Stock Availability:</strong> Deals are removed within 24 hours if products go out of stock</li>
+        </ul>
+
+        <h3>What Makes Today's Deals Special</h3>
+        <p>
+          Today's featured deals represent the best opportunities we've identified in the past 24 hours. These aren't just any sales—they're products that meet our strict criteria for quality, value, and genuine savings. From power racks and barbells to cardio equipment and accessories, each item has been vetted to ensure you're getting a legitimate deal on equipment that will serve you well for years to come.
+        </p>
+        <p>
+          The home gym equipment market is dynamic, with prices fluctuating based on inventory levels, seasonal demand, and promotional cycles. By checking PlateDrop daily, you'll catch these opportunities as they arise. Many of our best deals sell out within hours, so acting quickly on items you've been watching can lead to significant savings.
+        </p>
+
+        <h3>Building Your Home Gym Strategically</h3>
+        <p>
+          Smart home gym builders know that patience and timing can save thousands of dollars. Rather than buying everything at once at retail prices, successful gym builders watch for deals on their priority items. Start with the essentials—a quality power rack, barbell, and plates—then add specialized equipment as deals arise.
+        </p>
+        <p>
+          Our <a href="/guides">buying guides</a> can help you understand what to look for in each category, from weight capacity and build quality to warranty coverage and upgrade potential. Combined with our daily deals, you'll have everything you need to make informed purchasing decisions.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="deals-section">
     <div class="container">
       <div class="section-header">
@@ -111,6 +180,14 @@ const formattedDate = today.toLocaleDateString('en-US', {
         <h2 class="section-title">Today's Featured Deals</h2>
         <p class="section-description">
           Hand-picked deals with the best discounts and value. Updated every 24 hours.
+        </p>
+      </div>
+
+      <div class="affiliate-disclosure-banner">
+        <p>
+          <strong>Affiliate Disclosure:</strong> We participate in the Amazon Associates Program and other affiliate programs.
+          We may earn commissions from qualifying purchases at no extra cost to you.
+          <a href="/affiliate-disclosure">Learn more</a>
         </p>
       </div>
       
@@ -520,6 +597,73 @@ const formattedDate = today.toLocaleDateString('en-US', {
   }
   
   /* Sections */
+  .intro-section {
+    padding: var(--space-20) 0;
+    background: var(--color-bg-primary);
+  }
+
+  .intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .intro-content h2 {
+    font-size: var(--text-3xl);
+    font-weight: 800;
+    margin-bottom: var(--space-6);
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .intro-content h3 {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-top: var(--space-10);
+    margin-bottom: var(--space-4);
+    color: var(--color-text-primary);
+  }
+
+  .intro-content p {
+    font-size: var(--text-lg);
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-5);
+  }
+
+  .intro-content ul {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-6) 0;
+  }
+
+  .intro-content li {
+    padding-left: var(--space-8);
+    position: relative;
+    margin-bottom: var(--space-4);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+
+  .intro-content li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+  }
+
+  .intro-content a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    transition: color var(--transition-fast);
+  }
+
+  .intro-content a:hover {
+    color: var(--color-secondary);
+  }
+
   .deals-section {
     padding-block: var(--space-24);
     position: relative;
@@ -977,6 +1121,31 @@ blur);
       flex-direction: column;
       gap: var(--space-4);
     }
+  }
+
+  .affiliate-disclosure-banner {
+    background: rgba(255, 107, 53, 0.1);
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    margin-bottom: var(--space-8);
+    text-align: center;
+  }
+
+  .affiliate-disclosure-banner p {
+    margin: 0;
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+
+  .affiliate-disclosure-banner a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    font-weight: 600;
+  }
+
+  .affiliate-disclosure-banner a:hover {
+    color: var(--color-secondary);
   }
 </style>
     backdrop-filter: var(--glass-
