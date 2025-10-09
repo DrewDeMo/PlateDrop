@@ -22,8 +22,10 @@ export default defineConfig({
   },
   outDir: '../dist',
   build: {
-    inlineStylesheets: 'auto'
+    inlineStylesheets: 'auto',
+    assets: '_astro'
   },
+  scopedStyleStrategy: 'where',
   vite: {
     resolve: {
       alias: {

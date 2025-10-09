@@ -93,7 +93,7 @@ const {
     z-index: 10000;
     font-weight: 700;
     box-shadow: var(--shadow-glow);
-    transition: top var(--transition-base);
+    transition: top 300ms ease-out !important;
   }
   
   .skip-link:focus {
@@ -124,7 +124,7 @@ const {
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
-    transition: all var(--transition-base);
+    transition: all 400ms cubic-bezier(0.34, 1.56, 0.64, 1) !important;
     z-index: 999;
   }
   
@@ -135,12 +135,12 @@ const {
   }
   
   .scroll-to-top:hover {
-    transform: translateY(-4px) scale(1.05);
+    transform: translateY(-6px) scale(1.1) !important;
     box-shadow: var(--shadow-glow), var(--shadow-2xl);
   }
   
   .scroll-to-top:active {
-    transform: translateY(-2px) scale(0.98);
+    transform: translateY(-2px) scale(0.95) !important;
   }
   
   @media (max-width: 768px) {
