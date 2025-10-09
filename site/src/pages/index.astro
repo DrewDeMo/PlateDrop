@@ -83,16 +83,16 @@ const formattedDate = today.toLocaleDateString('en-US', {
       </div>
       
       <div class="deals-grid">
-        {deals.length > 0 ? (
+        {deals.length > 0 ?
           deals.map((deal) => (
             <DealCard {...deal} />
           ))
-        ) : (
+         :
           <div class="no-deals">
             <p>No deals available yet. Check back soon!</p>
             <p class="text-sm">The automated system runs daily at 2 AM UTC to fetch the latest deals.</p>
           </div>
-        )}
+        }
       </div>
       
       <div class="deals-footer">
