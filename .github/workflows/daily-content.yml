@@ -62,8 +62,10 @@ jobs:
           git config user.name "PlateDrop Bot"
           git config user.email "bot@platedrop.fit"
           
-          # Add generated content and updated topics database
-          git add content/workouts content/tips data/content-topics.json
+          # Add generated content and updated topics database (only if they exist)
+          [ -d "content/workouts" ] && git add content/workouts || echo "No workouts directory"
+          [ -d "content/tips" ] && git add content/tips || echo "No tips directory"
+          [ -f "data/content-topics.json" ] && git add data/content-topics.json || echo "No topics database"
           
           # Check if there are changes to commit
           if git diff --staged --quiet; then
