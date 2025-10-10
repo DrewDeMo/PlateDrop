@@ -14,40 +14,35 @@ PlateDrop is committed to providing honest, unbiased information about home gym 
 
 ## Affiliate Relationships
 
-PlateDrop participates in various affiliate marketing programs, which means we may earn commissions when you click links and make purchases through our site.
+PlateDrop may earn commissions when you click links and make purchases through our site. We work with various fitness equipment retailers to bring you the best deals.
 
-### Current Affiliate Programs
+### How We Work
 
-We are participants in the following affiliate programs:
+We monitor deals from multiple retailers and may earn commissions from qualifying purchases. Our focus is on finding genuine discounts and value for home gym builders.
 
-- **Amazon Associates Program**
-- **Rogue Fitness Affiliate Program**
-- **REP Fitness Affiliate Program**
-- Other fitness equipment retailers (as disclosed)
+## How Retailer Links Work
 
-## How Affiliate Links Work
-
-When you click an affiliate link on our site and make a purchase:
+When you click a retailer link on our site and make a purchase:
 
 1. You are redirected to the retailer's website
-2. The retailer tracks your purchase using a unique identifier
+2. The retailer may track your purchase using a unique identifier
 3. We may earn a small commission if you complete a purchase
-4. **You pay the same price** - affiliate commissions do not increase your cost
+4. **You pay the same price** - commissions do not increase your cost
 
 ## Our Editorial Independence
 
 ### What We Promise
 
-- **Honest Reviews:** Our opinions are our own and not influenced by affiliate relationships
+- **Honest Reviews:** Our opinions are our own and not influenced by commission rates
 - **Accurate Information:** We verify prices and specifications before publishing
-- **Best Deals:** We highlight genuine discounts and value, not just high-commission products
-- **Transparency:** We clearly disclose when content contains affiliate links
+- **Best Deals:** We highlight genuine discounts and value for home gym builders
+- **Transparency:** We clearly disclose our commission relationships
 
 ### What We Don't Do
 
 - We do not inflate prices to increase commissions
 - We do not recommend products solely based on commission rates
-- We do not hide or misrepresent affiliate relationships
+- We do not hide or misrepresent our commission relationships
 - We do not guarantee product availability or pricing
 
 ## Price Accuracy
@@ -61,18 +56,18 @@ We make every effort to ensure prices are accurate at the time of publication. H
 
 ## Your Support
 
-When you use our affiliate links, you support PlateDrop at no extra cost to you. This helps us:
+When you use our retailer links, you support PlateDrop at no extra cost to you. This helps us:
 
 - Maintain and improve the website
 - Research and test equipment
 - Create helpful content
 - Keep the site free for all users
 
-## Questions About Affiliate Relationships
+## Questions About Our Partnerships
 
-If you have questions about our affiliate relationships or specific product recommendations, please contact us at:
+If you have questions about our retailer partnerships or specific product recommendations, please contact us at:
 
-**Email:** affiliate@platedrop.fit
+**Email:** contact@platedrop.fit
 
 ## FTC Compliance
 
@@ -80,7 +75,7 @@ This disclosure complies with the Federal Trade Commission's guidelines on endor
 
 ## Changes to This Disclosure
 
-We may update this disclosure as we add or remove affiliate partnerships. Check this page periodically for updates.
+We may update this disclosure as we add or remove retailer partnerships. Check this page periodically for updates.
 
 ---
 

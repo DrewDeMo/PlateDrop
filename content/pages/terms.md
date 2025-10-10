@@ -19,7 +19,7 @@ By accessing and using PlateDrop ("the Site"), you accept and agree to be bound 
 You may use this Site for:
 - Browsing home gym equipment deals
 - Reading buying guides and educational content
-- Clicking affiliate links to purchase products
+- Clicking retailer links to purchase products
 - Accessing publicly available information
 
 ### Prohibited Use
@@ -31,9 +31,9 @@ You may not:
 - Copy, reproduce, or redistribute Site content without permission
 - Use automated systems to scrape or collect data from the Site
 
-## Affiliate Relationships
+## Retailer Partnerships
 
-PlateDrop participates in affiliate marketing programs, including the Amazon Associates Program. We may earn commissions from qualifying purchases made through links on our Site. See our [Affiliate Disclosure](/affiliate-disclosure) for complete details.
+PlateDrop may earn commissions from qualifying purchases made through retailer links on our Site. See our [Affiliate Disclosure](/affiliate-disclosure) for complete details.
 
 ## Content and Information
 

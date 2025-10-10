@@ -44,7 +44,7 @@ publishedTime: "[ISO 8601 date]"
 
 ---
 
-**Price Disclaimer:** Prices and availability accurate as of [date/time]. We earn from qualifying purchases through affiliate links at no extra cost to you.
+**Price Disclaimer:** Prices and availability accurate as of [date/time].
 
 PRODUCT DATA:
 {product_json}

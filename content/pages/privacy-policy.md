@@ -41,15 +41,11 @@ We use collected information to:
 
 ## Third-Party Services
 
-### Affiliate Programs
+### Retailer Partnerships
 
-We participate in affiliate programs including:
+We work with various fitness equipment retailers and may earn commissions from qualifying purchases.
 
-- Amazon Associates
-- Rogue Fitness Affiliate Program
-- REP Fitness Affiliate Program
-
-When you click affiliate links, these companies may collect information about your visit. Please review their privacy policies.
+When you click retailer links, these companies may collect information about your visit. Please review their privacy policies.
 
 ### Analytics
 

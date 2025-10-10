@@ -73,215 +73,351 @@ const structuredData = [
   <HeroSection formattedDate={formattedDate} />
 
   <!-- SEO Intro Section -->
-  <section class="seo-intro-section py-16 bg-bg text-text">
-    <div class="container max-w-[1100px] mx-auto px-6">
-      <div class="grid gap-12 items-start md:grid-cols-[1.2fr_1fr]">
-        <div class="seo-intro-copy">
-          <h2 class="text-3xl md:text-[2.5rem] font-black tracking-tight mb-6">
+  <section class="seo-intro-section relative py-24 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-bg via-bg-secondary to-bg opacity-90"></div>
+    <div class="absolute inset-0 bg-gradient-mesh opacity-30"></div>
+    <div class="container max-w-[1200px] mx-auto px-6 relative z-10">
+      <div class="grid gap-16 items-start lg:grid-cols-[1.3fr_1fr]">
+        <div class="seo-intro-copy space-y-8">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-sm font-bold text-primary backdrop-blur-sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+            <span>Industry Leading</span>
+          </div>
+          <h2 class="text-4xl lg:text-5xl font-black tracking-tight leading-[1.1] bg-gradient-to-br from-text via-text to-text-secondary bg-clip-text text-transparent">
             Why PlateDrop Leads the Home Gym Deal Search Results
           </h2>
-          <p class="text-base md:text-lg leading-relaxed text-text-secondary mb-6">
-            PlateDrop monitors the same search phrases lifters use—like "best home gym deals," "cheap squat rack," and "adjustable dumbbell sale." Our price history checks filter out fake MSRP discounts so every feature below reflects a real opportunity to save on trusted brands.
-          </p>
-          <p class="text-base md:text-lg leading-relaxed text-text-secondary mb-6">
-            Whether you're piecing together your first garage gym or upgrading with a smart cardio machine, you will find the exact retailer links, specs, and price drops you need. Dive deeper with our in-depth <a href="/guides" class="text-primary font-semibold underline hover:text-secondary">home gym buying guides</a> and <a href="/workouts" class="text-primary font-semibold underline hover:text-secondary">training plans</a> to maximize every piece of equipment you bring home.
-          </p>
+          <div class="space-y-6">
+            <p class="text-lg leading-relaxed text-text-secondary">
+              PlateDrop monitors the same search phrases lifters use—like "best home gym deals," "cheap squat rack," and "adjustable dumbbell sale." Our price history checks filter out fake MSRP discounts so every feature below reflects a real opportunity to save on trusted brands.
+            </p>
+            <p class="text-lg leading-relaxed text-text-secondary">
+              Whether you're piecing together your first garage gym or upgrading with a smart cardio machine, you will find the exact retailer links, specs, and price drops you need. Dive deeper with our in-depth <a href="/guides" class="text-primary font-bold underline decoration-2 underline-offset-4 hover:text-primary-light transition-colors duration-base">home gym buying guides</a> and <a href="/workouts" class="text-primary font-bold underline decoration-2 underline-offset-4 hover:text-primary-light transition-colors duration-base">training plans</a> to maximize every piece of equipment you bring home.
+            </p>
+          </div>
         </div>
-        <div class="seo-intro-sidebar bg-surface border border-border rounded-2xl p-8 shadow-[0_12px_40px_rgba(0,0,0,0.12)]">
-          <h3 class="text-xl font-bold text-text mb-4">Popular Deal Categories</h3>
-          <ul class="space-y-3 text-base text-text-secondary">
-            <li class="flex items-start gap-2">
-              <span class="mt-1 text-primary">•</span>
-              <span>Power racks &amp; squat stands with multi-grip pull-up bars</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="mt-1 text-primary">•</span>
-              <span>Olympic barbells, bumper plates, and quick-change collars</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="mt-1 text-primary">•</span>
-              <span>Adjustable dumbbells, kettlebells, and resistance systems</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="mt-1 text-primary">•</span>
-              <span>Treadmills, rowers, bikes, and connected cardio equipment</span>
-            </li>
-          </ul>
+        <div class="seo-intro-sidebar relative group">
+          <div class="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl blur-2xl group-hover:opacity-10 transition-opacity duration-slow"></div>
+          <div class="relative bg-surface-elevated border border-border-light rounded-3xl p-10 shadow-soft-lg backdrop-blur-glass">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-glow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-black text-text">Popular Deal Categories</h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3 group/item">
+                <div class="mt-1 w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover/item:bg-primary/20 transition-colors duration-base">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="text-primary">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                <span class="text-base text-text-secondary leading-relaxed group-hover/item:text-text transition-colors duration-base">Power racks &amp; squat stands with multi-grip pull-up bars</span>
+              </li>
+              <li class="flex items-start gap-3 group/item">
+                <div class="mt-1 w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover/item:bg-primary/20 transition-colors duration-base">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="text-primary">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                <span class="text-base text-text-secondary leading-relaxed group-hover/item:text-text transition-colors duration-base">Olympic barbells, bumper plates, and quick-change collars</span>
+              </li>
+              <li class="flex items-start gap-3 group/item">
+                <div class="mt-1 w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover/item:bg-primary/20 transition-colors duration-base">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="text-primary">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                <span class="text-base text-text-secondary leading-relaxed group-hover/item:text-text transition-colors duration-base">Adjustable dumbbells, kettlebells, and resistance systems</span>
+              </li>
+              <li class="flex items-start gap-3 group/item">
+                <div class="mt-1 w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover/item:bg-primary/20 transition-colors duration-base">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="text-primary">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                <span class="text-base text-text-secondary leading-relaxed group-hover/item:text-text transition-colors duration-base">Treadmills, rowers, bikes, and connected cardio equipment</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Trust Section -->
-  <section class="trust-section py-16 bg-bg border-b border-border">
-    <div class="container">
-      <div class="trust-grid grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-8">
-        <div class="trust-card text-center p-6">
-          <div class="trust-number text-[clamp(2rem,4vw,3rem)] font-extrabold text-primary leading-none mb-2">24/7</div>
-          <div class="trust-label text-base text-text-secondary font-semibold">Price Monitoring</div>
+  <section class="trust-section relative py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-bg-secondary via-bg to-bg-secondary"></div>
+    <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(0, 78, 137, 0.1) 0%, transparent 50%);"></div>
+    <div class="container relative z-10">
+      <div class="trust-grid grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div class="trust-card group relative">
+          <div class="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-smooth blur-xl"></div>
+          <div class="relative bg-surface-elevated border border-border-light rounded-2xl p-8 text-center backdrop-blur-glass hover:border-primary/30 transition-all duration-smooth hover:shadow-soft">
+            <div class="trust-number text-5xl lg:text-6xl font-black bg-gradient-primary bg-clip-text text-transparent leading-none mb-3 group-hover:scale-110 transition-transform duration-smooth">24/7</div>
+            <div class="trust-label text-sm font-bold text-text-secondary uppercase tracking-wider">Price Monitoring</div>
+          </div>
         </div>
-        <div class="trust-card text-center p-6">
-          <div class="trust-number text-[clamp(2rem,4vw,3rem)] font-extrabold text-primary leading-none mb-2">5+</div>
-          <div class="trust-label text-base text-text-secondary font-semibold">Major Retailers</div>
+        <div class="trust-card group relative">
+          <div class="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-smooth blur-xl"></div>
+          <div class="relative bg-surface-elevated border border-border-light rounded-2xl p-8 text-center backdrop-blur-glass hover:border-primary/30 transition-all duration-smooth hover:shadow-soft">
+            <div class="trust-number text-5xl lg:text-6xl font-black bg-gradient-primary bg-clip-text text-transparent leading-none mb-3 group-hover:scale-110 transition-transform duration-smooth">5+</div>
+            <div class="trust-label text-sm font-bold text-text-secondary uppercase tracking-wider">Major Retailers</div>
+          </div>
         </div>
-        <div class="trust-card text-center p-6">
-          <div class="trust-number text-[clamp(2rem,4vw,3rem)] font-extrabold text-primary leading-none mb-2">100%</div>
-          <div class="trust-label text-base text-text-secondary font-semibold">Verified Deals</div>
+        <div class="trust-card group relative">
+          <div class="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-smooth blur-xl"></div>
+          <div class="relative bg-surface-elevated border border-border-light rounded-2xl p-8 text-center backdrop-blur-glass hover:border-primary/30 transition-all duration-smooth hover:shadow-soft">
+            <div class="trust-number text-5xl lg:text-6xl font-black bg-gradient-primary bg-clip-text text-transparent leading-none mb-3 group-hover:scale-110 transition-transform duration-smooth">100%</div>
+            <div class="trust-label text-sm font-bold text-text-secondary uppercase tracking-wider">Verified Deals</div>
+          </div>
         </div>
-        <div class="trust-card text-center p-6">
-          <div class="trust-number text-[clamp(2rem,4vw,3rem)] font-extrabold text-primary leading-none mb-2">Daily</div>
-          <div class="trust-label text-base text-text-secondary font-semibold">Updates</div>
+        <div class="trust-card group relative">
+          <div class="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-smooth blur-xl"></div>
+          <div class="relative bg-surface-elevated border border-border-light rounded-2xl p-8 text-center backdrop-blur-glass hover:border-primary/30 transition-all duration-smooth hover:shadow-soft">
+            <div class="trust-number text-5xl lg:text-6xl font-black bg-gradient-primary bg-clip-text text-transparent leading-none mb-3 group-hover:scale-110 transition-transform duration-smooth">Daily</div>
+            <div class="trust-label text-sm font-bold text-text-secondary uppercase tracking-wider">Updates</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- How It Works Section -->
-  <section class="how-it-works-section py-24 bg-bg-secondary">
-    <div class="container">
-      <div class="section-header-modern text-center mb-16">
-        <div class="section-eyebrow inline-block text-sm font-bold text-primary uppercase tracking-wider mb-4">Our Process</div>
-        <h2 class="section-title-modern text-4xl font-black mb-4 bg-gradient-primary bg-clip-text text-transparent">How We Find the Best Deals</h2>
-        <p class="section-description-modern text-xl text-text-secondary max-w-[60ch] mx-auto">
+  <section class="how-it-works-section relative py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-bg"></div>
+    <div class="absolute inset-0 opacity-[0.02]" style="background-image: url('/images/backgrounds/metal-texture.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; mix-blend-mode: overlay;"></div>
+    <div class="container relative z-10">
+      <div class="section-header-modern text-center mb-20">
+        <div class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary/10 border border-primary/20 rounded-full text-sm font-bold text-primary backdrop-blur-sm mb-6">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <span>Our Process</span>
+        </div>
+        <h2 class="section-title-modern text-5xl lg:text-6xl font-black mb-6 bg-gradient-to-br from-text via-text to-text-secondary bg-clip-text text-transparent leading-[1.1]">How We Find the Best Deals</h2>
+        <p class="section-description-modern text-xl text-text-secondary max-w-[65ch] mx-auto leading-relaxed">
           Automated tracking and verification to ensure you get genuine savings
         </p>
       </div>
       
-      <div class="process-grid grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-10 mt-12">
-        <div class="process-step relative">
-          <div class="process-number text-4xl font-extrabold text-primary/20 leading-none mb-4">01</div>
-          <h3 class="text-xl font-bold text-text mb-3">Monitor Prices</h3>
-          <p class="text-base leading-relaxed text-text-secondary m-0">Our system tracks thousands of products across major retailers 24/7, comparing current prices against 30-90 day averages.</p>
+      <div class="process-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <div class="process-step group relative">
+          <div class="absolute -inset-4 bg-gradient-primary opacity-0 group-hover:opacity-10 rounded-3xl blur-2xl transition-opacity duration-slow"></div>
+          <div class="relative bg-surface-elevated border border-border-light rounded-3xl p-8 backdrop-blur-glass hover:border-primary/30 transition-all duration-smooth hover:shadow-soft">
+            <div class="flex items-start justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-smooth">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div class="process-number text-6xl font-black text-primary/10 leading-none">01</div>
+            </div>
+            <h3 class="text-2xl font-black text-text mb-4">Monitor Prices</h3>
+            <p class="text-base leading-relaxed text-text-secondary m-0">Our system tracks thousands of products across major retailers 24/7, comparing current prices against 30-90 day averages.</p>
+          </div>
         </div>
-        <div class="process-step relative">
-          <div class="process-number text-4xl font-extrabold text-primary/20 leading-none mb-4">02</div>
-          <h3 class="text-xl font-bold text-text mb-3">Verify Discounts</h3>
-          <p class="text-base leading-relaxed text-text-secondary m-0">Each deal is validated against historical data to confirm genuine savings—no inflated "original" prices.</p>
+        <div class="process-step group relative">
+          <div class="absolute -inset-4 bg-gradient-primary opacity-0 group-hover:opacity-10 rounded-3xl blur-2xl transition-opacity duration-slow"></div>
+          <div class="relative bg-surface-elevated border border-border-light rounded-3xl p-8 backdrop-blur-glass hover:border-primary/30 transition-all duration-smooth hover:shadow-soft">
+            <div class="flex items-start justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-smooth">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+              </div>
+              <div class="process-number text-6xl font-black text-primary/10 leading-none">02</div>
+            </div>
+            <h3 class="text-2xl font-black text-text mb-4">Verify Discounts</h3>
+            <p class="text-base leading-relaxed text-text-secondary m-0">Each deal is validated against historical data to confirm genuine savings—no inflated "original" prices.</p>
+          </div>
         </div>
-        <div class="process-step relative">
-          <div class="process-number text-4xl font-extrabold text-primary/20 leading-none mb-4">03</div>
-          <h3 class="text-xl font-bold text-text mb-3">Quality Check</h3>
-          <p class="text-base leading-relaxed text-text-secondary m-0">Only equipment from reputable brands with solid warranties makes our list.</p>
+        <div class="process-step group relative">
+          <div class="absolute -inset-4 bg-gradient-primary opacity-0 group-hover:opacity-10 rounded-3xl blur-2xl transition-opacity duration-slow"></div>
+          <div class="relative bg-surface-elevated border border-border-light rounded-3xl p-8 backdrop-blur-glass hover:border-primary/30 transition-all duration-smooth hover:shadow-soft">
+            <div class="flex items-start justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-smooth">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+                  <path d="M9 12l2 2 4-4"/>
+                  <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+                </svg>
+              </div>
+              <div class="process-number text-6xl font-black text-primary/10 leading-none">03</div>
+            </div>
+            <h3 class="text-2xl font-black text-text mb-4">Quality Check</h3>
+            <p class="text-base leading-relaxed text-text-secondary m-0">Only equipment from reputable brands with solid warranties makes our list.</p>
+          </div>
         </div>
-        <div class="process-step relative">
-          <div class="process-number text-4xl font-extrabold text-primary/20 leading-none mb-4">04</div>
-          <h3 class="text-xl font-bold text-text mb-3">Daily Updates</h3>
-          <p class="text-base leading-relaxed text-text-secondary m-0">Fresh deals every morning at 2 AM UTC. Out-of-stock items are removed within 24 hours.</p>
+        <div class="process-step group relative">
+          <div class="absolute -inset-4 bg-gradient-primary opacity-0 group-hover:opacity-10 rounded-3xl blur-2xl transition-opacity duration-slow"></div>
+          <div class="relative bg-surface-elevated border border-border-light rounded-3xl p-8 backdrop-blur-glass hover:border-primary/30 transition-all duration-smooth hover:shadow-soft">
+            <div class="flex items-start justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-smooth">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+                  <path d="M12 2v20"/>
+                  <path d="m5 9 7-7 7 7"/>
+                  <path d="m5 15 7 7 7-7"/>
+                </svg>
+              </div>
+              <div class="process-number text-6xl font-black text-primary/10 leading-none">04</div>
+            </div>
+            <h3 class="text-2xl font-black text-text mb-4">Daily Updates</h3>
+            <p class="text-base leading-relaxed text-text-secondary m-0">Fresh deals every morning at 2 AM UTC. Out-of-stock items are removed within 24 hours.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Deals Section -->
-  <section id="deals" class="deals-section py-24 relative">
-    <div class="container">
+  <section id="deals" class="deals-section relative py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-bg"></div>
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('/images/backgrounds/gym-floor-texture.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+    <div class="container relative z-10">
       <div class="section-header-modern text-center mb-16">
-        <div class="section-eyebrow inline-block text-sm font-bold text-primary uppercase tracking-wider mb-4">Today's Best Offers</div>
-        <h2 class="section-title-modern text-4xl font-black mb-4 bg-gradient-primary bg-clip-text text-transparent">Featured Deals</h2>
-        <p class="section-description-modern text-xl text-text-secondary max-w-[60ch] mx-auto">
+        <div class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary/10 border border-primary/20 rounded-full text-sm font-bold text-primary backdrop-blur-sm mb-6">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+          </svg>
+          <span>Today's Best Offers</span>
+        </div>
+        <h2 class="section-title-modern text-5xl lg:text-6xl font-black mb-6 bg-gradient-to-br from-text via-text to-text-secondary bg-clip-text text-transparent leading-[1.1]">Featured Deals</h2>
+        <p class="section-description-modern text-xl text-text-secondary max-w-[65ch] mx-auto leading-relaxed">
           Verified discounts on premium equipment. Updated daily at 2 AM UTC.
         </p>
       </div>
 
-      <div class="affiliate-disclosure-banner bg-primary/10 border border-primary/20 rounded-lg p-4 mb-8 text-center">
-        <p class="m-0 text-sm text-text-secondary flex items-center justify-center gap-2 flex-wrap">
-          <strong>Affiliate Disclosure:</strong> We participate in the Amazon Associates Program and other affiliate programs.
-          We may earn commissions from qualifying purchases at no extra cost to you.
-          <a href="/affiliate-disclosure" class="text-primary underline font-semibold hover:text-secondary">Learn more</a>
-        </p>
-      </div>
       
-      <div class="deals-grid grid grid-cols-[repeat(auto-fill,minmax(340px,1fr))] gap-10 mb-16">
-        {deals.length > 0 ? 
+      <div class="deals-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {deals.length > 0 ?
           deals.map((deal, index) => (
-            <div class="deal-wrapper animate-fade-in" style={`animation-delay: ${index * 100}ms`}>
+            <div class="deal-wrapper animate-fade-in-up" style={`animation-delay: ${index * 60}ms`}>
               <DealCard {...deal} />
             </div>
           ))
-         : 
-          <div class="no-deals col-span-full text-center p-20 bg-gradient-card backdrop-blur-glass rounded-2xl border-2 border-dashed border-border">
-            <svg class="no-deals-icon text-5xl mb-6 animate-float inline-block" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M6.5 6.5h11M6.5 17.5h11M9 12h6"/>
-              <circle cx="9" cy="9" r="1.5"/>
-              <circle cx="15" cy="9" r="1.5"/>
-              <circle cx="9" cy="15" r="1.5"/>
-              <circle cx="15" cy="15" r="1.5"/>
-            </svg>
-            <h3 class="text-2xl mb-3">No deals available yet</h3>
-            <p class="text-base text-text-secondary">Check back soon! Our automated system runs daily at 2 AM UTC to fetch the latest deals.</p>
+         :
+          <div class="no-deals col-span-full">
+            <div class="relative overflow-hidden rounded-2xl">
+              <div class="absolute inset-0 opacity-[0.08]" style="background-image: url('/images/backgrounds/tcltech_detailed_realistic_gym_equipment_for_a_background_fea_040e10d5-1652-42b1-b7a4-4186da5feb82_3.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+              <div class="relative text-center p-16 bg-surface-elevated/80 border border-border-light backdrop-blur-sm">
+                <div class="w-16 h-16 mx-auto mb-6 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <svg class="text-primary" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-black text-text mb-3">No deals available yet</h3>
+                <p class="text-base text-text-secondary max-w-[50ch] mx-auto">Check back soon! Our automated system runs daily at 2 AM UTC to fetch the latest deals.</p>
+              </div>
+            </div>
           </div>
         }
       </div>
       
-      <div class="deals-footer pt-10 border-t border-border">
-        <p class="disclaimer text-sm text-text-tertiary text-center max-w-[70ch] mx-auto leading-relaxed flex items-center justify-center gap-2">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-primary">
+      <div class="deals-footer pt-8 border-t border-border-light/50">
+        <div class="flex items-center justify-center gap-3 text-sm text-text-tertiary max-w-[70ch] mx-auto">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary flex-shrink-0">
             <circle cx="12" cy="12" r="10"></circle>
             <line x1="12" y1="16" x2="12" y2="12"></line>
             <line x1="12" y1="8" x2="12.01" y2="8"></line>
           </svg>
-          <strong>Price Disclaimer:</strong> Prices and availability are accurate as of posting time but may change.
-          We earn from qualifying purchases through affiliate links.
-        </p>
+          <p class="leading-relaxed"><strong class="font-semibold text-text-secondary">Price Disclaimer:</strong> Prices and availability are accurate as of posting time but may change.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Features Section -->
-  <section class="features-section py-24 bg-gradient-to-br from-[#1a1a1a] to-[#2d2d2d]">
-    <div class="container">
-      <div class="features-split grid grid-cols-2 gap-16 items-center">
-        <div class="features-content text-white">
-          <div class="section-eyebrow text-primary text-sm font-bold uppercase tracking-wider mb-4">Why PlateDrop</div>
-          <h2 class="section-title-large text-[clamp(2rem,4vw,3rem)] font-extrabold text-white mb-4 tracking-tight leading-[1.1]">Built for Serious Lifters</h2>
-          <p class="features-intro text-xl text-white/80 mb-10 leading-relaxed">
-            We automate the tedious work of finding legitimate deals so you can spend your time where it matters—in the gym.
-          </p>
-          <div class="features-list flex flex-col gap-6">
-            <div class="feature-item flex gap-4 items-start">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="flex-shrink-0 text-primary mt-0.5">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+  <section class="features-section relative py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#0a0d1a] via-[#111827] to-[#1f2937]"></div>
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: url('/images/backgrounds/rack-pattern.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+    <div class="container relative z-10">
+      <div class="features-split grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+        <div class="features-content space-y-10">
+          <div>
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-sm font-bold text-primary backdrop-blur-sm mb-6">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
               </svg>
+              <span>Why PlateDrop</span>
+            </div>
+            <h2 class="text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight leading-[1.1]">Built for Serious Lifters</h2>
+            <p class="text-xl text-white/80 leading-relaxed">
+              We automate the tedious work of finding legitimate deals so you can spend your time where it matters—in the gym.
+            </p>
+          </div>
+          <div class="features-list space-y-6">
+            <div class="feature-item group flex gap-5 items-start p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/30 transition-all duration-smooth">
+              <div class="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0 shadow-glow group-hover:scale-110 transition-transform duration-smooth">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
               <div>
-                <h4 class="text-lg font-bold text-white mb-1">Verified Discounts</h4>
-                <p class="text-base text-white/70 m-0">Historical price validation on every deal</p>
+                <h4 class="text-xl font-black text-white mb-2">Verified Discounts</h4>
+                <p class="text-base text-white/70 m-0 leading-relaxed">Historical price validation on every deal</p>
               </div>
             </div>
-            <div class="feature-item flex gap-4 items-start">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="flex-shrink-0 text-primary mt-0.5">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
+            <div class="feature-item group flex gap-5 items-start p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/30 transition-all duration-smooth">
+              <div class="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0 shadow-glow group-hover:scale-110 transition-transform duration-smooth">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
               <div>
-                <h4 class="text-lg font-bold text-white mb-1">Daily Updates</h4>
-                <p class="text-base text-white/70 m-0">Fresh deals every morning at 2 AM UTC</p>
+                <h4 class="text-xl font-black text-white mb-2">Daily Updates</h4>
+                <p class="text-base text-white/70 m-0
+
+ leading-relaxed">Fresh deals every morning at 2 AM UTC</p>
               </div>
             </div>
-            <div class="feature-item flex gap-4 items-start">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="flex-shrink-0 text-primary mt-0.5">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-              </svg>
+            <div class="feature-item group flex gap-5 items-start p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/30 transition-all duration-smooth">
+              <div class="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0 shadow-glow group-hover:scale-110 transition-transform duration-smooth">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
               <div>
-                <h4 class="text-lg font-bold text-white mb-1">Privacy Focused</h4>
-                <p class="text-base text-white/70 m-0">No tracking, no spam, no data selling</p>
+                <h4 class="text-xl font-black text-white mb-2">Privacy Focused</h4>
+                <p class="text-base text-white/70 m-0 leading-relaxed">No tracking, no spam, no data selling</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="features-visual grid grid-cols-1 gap-4">
-          <div class="features-stat-card p-8 bg-white/5 border border-white/10 rounded-xl text-center">
-            <div class="stat-large text-[clamp(2.5rem,5vw,4rem)] font-extrabold text-primary leading-none mb-2">5+</div>
-            <div class="stat-label text-base text-white/80 font-semibold">Major Retailers Tracked</div>
+        <div class="features-visual grid grid-cols-1 gap-6">
+          <div class="features-stat-card group relative">
+            <div class="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 rounded-2xl blur-xl transition-opacity duration-slow"></div>
+            <div class="relative p-10 bg-white/5 border border-white/10 rounded-2xl text-center backdrop-blur-glass hover:border-primary/30 transition-all duration-smooth">
+              <div class="stat-large text-7xl font-black bg-gradient-primary bg-clip-text text-transparent leading-none mb-4 group-hover:scale-110 transition-transform duration-smooth">5+</div>
+              <div class="stat-label text-base text-white/80 font-bold uppercase tracking-wider">Major Retailers Tracked</div>
+            </div>
           </div>
-          <div class="features-stat-card p-8 bg-white/5 border border-white/10 rounded-xl text-center">
-            <div class="stat-large text-[clamp(2.5rem,5vw,4rem)] font-extrabold text-primary leading-none mb-2">1000s</div>
-            <div class="stat-label text-base text-white/80 font-semibold">Products Monitored</div>
+          <div class="features-stat-card group relative">
+            <div class="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 rounded-2xl blur-xl transition-opacity duration-slow"></div>
+            <div class="relative p-10 bg-white/5 border border-white/10 rounded-2xl text-center backdrop-blur-glass hover:border-primary/30 transition-all duration-smooth">
+              <div class="stat-large text-7xl font-black bg-gradient-primary bg-clip-text text-transparent leading-none mb-4 group-hover:scale-110 transition-transform duration-smooth">1000s</div>
+              <div class="stat-label text-base text-white/80 font-bold uppercase tracking-wider">Products Monitored</div>
+            </div>
           </div>
-          <div class="features-stat-card p-8 bg-white/5 border border-white/10 rounded-xl text-center">
-            <div class="stat-large text-[clamp(2.5rem,5vw,4rem)] font-extrabold text-primary leading-none mb-2">24/7</div>
-            <div class="stat-label text-base text-white/80 font-semibold">Price Monitoring</div>
+          <div class="features-stat-card group relative">
+            <div class="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 rounded-2xl blur-xl transition-opacity duration-slow"></div>
+            <div class="relative p-10 bg-white/5 border border-white/10 rounded-2xl text-center backdrop-blur-glass hover:border-primary/30 transition-all duration-smooth">
+              <div class="stat-large text-7xl font-black bg-gradient-primary bg-clip-text text-transparent leading-none mb-4 group-hover:scale-110 transition-transform duration-smooth">24/7</div>
+              <div class="stat-label text-base text-white/80 font-bold uppercase tracking-wider">Price Monitoring</div>
+            </div>
           </div>
         </div>
       </div>
@@ -289,83 +425,125 @@ const structuredData = [
   </section>
 
   <!-- Categories Section -->
-  <section class="categories-section py-24 bg-bg">
-    <div class="container-wide max-w-[1400px] mx-auto px-6">
-      <div class="section-header-modern text-center mb-12">
-        <div class="section-eyebrow inline-block text-sm font-bold text-primary uppercase tracking-wider mb-4">Shop by Category</div>
-        <h2 class="section-title-modern text-4xl font-black bg-gradient-primary bg-clip-text text-transparent">Find Your Equipment</h2>
+  <section class="categories-section relative py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-bg"></div>
+    <div class="absolute inset-0 bg-gradient-mesh opacity-20"></div>
+    <div class="container-wide max-w-[1400px] mx-auto px-6 relative z-10">
+      <div class="section-header-modern text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary/10 border border-primary/20 rounded-full text-sm font-bold text-primary backdrop-blur-sm mb-6">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="3" y="3" width="7" height="7"/>
+            <rect x="14" y="3" width="7" height="7"/>
+            <rect x="14" y="14" width="7" height="7"/>
+            <rect x="3" y="14" width="7" height="7"/>
+          </svg>
+          <span>Shop by Category</span>
+        </div>
+        <h2 class="section-title-modern text-5xl lg:text-6xl font-black bg-gradient-to-br from-text via-text to-text-secondary bg-clip-text text-transparent leading-[1.1]">Find Your Equipment</h2>
       </div>
       
-      <div class="categories-showcase grid grid-cols-[1.5fr_1fr] gap-6 mt-12">
-        <a href="/deals?category=racks" class="category-large bg-gradient-to-br from-primary to-primary-dark rounded-2xl p-12 no-underline text-white flex items-center justify-center min-h-[400px] transition-transform duration-base hover:scale-[1.02] hover:no-underline">
-          <div class="category-large-content text-center">
-            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="mb-6 inline-block">
-              <rect x="4" y="2" width="16" height="20" rx="2"/>
-              <line x1="8" y1="6" x2="16" y2="6"/>
-              <line x1="8" y1="12" x2="16" y2="12"/>
-              <line x1="8" y1="18" x2="16" y2="18"/>
-            </svg>
-            <h3 class="text-3xl font-extrabold mb-3 text-white">Power Racks</h3>
-            <p class="text-lg mb-6 opacity-90">Squat racks, cages & rigs</p>
-            <span class="category-link inline-block text-base font-bold px-6 py-3 bg-white/20 rounded-lg transition-colors duration-base hover:bg-white/30">Browse Deals →</span>
+      <div class="categories-showcase grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-8">
+        <a href="/deals?category=racks" class="category-large group relative overflow-hidden rounded-3xl min-h-[400px] lg:min-h-[500px] no-underline">
+          <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary-dark to-secondary"></div>
+          <div class="absolute inset-0 bg-noise opacity-[0.03]"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+          <div class="relative h-full flex items-center justify-center p-12 text-white">
+            <div class="category-large-content text-center space-y-6">
+              <div class="w-20 h-20 mx-auto rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-white/30 transition-all duration-smooth shadow-glow">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="2" width="16" height="20" rx="2"/>
+                  <line x1="8" y1="6" x2="16" y2="6"/>
+                  <line x1="8" y1="12" x2="16" y2="12"/>
+                  <line x1="8" y1="18" x2="16" y2="18"/>
+                </svg>
+              </div>
+              <h3 class="text-4xl lg:text-5xl font-black text-white">Power Racks</h3>
+              <p class="text-xl opacity-90">Squat racks, cages & rigs</p>
+              <span class="inline-flex items-center gap-2 text-lg font-bold px-8 py-4 bg-white/20 backdrop-blur-sm rounded-xl group-hover:bg-white/30 transition-all duration-smooth">
+                Browse Deals
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="group-hover:translate-x-1 transition-transform duration-smooth">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </span>
+            </div>
           </div>
         </a>
         
         <div class="categories-grid-compact grid grid-cols-1 gap-4">
-          <a href="/deals?category=barbells" class="category-compact flex items-center gap-4 p-6 bg-surface border-2 border-border rounded-xl no-underline transition-all duration-base hover:border-primary hover:bg-surface-elevated hover:translate-x-2 hover:no-underline">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary flex-shrink-0">
-              <line x1="4" y1="12" x2="20" y2="12"/>
-              <circle cx="6" cy="12" r="3"/>
-              <circle cx="18" cy="12" r="3"/>
-            </svg>
+          <a href="/deals?category=barbells" class="category-compact group flex items-center gap-5 p-6 bg-surface-elevated border border-border-light rounded-2xl no-underline transition-all duration-smooth hover:border-primary/40 hover:bg-surface hover:translate-x-2 hover:shadow-soft hover:no-underline">
+            <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-smooth">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-primary">
+                <line x1="4" y1="12" x2="20" y2="12"/>
+                <circle cx="6" cy="12" r="3"/>
+                <circle cx="18" cy="12" r="3"/>
+              </svg>
+            </div>
             <div class="flex-1 flex items-center justify-between">
-              <h4 class="text-lg font-bold text-text m-0">Barbells</h4>
-              <span class="text-primary text-xl font-bold">→</span>
+              <h4 class="text-xl font-black text-text m-0">Barbells</h4>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-primary group-hover:translate-x-1 transition-transform duration-smooth">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
             </div>
           </a>
           
-          <a href="/deals?category=plates" class="category-compact flex items-center gap-4 p-6 bg-surface border-2 border-border rounded-xl no-underline transition-all duration-base hover:border-primary hover:bg-surface-elevated hover:translate-x-2 hover:no-underline">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary flex-shrink-0">
-              <circle cx="12" cy="12" r="10"/>
-              <circle cx="12" cy="12" r="4"/>
-            </svg>
+          <a href="/deals?category=plates" class="category-compact group flex items-center gap-5 p-6 bg-surface-elevated border border-border-light rounded-2xl no-underline transition-all duration-smooth hover:border-primary/40 hover:bg-surface hover:translate-x-2 hover:shadow-soft hover:no-underline">
+            <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-smooth">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-primary">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="4"/>
+              </svg>
+            </div>
             <div class="flex-1 flex items-center justify-between">
-              <h4 class="text-lg font-bold text-text m-0">Weight Plates</h4>
-              <span class="text-primary text-xl font-bold">→</span>
+              <h4 class="text-xl font-black text-text m-0">Weight Plates</h4>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-primary group-hover:translate-x-1 transition-transform duration-smooth">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
             </div>
           </a>
           
-          <a href="/deals?category=dumbbells" class="category-compact flex items-center gap-4 p-6 bg-surface border-2 border-border rounded-xl no-underline transition-all duration-base hover:border-primary hover:bg-surface-elevated hover:translate-x-2 hover:no-underline">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary flex-shrink-0">
-              <line x1="6" y1="12" x2="18" y2="12"/>
-              <rect x="3" y="9" width="4" height="6" rx="1"/>
-              <rect x="17" y="9" width="4" height="6" rx="1"/>
-            </svg>
+          <a href="/deals?category=dumbbells" class="category-compact group flex items-center gap-5 p-6 bg-surface-elevated border border-border-light rounded-2xl no-underline transition-all duration-smooth hover:border-primary/40 hover:bg-surface hover:translate-x-2 hover:shadow-soft hover:no-underline">
+            <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-smooth">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-primary">
+                <line x1="6" y1="12" x2="18" y2="12"/>
+                <rect x="3" y="9" width="4" height="6" rx="1"/>
+                <rect x="17" y="9" width="4" height="6" rx="1"/>
+              </svg>
+            </div>
             <div class="flex-1 flex items-center justify-between">
-              <h4 class="text-lg font-bold text-text m-0">Dumbbells</h4>
-              <span class="text-primary text-xl font-bold">→</span>
+              <h4 class="text-xl font-black text-text m-0">Dumbbells</h4>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-primary group-hover:translate-x-1 transition-transform duration-smooth">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
             </div>
           </a>
           
-          <a href="/deals?category=benches" class="category-compact flex items-center gap-4 p-6 bg-surface border-2 border-border rounded-xl no-underline transition-all duration-base hover:border-primary hover:bg-surface-elevated hover:translate-x-2 hover:no-underline">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary flex-shrink-0">
-              <rect x="4" y="10" width="16" height="3" rx="1"/>
-              <line x1="6" y1="13" x2="6" y2="20"/>
-              <line x1="18" y1="13" x2="18" y2="20"/>
-            </svg>
+          <a href="/deals?category=benches" class="category-compact group flex items-center gap-5 p-6 bg-surface-elevated border border-border-light rounded-2xl no-underline transition-all duration-smooth hover:border-primary/40 hover:bg-surface hover:translate-x-2 hover:shadow-soft hover:no-underline">
+            <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-smooth">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-primary">
+                <rect x="4" y="10" width="16" height="3" rx="1"/>
+                <line x1="6" y1="13" x2="6" y2="20"/>
+                <line x1="18" y1="13" x2="18" y2="20"/>
+              </svg>
+            </div>
             <div class="flex-1 flex items-center justify-between">
-              <h4 class="text-lg font-bold text-text m-0">Benches</h4>
-              <span class="text-primary text-xl font-bold">→</span>
+              <h4 class="text-xl font-black text-text m-0">Benches</h4>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-primary group-hover:translate-x-1 transition-transform duration-smooth">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
             </div>
           </a>
           
-          <a href="/deals?category=cardio" class="category-compact flex items-center gap-4 p-6 bg-surface border-2 border-border rounded-xl no-underline transition-all duration-base hover:border-primary hover:bg-surface-elevated hover:translate-x-2 hover:no-underline">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary flex-shrink-0">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-            </svg>
+          <a href="/deals?category=cardio" class="category-compact group flex items-center gap-5 p-6 bg-surface-elevated border border-border-light rounded-2xl no-underline transition-all duration-smooth hover:border-primary/40 hover:bg-surface hover:translate-x-2 hover:shadow-soft hover:no-underline">
+            <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-smooth">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-primary">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
             <div class="flex-1 flex items-center justify-between">
-              <h4 class="text-lg font-bold text-text m-0">Cardio</h4>
-              <span class="text-primary text-xl font-bold">→</span>
+              <h4 class="text-xl font-black text-text m-0">Cardio</h4>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-primary group-hover:translate-x-1 transition-transform duration-smooth">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
             </div>
           </a>
         </div>
@@ -375,11 +553,12 @@ const structuredData = [
   </section>
 
   <!-- Value Props Section -->
-  <section class="value-props-section py-24 bg-bg-secondary relative">
-    <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(ellipse at top left, rgba(255, 107, 53, 0.05) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(0, 78, 137, 0.05) 0%, transparent 50%);"></div>
-    <div class="container relative">
-      <div class="section-header text-center mb-16">
-        <div class="section-badge inline-flex items-center gap-2 px-5 py-2 bg-gradient-card backdrop-blur-glass border border-glass-border rounded-full text-sm font-bold mb-4">
+  <section class="value-props-section relative py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-bg-secondary via-bg to-bg-secondary"></div>
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('/images/backgrounds/barbell-pattern.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+    <div class="container relative z-10">
+      <div class="section-header text-center mb-20">
+        <div class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary/10 border border-primary/20 rounded-full text-sm font-bold text-primary backdrop-blur-sm mb-6">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M12 2L2 7l10 5 10-5-10-5z"/>
             <path d="M2 17l10 5 10-5"/>
@@ -387,85 +566,116 @@ const structuredData = [
           </svg>
           <span>Smart Shopping</span>
         </div>
-        <h2 class="section-title text-4xl font-black mb-4 bg-gradient-primary bg-clip-text text-transparent">Build Your Gym the Smart Way</h2>
-        <p class="section-description text-xl text-text-secondary max-w-[60ch] mx-auto">
+        <h2 class="section-title text-5xl lg:text-6xl font-black mb-6 bg-gradient-to-br from-text via-text to-text-secondary bg-clip-text text-transparent leading-[1.1]">Build Your Gym the Smart Way</h2>
+        <p class="section-description text-xl text-text-secondary max-w-[65ch] mx-auto leading-relaxed">
           Strategic tips for maximizing value on home gym equipment
         </p>
       </div>
       
-      <div class="value-props-grid grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-        <div class="value-prop-card card">
-          <div class="value-prop-icon mb-6">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
-              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-            </svg>
+      <div class="value-props-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div class="value-prop-card group relative">
+          <div class="absolute -inset-4 bg-gradient-primary opacity-0 group-hover:opacity-10 rounded-3xl blur-2xl transition-opacity duration-slow"></div>
+          <div class="relative bg-surface-elevated border border-border-light rounded-3xl p-10 backdrop-blur-glass hover:border-primary/30 transition-all duration-smooth hover:shadow-soft">
+            <div class="value-prop-icon mb-8">
+              <div class="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-smooth">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-2xl font-black text-text mb-4">Timing is Everything</h3>
+            <p class="text-base leading-relaxed text-text-secondary m-0">
+              Major sales events like Black Friday, New Year, and end-of-season clearances can offer 20-40% off retail prices.
+              Our daily tracking helps you catch these opportunities as they happen.
+            </p>
           </div>
-          <h3 class="text-xl font-bold text-text mb-3">Timing is Everything</h3>
-          <p class="text-base leading-relaxed text-text-secondary m-0">
-            Major sales events like Black Friday, New Year, and end-of-season clearances can offer 20-40% off retail prices.
-            Our daily tracking helps you catch these opportunities as they happen.
-          </p>
         </div>
 
-        <div class="value-prop-card card">
-          <div class="value-prop-icon mb-6">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22 4 12 14.01 9 11.01"></polyline>
-            </svg>
+        <div class="value-prop-card group relative">
+          <div class="absolute -inset-4 bg-gradient-primary opacity-0 group-hover:opacity-10 rounded-3xl blur-2xl transition-opacity duration-slow"></div>
+          <div class="relative bg-surface-elevated border border-border-light rounded-3xl p-10 backdrop-blur-glass hover:border-primary/30 transition-all duration-smooth hover:shadow-soft">
+            <div class="value-prop-icon mb-8">
+              <div class="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-smooth">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-2xl font-black text-text mb-4">Quality Over Quantity</h3>
+            <p class="text-base leading-relaxed text-text-secondary m-0">
+              A few pieces of quality equipment will serve you better than a garage full of cheap gear.
+              Focus on reputable brands with solid warranties and proven durability.
+            </p>
           </div>
-          <h3 class="text-xl font-bold text-text mb-3">Quality Over Quantity</h3>
-          <p class="text-base leading-relaxed text-text-secondary m-0">
-            A few pieces of quality equipment will serve you better than a garage full of cheap gear.
-            Focus on reputable brands with solid warranties and proven durability.
-          </p>
         </div>
 
-        <div class="value-prop-card card">
-          <div class="value-prop-icon mb-6">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-              <polyline points="10 9 9 9 8 9"></polyline>
-            </svg>
+        <div class="value-prop-card group relative">
+          <div class="absolute -inset-4 bg-gradient-primary opacity-0 group-hover:opacity-10 rounded-3xl blur-2xl transition-opacity duration-slow"></div>
+          <div class="relative bg-surface-elevated border border-border-light rounded-3xl p-10 backdrop-blur-glass hover:border-primary/30 transition-all duration-smooth hover:shadow-soft">
+            <div class="value-prop-icon mb-8">
+              <div class="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-smooth">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-2xl font-black text-text mb-4">Start with Essentials</h3>
+            <p class="text-base leading-relaxed text-text-secondary m-0">
+              Power rack, barbell, and plates form the foundation of any home gym.
+              Once you have these basics, you can add specialized equipment as deals arise and your training evolves.
+            </p>
           </div>
-          <h3 class="text-xl font-bold text-text mb-3">Start with Essentials</h3>
-          <p class="text-base leading-relaxed text-text-secondary m-0">
-            Power rack, barbell, and plates form the foundation of any home gym.
-            Once you have these basics, you can add specialized equipment as deals arise and your training evolves.
-          </p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ Section -->
-  <section class="faq-section py-24 bg-bg">
-    <div class="container max-w-[1100px] mx-auto px-6">
-      <div class="section-header text-center mb-14">
-        <div class="section-badge inline-flex items-center gap-2 px-5 py-2 bg-gradient-card backdrop-blur-glass border border-glass-border rounded-full text-sm font-bold mb-4">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <section class="faq-section relative py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-bg"></div>
+    <div class="absolute inset-0 bg-noise opacity-[0.015]"></div>
+    <div class="container max-w-[1100px] mx-auto px-6 relative z-10">
+      <div class="section-header text-center mb-20">
+        <div class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary/10 border border-primary/20 rounded-full text-sm font-bold text-primary backdrop-blur-sm mb-6">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <circle cx="12" cy="12" r="10"></circle>
             <path d="M12 16v-4"></path>
             <circle cx="12" cy="8" r="1"></circle>
           </svg>
           <span>Home Gym Deal FAQ</span>
         </div>
-        <h2 class="section-title text-4xl font-black mb-4 bg-gradient-primary bg-clip-text text-transparent">
+        <h2 class="section-title text-5xl lg:text-6xl font-black mb-6 bg-gradient-to-br from-text via-text to-text-secondary bg-clip-text text-transparent leading-[1.1]">
           Answers for Smart Equipment Shoppers
         </h2>
-        <p class="section-description text-lg text-text-secondary max-w-[65ch] mx-auto">
+        <p class="section-description text-xl text-text-secondary max-w-[65ch] mx-auto leading-relaxed">
           Everything you need to know about tracking gym equipment discounts and choosing the right pieces for your training style.
         </p>
       </div>
 
       <div class="faq-grid space-y-6">
         {faqItems.map((item, index) => (
-          <div class="faq-item bg-surface border border-border rounded-2xl p-8 shadow-[0_10px_32px_rgba(0,0,0,0.12)] animate-fade-in" style={`animation-delay: ${index * 80}ms`}>
-            <h3 class="text-2xl font-bold text-text mb-3">{item.question}</h3>
-            <p class="text-base text-text-secondary leading-relaxed m-0">{item.answer}</p>
+          <div class="faq-item group relative animate-fade-in-up" style={`animation-delay: ${index * 80}ms`}>
+            <div class="absolute -inset-4 bg-gradient-primary opacity-0 group-hover:opacity-5 rounded-3xl blur-2xl transition-opacity duration-slow"></div>
+            <div class="relative bg-surface-elevated border border-border-light rounded-3xl p-10 backdrop-blur-glass hover:border-primary/30 transition-all duration-smooth hover:shadow-soft">
+              <div class="flex items-start gap-5">
+                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-smooth">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-primary">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-black text-text mb-4">{item.question}</h3>
+                  <p class="text-base text-text-secondary leading-relaxed m-0">{item.answer}</p>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -473,25 +683,30 @@ const structuredData = [
   </section>
 
   <!-- CTA Section -->
-  <section class="cta-section py-20 bg-gradient-to-br from-[#1a1a1a] to-[#2d2d2d]">
-    <div class="container">
-      <div class="cta-content-modern flex items-center justify-between gap-12 p-12 bg-white/5 rounded-2xl border border-white/10">
-        <div class="cta-text flex-1">
-          <h2 class="cta-title-modern text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold text-white mb-3 tracking-tight">Ready to Build Your Gym?</h2>
-          <p class="cta-description-modern text-lg text-white/80 m-0 leading-relaxed">
-            Explore our comprehensive buying guides to make informed decisions
-          </p>
-        </div>
-        <div class="cta-actions flex gap-4 flex-shrink-0">
-          <a href="/guides" class="cta-button-primary inline-flex items-center gap-2 px-8 py-4 bg-primary text-white text-base font-bold rounded-lg no-underline transition-all duration-base whitespace-nowrap hover:bg-primary-dark hover:text-white hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(255,107,53,0.4)]">
-            Browse Guides
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transition-transform duration-base group-hover:translate-x-1">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-          <a href="/about" class="cta-button-secondary inline-flex items-center px-8 py-4 bg-transparent text-white text-base font-semibold border-2 border-white/20 rounded-lg no-underline transition-all duration-base whitespace-nowrap hover:bg-white/10 hover:border-white/40">
-            Learn More
-          </a>
+  <section class="cta-section relative py-24 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#0a0d1a] via-[#111827] to-[#1f2937]"></div>
+    <div class="absolute inset-0 bg-noise opacity-[0.02]"></div>
+    <div class="container relative z-10">
+      <div class="cta-content-modern relative group">
+        <div class="absolute -inset-8 bg-gradient-primary opacity-10 rounded-3xl blur-3xl group-hover:opacity-15 transition-opacity duration-slow"></div>
+        <div class="relative flex flex-col lg:flex-row items-center justify-between gap-10 p-12 lg:p-16 bg-white/5 rounded-3xl border border-white/10 backdrop-blur-glass">
+          <div class="cta-text flex-1 text-center lg:text-left">
+            <h2 class="cta-title-modern text-4xl lg:text-5xl font-black text-white mb-4 tracking-tight leading-[1.1]">Ready to Build Your Gym?</h2>
+            <p class="cta-description-modern text-xl text-white/80 m-0 leading-relaxed">
+              Explore our comprehensive buying guides to make informed decisions
+            </p>
+          </div>
+          <div class="cta-actions flex flex-col sm:flex-row gap-4 flex-shrink-0">
+            <a href="/guides" class="group/btn inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-primary text-white text-lg font-black rounded-xl no-underline transition-all duration-smooth whitespace-nowrap hover:text-white hover:shadow-glow-lg hover:scale-105">
+              Browse Guides
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="group-hover/btn:translate-x-1 transition-transform duration-smooth">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="/about" class="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white text-lg font-bold border-2 border-white/20 rounded-xl no-underline transition-all duration-smooth whitespace-nowrap hover:bg-white/10 hover:border-white/40">
+              Learn More
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -501,87 +716,90 @@ const structuredData = [
 <style>
   /* Responsive Design */
   @media (max-width: 1024px) {
-    .hero {
-      @apply min-h-[500px];
+    .seo-intro-section {
+      @apply py-20;
     }
     
-    .hero-image {
-      @apply w-[50%];
+    .features-split {
+      @apply gap-12;
+    }
+    
+    .categories-showcase {
+      @apply gap-6;
     }
   }
   
   @media (max-width: 768px) {
-    .hero {
-      @apply min-h-[550px] py-16;
+    .seo-intro-section {
+      @apply py-16;
     }
     
-    .hero-image {
-      @apply w-[60%] opacity-30;
-    }
-    
-    .hero-content {
-      @apply max-w-full py-16;
-    }
-    
-    .hero-cta {
-      @apply flex-col items-stretch gap-3;
-    }
-    
-    .hero-cta a,
-    .hero-cta button {
-      @apply w-full justify-center;
+    .seo-intro-copy h2 {
+      @apply text-3xl;
     }
     
     .trust-grid {
-      @apply grid-cols-2;
+      @apply grid-cols-2 gap-4;
     }
     
     .process-grid {
-      @apply grid-cols-1;
+      @apply grid-cols-1 gap-6;
     }
     
     .deals-grid {
-      @apply grid-cols-1 gap-8;
+      @apply grid-cols-1 gap-6;
     }
     
     .features-split {
-      @apply grid-cols-1 gap-12;
+      @apply grid-cols-1 gap-10;
     }
     
     .categories-showcase {
-      @apply grid-cols-1;
+      @apply grid-cols-1 gap-6;
+    }
+    
+    .category-large {
+      @apply min-h-[350px];
+    }
+    
+    .value-props-grid {
+      @apply grid-cols-1 gap-6;
     }
     
     .cta-content-modern {
-      @apply flex-col text-center p-10;
+      @apply flex-col text-center p-8;
     }
     
     .cta-actions {
       @apply flex-col w-full;
     }
     
-    .cta-button-primary,
-    .cta-button-secondary {
-      @apply w-full justify-center;
+    .cta-actions a {
+      @apply w-full;
     }
   }
   
   @media (max-width: 480px) {
-    .hero {
-      @apply min-h-[500px];
+    .seo-intro-copy h2 {
+      @apply text-2xl;
     }
     
-    .hero h1 {
+    .section-title-modern,
+
+    .section-title {
+      @apply text-3xl;
+    }
+    
+    .trust-number {
       @apply text-4xl;
     }
     
-    .hero p {
-      @apply text-base;
+    .process-step h3 {
+      @apply text-xl;
     }
     
-    .hero-image {
-      @apply w-[70%];
+    .category-large h3 {
+      @apply text-3xl;
     }
   }
 </style>
-

@@ -18,13 +18,6 @@ const { deals } = Astro.props;
       </p>
     </div>
 
-    <div class="affiliate-disclosure-banner bg-primary/10 border border-primary/20 rounded-lg p-4 mb-8 text-center">
-      <p class="m-0 text-sm text-text-secondary flex items-center justify-center gap-2 flex-wrap">
-        <strong>Affiliate Disclosure:</strong> We participate in the Amazon Associates Program and other affiliate programs.
-        We may earn commissions from qualifying purchases at no extra cost to you.
-        <a href="/affiliate-disclosure" class="text-primary underline font-semibold hover:text-secondary">Learn more</a>
-      </p>
-    </div>
 
     <div class="deals-grid grid grid-cols-[repeat(auto-fill,minmax(340px,1fr))] gap-10 mb-16">
       {deals.length > 0 ? (
@@ -74,7 +67,6 @@ const { deals } = Astro.props;
           <line x1="12" y1="8" x2="12.01" y2="8"></line>
         </svg>
         <strong>Price Disclaimer:</strong> Prices and availability are accurate as of posting time but may change.
-        We earn from qualifying purchases through affiliate links.
       </p>
     </div>
   </div>

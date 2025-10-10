@@ -92,9 +92,6 @@ Required variables (see `.env.example`):
 
 - `OPENAI_API_KEY` - OpenAI API key for content generation
 - `PRIMARY_SITE_URL` - Your site URL (e.g., https://platedrop.fit)
-- `AMAZON_ASSOC_TAG` - Amazon Associates tag
-- `ROGUE_AFFILIATE_TAG` - Rogue Fitness affiliate tag
-- `REP_AFFILIATE_TAG` - REP Fitness affiliate tag
 
 ### Retailer Configuration
 
