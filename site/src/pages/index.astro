@@ -70,74 +70,7 @@ const structuredData = [
 >
 
   <!-- Hero Section -->
-  <div class="hero relative overflow-visible min-h-[600px] flex items-center -mt-[72px] pt-[72px]" style="background: linear-gradient(135deg, #3d2817 0%, #2d1f14 50%, #1a1614 100%);">
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 opacity-5">
-      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, rgba(255, 107, 53, 0.3) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(255, 107, 53, 0.2) 0%, transparent 50%);"></div>
-    </div>
-    
-    <!-- Featured Image - Extends above nav -->
-    <div class="hero-image absolute right-0 -top-[72px] bottom-0 w-[55%] flex items-end justify-end pointer-events-none z-[999]">
-      <Image
-        src="/images/hero/hero_feature.webp"
-        alt="Fitness athlete"
-        width={700}
-        height={700}
-        loading="eager"
-        fetchpriority="high"
-        format="webp"
-        quality={90}
-        class="h-[calc(100%+72px)] w-auto object-contain object-bottom"
-      />
-    </div>
-    
-    <div class="container max-w-[1400px] mx-auto px-6 relative z-10">
-      <div class="hero-content max-w-[600px] py-20">
-        <h1 class="text-[clamp(2.5rem,6vw,4.5rem)] font-black leading-[1.1] tracking-tight text-white mb-6">
-          Today's Best Home Gym Equipment Deals
-        </h1>
-        <p class="text-lg leading-relaxed text-white/70 mb-6 max-w-[520px]">
-          Discover verified discounts on power racks, barbells, dumbbells, benches, and cardio machines. Our deal experts track prices across trusted retailers so you can build a complete home gym for less.
-        </p>
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-white/60 mb-10">
-          Updated {formattedDate}
-        </p>
-
-        <div class="hero-cta flex items-center gap-4 flex-wrap mb-12">
-          <a href="#deals" class="inline-flex items-center gap-2 px-8 py-4 bg-[#ff6b35] text-white text-base font-bold rounded-full no-underline transition-all duration-200 hover:bg-[#ff5722] hover:text-white hover:shadow-lg hover:shadow-[#ff6b35]/30">
-            See Today's Deals
-          </a>
-          <button class="inline-flex items-center gap-2 px-6 py-4 bg-transparent text-white text-base font-semibold border-2 border-white/20 rounded-full transition-all duration-200 hover:bg-white/10 hover:border-white/40">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8 5v14l11-7z"/>
-            </svg>
-            Watch How PlateDrop Works
-          </button>
-        </div>
-
-        <!-- User Avatars & Stats -->
-        <div class="flex items-center gap-6">
-          <div class="flex items-center -space-x-3">
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-red-500 border-2 border-[#1a1614] flex items-center justify-center text-white text-sm font-bold">A</div>
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 border-2 border-[#1a1614] flex items-center justify-center text-white text-sm font-bold">B</div>
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-teal-500 border-2 border-[#1a1614] flex items-center justify-center text-white text-sm font-bold">C</div>
-          </div>
-          <div class="text-white/60 text-sm">
-            <span class="text-white font-semibold">2,000+</span> members joined
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Category Tags -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3 flex-wrap justify-center px-6 z-10">
-      <span class="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-xs font-medium">Personal Training</span>
-      <span class="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-xs font-medium">Strength</span>
-      <span class="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-xs font-medium">Group Classes</span>
-      <span class="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-xs font-medium">Cardio Equipment</span>
-      <span class="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-xs font-medium">Functional Workouts</span>
-    </div>
-  </div>
+  <HeroSection formattedDate={formattedDate} />
 
   <!-- SEO Intro Section -->
   <section class="seo-intro-section py-16 bg-bg text-text">

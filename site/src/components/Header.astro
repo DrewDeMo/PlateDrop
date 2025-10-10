@@ -2,115 +2,339 @@
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="site-header sticky top-0 z-[1000] bg-[#1a1614]/95 backdrop-blur-xl border-b border-white/5 transition-all duration-300" id="site-header">
-  <div class="container max-w-[1400px] mx-auto px-6">
-    <nav class="nav-wrapper flex items-center justify-between py-4 gap-8 relative z-[1001]">
-      <a href="/" class="logo flex items-center gap-2 text-xl font-bold text-white no-underline transition-opacity duration-200 hover:opacity-80 hover:no-underline">
-        <img src="/svgs/logo_new.svg" alt="PlateDrop Logo" width="32" height="32" class="w-8 h-8" />
-        <span class="logo-text tracking-tight">PlateDrop</span>
+<header 
+  class="site-header-2026 fixed top-0 left-0 right-0 z-[1000] transition-all duration-smooth" 
+  id="site-header"
+  data-scrolled="false"
+>
+  <!-- Glassmorphic backdrop -->
+  <div class="header-backdrop absolute inset-0 bg-bg-secondary/60 backdrop-blur-strong border-b border-border opacity-0 transition-all duration-smooth"></div>
+  
+  <!-- Animated gradient line -->
+  <div class="header-gradient-line absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 transition-opacity duration-smooth"></div>
+  
+  <div class="container relative z-10">
+    <nav class="nav-wrapper flex items-center justify-between py-5 gap-8 transition-all duration-smooth">
+      
+      <!-- Revolutionary logo design -->
+      <a 
+        href="/" 
+        class="logo-link group flex items-center gap-4 no-underline relative"
+        aria-label="PlateDrop Home"
+      >
+        <div class="logo-container relative">
+          <!-- Animated glow rings -->
+          <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/30 to-accent/30 blur-xl opacity-0 group-hover:opacity-100 transition-all duration-smooth scale-150"></div>
+          <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-accent opacity-0 group-hover:opacity-20 transition-all duration-smooth animate-spin-slow"></div>
+          
+          <!-- Logo icon -->
+          <div class="relative w-12 h-12 bg-gradient-to-br from-surface-elevated to-surface backdrop-blur-glass border border-border-light rounded-2xl flex items-center justify-center transition-all duration-smooth group-hover:scale-110 group-hover:rotate-12 group-hover:border-primary shadow-soft">
+            <img 
+              src="/svgs/logo_new.svg" 
+              alt="" 
+              width="28" 
+              height="28" 
+              class="w-7 h-7 relative z-10"
+            />
+          </div>
+        </div>
+        
+        <!-- Logo text with gradient -->
+        <div class="flex flex-col">
+          <span class="text-2xl font-black tracking-tighter gradient-text transition-all duration-smooth">
+            PlateDrop
+          </span>
+          <span class="text-[10px] font-bold text-text-tertiary uppercase tracking-widest -mt-1">
+            Fitness Deals
+          </span>
+        </div>
       </a>
       
-      <ul class="nav-links flex items-center gap-1 list-none m-0 p-0">
-        <li>
-          <a href="/" class={`nav-link text-sm font-medium no-underline px-4 py-2 rounded-md transition-all duration-200 hover:no-underline ${currentPath === '/' ? 'text-white bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/5'}`}>
-            About Us
-          </a>
-        </li>
-        <li>
-          <a href="/guides" class={`nav-link text-sm font-medium no-underline px-4 py-2 rounded-md transition-all duration-200 hover:no-underline ${currentPath.startsWith('/guides') ? 'text-white bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/5'}`}>
-            Services
-          </a>
-        </li>
-        <li>
-          <a href="/workouts" class={`nav-link text-sm font-medium no-underline px-4 py-2 rounded-md transition-all duration-200 hover:no-underline ${currentPath.startsWith('/workouts') ? 'text-white bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/5'}`}>
-            Product
-          </a>
-        </li>
-        <li>
-          <a href="/faq" class={`nav-link text-sm font-medium no-underline px-4 py-2 rounded-md transition-all duration-200 hover:no-underline ${currentPath === '/faq' ? 'text-white bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/5'}`}>
-            FAQ
-          </a>
-        </li>
-      </ul>
+      <!-- Desktop Navigation - Pill style -->
+      <div class="nav-pills hidden lg:flex items-center gap-2 px-3 py-2 bg-surface-glass backdrop-blur-strong border border-border rounded-3xl shadow-soft">
+        <a 
+          href="/" 
+          class={`nav-pill group relative px-6 py-3 rounded-2xl text-sm font-bold transition-all duration-smooth no-underline ${
+            currentPath === '/' 
+              ? 'bg-gradient-to-r from-primary to-primary-dark text-white shadow-glow' 
+              : 'text-text-secondary hover:text-text hover:bg-surface-elevated'
+          }`}
+        >
+          <span class="relative z-10">About</span>
+          {currentPath !== '/' && (
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-smooth"></div>
+          )}
+        </a>
+        
+        <a 
+          href="/guides" 
+          class={`nav-pill group relative px-6 py-3 rounded-2xl text-sm font-bold transition-all duration-smooth no-underline ${
+            currentPath.startsWith('/guides') 
+              ? 'bg-gradient-to-r from-primary to-primary-dark text-white shadow-glow' 
+              : 'text-text-secondary hover:text-text hover:bg-surface-elevated'
+          }`}
+        >
+          <span class="relative z-10">Services</span>
+          {!currentPath.startsWith('/guides') && (
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-smooth"></div>
+          )}
+        </a>
+        
+        <a 
+          href="/workouts" 
+          class={`nav-pill group relative px-6 py-3 rounded-2xl text-sm font-bold transition-all duration-smooth no-underline ${
+            currentPath.startsWith('/workouts') 
+              ? 'bg-gradient-to-r from-primary to-primary-dark text-white shadow-glow' 
+              : 'text-text-secondary hover:text-text hover:bg-surface-elevated'
+          }`}
+        >
+          <span class="relative z-10">Product</span>
+          {!currentPath.startsWith('/workouts') && (
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-smooth"></div>
+          )}
+        </a>
+        
+        <a 
+          href="/faq" 
+          class={`nav-pill group relative px-6 py-3 rounded-2xl text-sm font-bold transition-all duration-smooth no-underline ${
+            currentPath === '/faq' 
+              ? 'bg-gradient-to-r from-primary to-primary-dark text-white shadow-glow' 
+              : 'text-text-secondary hover:text-text hover:bg-surface-elevated'
+          }`}
+        >
+          <span class="relative z-10">FAQ</span>
+          {currentPath !== '/faq' && (
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-smooth"></div>
+          )}
+        </a>
+      </div>
       
-      <a href="/contact" class="cta-button inline-flex items-center gap-2 px-6 py-2.5 bg-[#ff6b35] text-white text-sm font-semibold rounded-full no-underline transition-all duration-200 hover:bg-[#ff5722] hover:no-underline hover:shadow-lg hover:shadow-[#ff6b35]/30">
-        Contact Us
+      <!-- CTA Button - Bold design -->
+      <a 
+        href="/contact" 
+        class="cta-button hidden lg:inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary via-primary-dark to-primary text-white text-sm font-black rounded-3xl no-underline transition-all duration-smooth hover:no-underline hover:shadow-glow hover:scale-105 group relative overflow-hidden bg-[length:200%_auto] animate-gradient"
+      >
+        <span class="relative z-10">Get Started</span>
+        <svg 
+          class="w-5 h-5 relative z-10 transition-transform duration-smooth group-hover:translate-x-1" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+        <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
       </a>
       
-      <button class="mobile-menu-toggle hidden md:hidden items-center justify-center bg-transparent border-none cursor-pointer p-2 z-[2] relative w-10 h-10 rounded-md transition-all duration-200 hover:bg-white/5" aria-label="Toggle menu">
-        <svg class="menu-icon w-6 h-6 text-white transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-        <svg class="close-icon w-6 h-6 text-white absolute opacity-0 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
+      <!-- Mobile Menu Toggle - Modern design -->
+      <button 
+        class="mobile-menu-toggle lg:hidden flex items-center justify-center bg-surface-glass backdrop-blur-glass border border-border cursor-pointer p-3 z-[2] relative w-12 h-12 rounded-2xl transition-all duration-smooth hover:border-primary hover:shadow-soft group" 
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <div class="relative w-6 h-6">
+          <span class="menu-line absolute left-0 top-1 w-full h-0.5 bg-text rounded-full transition-all duration-smooth group-hover:bg-primary"></span>
+          <span class="menu-line absolute left-0 top-1/2 -translate-y-1/2 w-full h-0.5 bg-text rounded-full transition-all duration-smooth group-hover:bg-primary"></span>
+          <span class="menu-line absolute left-0 bottom-1 w-full h-0.5 bg-text rounded-full transition-all duration-smooth group-hover:bg-primary"></span>
+        </div>
       </button>
       
     </nav>
   </div>
 </header>
 
+<!-- Mobile Menu - Full screen takeover -->
+<div class="mobile-menu-2026 lg:hidden fixed inset-0 bg-bg-secondary/98 backdrop-blur-strong z-[999] opacity-0 pointer-events-none transition-all duration-smooth">
+  
+  <!-- Animated background -->
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-primary to-accent rounded-full blur-[150px] animate-float"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-br from-secondary to-info rounded-full blur-[120px] animate-float-slow"></div>
+  </div>
+  
+  <div class="container relative z-10 h-full flex flex-col py-8">
+    
+    <!-- Close button -->
+    <div class="flex justify-end mb-12">
+      <button 
+        class="mobile-menu-close w-14 h-14 bg-surface-glass backdrop-blur-glass border border-border rounded-2xl flex items-center justify-center transition-all duration-smooth hover:border-primary hover:shadow-soft group"
+        aria-label="Close menu"
+      >
+        <svg class="w-6 h-6 text-text transition-colors duration-smooth group-hover:text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Navigation links -->
+    <nav class="flex-1 flex flex-col justify-center gap-4 mb-12">
+      <a 
+        href="/" 
+        class={`mobile-nav-link group relative px-8 py-6 rounded-3xl text-2xl font-black transition-all duration-smooth no-underline ${
+          currentPath === '/' 
+            ? 'bg-gradient-to-r from-primary to-primary-dark text-white shadow-glow' 
+            : 'text-text hover:bg-surface-glass'
+        }`}
+      >
+        <span class="relative z-10">About Us</span>
+        {currentPath !== '/' && (
+          <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-smooth"></div>
+        )}
+      </a>
+      
+      <a 
+        href="/guides" 
+        class={`mobile-nav-link group relative px-8 py-6 rounded-3xl text-2xl font-black transition-all duration-smooth no-underline ${
+          currentPath.startsWith('/guides') 
+            ? 'bg-gradient-to-r from-primary to-primary-dark text-white shadow-glow' 
+            : 'text-text hover:bg-surface-glass'
+        }`}
+      >
+        <span class="relative z-10">Services</span>
+        {!currentPath.startsWith('/guides') && (
+          <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-smooth"></div>
+        )}
+      </a>
+      
+      <a 
+        href="/workouts" 
+        class={`mobile-nav-link group relative px-8 py-6 rounded-3xl text-2xl font-black transition-all duration-smooth no-underline ${
+          currentPath.startsWith('/workouts') 
+            ? 'bg-gradient-to-r from-primary to-primary-dark text-white shadow-glow' 
+            : 'text-text hover:bg-surface-glass'
+        }`}
+      >
+        <span class="relative z-10">Product</span>
+        {!currentPath.startsWith('/workouts') && (
+          <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-smooth"></div>
+        )}
+      </a>
+      
+      <a 
+        href="/faq" 
+        class={`mobile-nav-link group relative px-8 py-6 rounded-3xl text-2xl font-black transition-all duration-smooth no-underline ${
+          currentPath === '/faq' 
+            ? 'bg-gradient-to-r from-primary to-primary-dark text-white shadow-glow' 
+            : 'text-text hover:bg-surface-glass'
+        }`}
+      >
+        <span class="relative z-10">FAQ</span>
+        {currentPath !== '/faq' && (
+          <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-smooth"></div>
+        )}
+      </a>
+    </nav>
+    
+    <!-- CTA -->
+    <a 
+      href="/contact" 
+      class="mobile-cta group relative inline-flex items-center justify-center gap-3 px-10 py-6 bg-gradient-to-r from-primary via-primary-dark to-primary text-white text-xl font-black rounded-3xl no-underline transition-all duration-smooth hover:shadow-glow hover:scale-105 overflow-hidden bg-[length:200%_auto] animate-gradient"
+    >
+      <span class="relative z-10">Get Started</span>
+      <svg class="relative z-10 w-6 h-6 transition-transform duration-smooth group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+      </svg>
+      <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+    </a>
+    
+  </div>
+</div>
+
 <style>
-  /* Mobile menu toggle active state */
-  .mobile-menu-toggle.active .menu-icon {
-    @apply opacity-0 rotate-90;
+  /* Scrolled state */
+  .site-header-2026[data-scrolled="true"] {
+    @apply py-0;
   }
   
-  .mobile-menu-toggle.active .close-icon {
-    @apply opacity-100 rotate-0;
+  .site-header-2026[data-scrolled="true"] .header-backdrop {
+    @apply opacity-100;
   }
   
-  /* Mobile styles */
-  @media (max-width: 768px) {
-    .mobile-menu-toggle {
-      @apply flex;
-    }
-    
-    .nav-links {
-      @apply fixed top-0 -right-full w-[280px] h-screen flex-col p-6 pt-20 gap-2 border-l border-white/10 shadow-2xl backdrop-blur-xl;
-      background-color: rgba(26, 22, 20, 0.98);
-      transition: right 400ms cubic-bezier(0.68, -0.6, 0.32, 1.6);
-    }
-    
-    .nav-links.active {
-      @apply right-0;
-    }
-    
-    .nav-links a {
-      @apply w-full justify-start px-4 py-3 text-base;
-    }
-    
-    .cta-button {
-      @apply hidden;
-    }
+  .site-header-2026[data-scrolled="true"] .header-gradient-line {
+    @apply opacity-100;
+  }
+  
+  .site-header-2026[data-scrolled="true"] .nav-wrapper {
+    @apply py-3;
+  }
+  
+  /* Mobile menu active states */
+  .mobile-menu-toggle.active .menu-line:nth-child(1) {
+    @apply top-1/2 -translate-y-1/2 rotate-45;
+  }
+  
+  .mobile-menu-toggle.active .menu-line:nth-child(2) {
+    @apply opacity-0;
+  }
+  
+  .mobile-menu-toggle.active .menu-line:nth-child(3) {
+    @apply bottom-1/2 translate-y-1/2 -rotate-45;
+  }
+  
+  .mobile-menu-2026.active {
+    @apply opacity-100 pointer-events-auto;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-30px); }
+  }
+  
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
   }
 </style>
 
 <script>
+  // Scroll behavior
+  const header = document.getElementById('site-header');
+  let lastScroll = 0;
+  
+  function handleScroll() {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 50) {
+      header?.setAttribute('data-scrolled', 'true');
+    } else {
+      header?.setAttribute('data-scrolled', 'false');
+    }
+    
+    lastScroll = currentScroll;
+  }
+  
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  
   // Mobile menu toggle
   const menuToggle = document.querySelector('.mobile-menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
+  const mobileMenu = document.querySelector('.mobile-menu-2026');
+  const mobileMenuClose = document.querySelector('.mobile-menu-close');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
   
-  if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      menuToggle.classList.toggle('active');
-    });
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!menuToggle.contains(e.target as Node) && !navLinks.contains(e.target as Node)) {
-        navLinks.classList.remove('active');
-        menuToggle.classList.remove('active');
-      }
-    });
-    
-    // Close menu when clicking a link
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        menuToggle.classList.remove('active');
-      });
-    });
+  function openMobileMenu() {
+    menuToggle?.classList.add('active');
+    mobileMenu?.classList.add('active');
+    document.body.style.overflow = 'hidden';
   }
+  
+  function closeMobileMenu() {
+    menuToggle?.classList.remove('active');
+    mobileMenu?.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  
+  menuToggle?.addEventListener('click', openMobileMenu);
+  mobileMenuClose?.addEventListener('click', closeMobileMenu);
+  
+  // Close menu when clicking a link
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+  
+  // Close menu on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu?.classList.contains('active')) {
+      closeMobileMenu();
+    }
+  });
 </script>
