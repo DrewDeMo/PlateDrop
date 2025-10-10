@@ -1,8 +1,8 @@
 name: Generate Daily Deals
 
 on:
-  schedule:
-    - cron: '0 2 * * *'  # 02:00 UTC daily (10 PM EST / 9 PM EDT)
+  # schedule:
+  #   - cron: '0 2 * * *'  # 02:00 UTC daily (10 PM EST / 9 PM EDT) - PAUSED
   workflow_dispatch:      # Allow manual trigger
 
 permissions:
