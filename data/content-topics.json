@@ -627,17 +627,19 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-10-13",
+    "last_updated": "2025-10-14",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
       "workouts_used": [
         "5x5-strength-training",
         "upper-lower-split",
-        "push-pull-legs"
+        "push-pull-legs",
+        "full-body-beginner"
       ],
       "tips_used": [
-        "choosing-first-barbell"
+        "choosing-first-barbell",
+        "power-rack-setup"
       ]
     }
   }
