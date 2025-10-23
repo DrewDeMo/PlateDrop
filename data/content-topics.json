@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-10-22",
+    "last_updated": "2025-10-23",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -641,13 +641,15 @@
         "bodyweight-plus-weights",
         "deadlift-focused",
         "squat-specialization",
-        "bench-press-program"
+        "bench-press-program",
+        "olympic-lifting-basics"
       ],
       "tips_used": [
         "choosing-first-barbell",
         "power-rack-setup",
         "weight-plate-guide",
-        "bench-maintenance"
+        "bench-maintenance",
+        "barbell-maintenance"
       ]
     }
   }
