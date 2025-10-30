@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-10-29",
+    "last_updated": "2025-10-30",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -646,7 +646,8 @@
         "crossfit-style-wod",
         "dumbbell-only-workout",
         "kettlebell-strength",
-        "morning-quick-workout"
+        "morning-quick-workout",
+        "evening-strength-session"
       ],
       "tips_used": [
         "choosing-first-barbell",
@@ -654,7 +655,8 @@
         "weight-plate-guide",
         "bench-maintenance",
         "barbell-maintenance",
-        "flooring-options"
+        "flooring-options",
+        "space-planning"
       ]
     }
   }
