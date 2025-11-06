@@ -627,31 +627,12 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-11-05",
+    "last_updated": "2025-11-06",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
       "workouts_used": [
-        "5x5-strength-training",
-        "upper-lower-split",
-        "push-pull-legs",
-        "full-body-beginner",
-        "hiit-home-gym",
-        "powerlifting-beginner",
-        "bodyweight-plus-weights",
-        "deadlift-focused",
-        "squat-specialization",
-        "bench-press-program",
-        "olympic-lifting-basics",
-        "crossfit-style-wod",
-        "dumbbell-only-workout",
-        "kettlebell-strength",
-        "morning-quick-workout",
-        "evening-strength-session",
-        "weekend-warrior",
-        "deload-week-workout",
-        "garage-gym-essentials",
-        "basement-gym-routine"
+        "5x5-strength-training"
       ],
       "tips_used": [
         "choosing-first-barbell",
@@ -661,7 +642,8 @@
         "barbell-maintenance",
         "flooring-options",
         "space-planning",
-        "budget-home-gym"
+        "budget-home-gym",
+        "dumbbell-selection"
       ]
     }
   }
