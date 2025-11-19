@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-11-18",
+    "last_updated": "2025-11-19",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -640,7 +640,8 @@
         "powerlifting-beginner",
         "bodyweight-plus-weights",
         "deadlift-focused",
-        "squat-specialization"
+        "squat-specialization",
+        "bench-press-program"
       ],
       "tips_used": [
         "choosing-first-barbell",
