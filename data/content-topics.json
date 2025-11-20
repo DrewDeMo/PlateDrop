@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-11-19",
+    "last_updated": "2025-11-20",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -641,7 +641,8 @@
         "bodyweight-plus-weights",
         "deadlift-focused",
         "squat-specialization",
-        "bench-press-program"
+        "bench-press-program",
+        "olympic-lifting-basics"
       ],
       "tips_used": [
         "choosing-first-barbell",
@@ -655,7 +656,8 @@
         "dumbbell-selection",
         "safety-equipment",
         "cable-system-benefits",
-        "specialty-bars"
+        "specialty-bars",
+        "cardio-equipment"
       ]
     }
   }
