@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-11-24",
+    "last_updated": "2025-11-25",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -644,7 +644,8 @@
         "bench-press-program",
         "olympic-lifting-basics",
         "crossfit-style-wod",
-        "dumbbell-only-workout"
+        "dumbbell-only-workout",
+        "kettlebell-strength"
       ],
       "tips_used": [
         "choosing-first-barbell",
@@ -659,7 +660,8 @@
         "safety-equipment",
         "cable-system-benefits",
         "specialty-bars",
-        "cardio-equipment"
+        "cardio-equipment",
+        "used-equipment"
       ]
     }
   }
