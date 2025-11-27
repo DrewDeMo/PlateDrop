@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-11-26",
+    "last_updated": "2025-11-27",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -646,7 +646,8 @@
         "crossfit-style-wod",
         "dumbbell-only-workout",
         "kettlebell-strength",
-        "morning-quick-workout"
+        "morning-quick-workout",
+        "evening-strength-session"
       ],
       "tips_used": [
         "choosing-first-barbell",
@@ -662,7 +663,8 @@
         "cable-system-benefits",
         "specialty-bars",
         "cardio-equipment",
-        "used-equipment"
+        "used-equipment",
+        "climate-control"
       ]
     }
   }
