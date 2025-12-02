@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-12-01",
+    "last_updated": "2025-12-02",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -649,7 +649,8 @@
         "morning-quick-workout",
         "evening-strength-session",
         "weekend-warrior",
-        "deload-week-workout"
+        "deload-week-workout",
+        "garage-gym-essentials"
       ],
       "tips_used": [
         "choosing-first-barbell",
@@ -666,7 +667,8 @@
         "specialty-bars",
         "cardio-equipment",
         "used-equipment",
-        "climate-control"
+        "climate-control",
+        "noise-reduction"
       ]
     }
   }
