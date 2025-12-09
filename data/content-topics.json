@@ -627,14 +627,15 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-12-08",
+    "last_updated": "2025-12-09",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
       "workouts_used": [
         "5x5-strength-training",
         "upper-lower-split",
-        "push-pull-legs"
+        "push-pull-legs",
+        "full-body-beginner"
       ],
       "tips_used": [
         "choosing-first-barbell",
@@ -653,7 +654,8 @@
         "used-equipment",
         "climate-control",
         "noise-reduction",
-        "lighting-setup"
+        "lighting-setup",
+        "mirror-placement"
       ]
     }
   }
