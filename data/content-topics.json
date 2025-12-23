@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-12-22",
+    "last_updated": "2025-12-23",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -644,10 +644,12 @@
         "bench-press-program",
         "olympic-lifting-basics",
         "crossfit-style-wod",
-        "dumbbell-only-workout"
+        "dumbbell-only-workout",
+        "kettlebell-strength"
       ],
       "tips_used": [
-        "choosing-first-barbell"
+        "choosing-first-barbell",
+        "power-rack-setup"
       ]
     }
   }
