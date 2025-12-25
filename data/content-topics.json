@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-12-24",
+    "last_updated": "2025-12-25",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -646,11 +646,13 @@
         "crossfit-style-wod",
         "dumbbell-only-workout",
         "kettlebell-strength",
-        "morning-quick-workout"
+        "morning-quick-workout",
+        "evening-strength-session"
       ],
       "tips_used": [
         "choosing-first-barbell",
-        "power-rack-setup"
+        "power-rack-setup",
+        "weight-plate-guide"
       ]
     }
   }
