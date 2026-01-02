@@ -627,12 +627,13 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2026-01-01",
+    "last_updated": "2026-01-02",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
       "workouts_used": [
-        "5x5-strength-training"
+        "5x5-strength-training",
+        "upper-lower-split"
       ],
       "tips_used": [
         "choosing-first-barbell",
