@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2026-01-06",
+    "last_updated": "2026-01-07",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -635,7 +635,8 @@
         "5x5-strength-training",
         "upper-lower-split",
         "push-pull-legs",
-        "full-body-beginner"
+        "full-body-beginner",
+        "hiit-home-gym"
       ],
       "tips_used": [
         "choosing-first-barbell",
