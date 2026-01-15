@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2026-01-14",
+    "last_updated": "2026-01-15",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -641,7 +641,8 @@
         "bodyweight-plus-weights",
         "deadlift-focused",
         "squat-specialization",
-        "bench-press-program"
+        "bench-press-program",
+        "olympic-lifting-basics"
       ],
       "tips_used": [
         "choosing-first-barbell",
@@ -651,7 +652,8 @@
         "barbell-maintenance",
         "flooring-options",
         "space-planning",
-        "budget-home-gym"
+        "budget-home-gym",
+        "dumbbell-selection"
       ]
     }
   }
