@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2026-01-15",
+    "last_updated": "2026-01-16",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -642,7 +642,8 @@
         "deadlift-focused",
         "squat-specialization",
         "bench-press-program",
-        "olympic-lifting-basics"
+        "olympic-lifting-basics",
+        "crossfit-style-wod"
       ],
       "tips_used": [
         "choosing-first-barbell",
