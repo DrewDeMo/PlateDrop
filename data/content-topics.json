@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2026-01-22",
+    "last_updated": "2026-01-23",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -647,7 +647,8 @@
         "dumbbell-only-workout",
         "kettlebell-strength",
         "morning-quick-workout",
-        "evening-strength-session"
+        "evening-strength-session",
+        "weekend-warrior"
       ],
       "tips_used": [
         "choosing-first-barbell",
