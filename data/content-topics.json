@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2026-01-26",
+    "last_updated": "2026-01-27",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -649,7 +649,8 @@
         "morning-quick-workout",
         "evening-strength-session",
         "weekend-warrior",
-        "deload-week-workout"
+        "deload-week-workout",
+        "garage-gym-essentials"
       ],
       "tips_used": [
         "choosing-first-barbell",
@@ -662,7 +663,8 @@
         "budget-home-gym",
         "dumbbell-selection",
         "safety-equipment",
-        "cable-system-benefits"
+        "cable-system-benefits",
+        "specialty-bars"
       ]
     }
   }
