@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2026-02-04",
+    "last_updated": "2026-02-05",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -636,7 +636,8 @@
         "upper-lower-split",
         "push-pull-legs",
         "full-body-beginner",
-        "hiit-home-gym"
+        "hiit-home-gym",
+        "powerlifting-beginner"
       ],
       "tips_used": [
         "choosing-first-barbell",
@@ -652,7 +653,8 @@
         "cable-system-benefits",
         "specialty-bars",
         "cardio-equipment",
-        "used-equipment"
+        "used-equipment",
+        "climate-control"
       ]
     }
   }
