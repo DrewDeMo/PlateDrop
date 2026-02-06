@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2026-02-05",
+    "last_updated": "2026-02-06",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -637,7 +637,8 @@
         "push-pull-legs",
         "full-body-beginner",
         "hiit-home-gym",
-        "powerlifting-beginner"
+        "powerlifting-beginner",
+        "bodyweight-plus-weights"
       ],
       "tips_used": [
         "choosing-first-barbell",
