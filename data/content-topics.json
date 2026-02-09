@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2026-02-06",
+    "last_updated": "2026-02-09",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -638,7 +638,8 @@
         "full-body-beginner",
         "hiit-home-gym",
         "powerlifting-beginner",
-        "bodyweight-plus-weights"
+        "bodyweight-plus-weights",
+        "deadlift-focused"
       ],
       "tips_used": [
         "choosing-first-barbell",
