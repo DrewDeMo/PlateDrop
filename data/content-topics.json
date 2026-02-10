@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2026-02-09",
+    "last_updated": "2026-02-10",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -639,7 +639,8 @@
         "hiit-home-gym",
         "powerlifting-beginner",
         "bodyweight-plus-weights",
-        "deadlift-focused"
+        "deadlift-focused",
+        "squat-specialization"
       ],
       "tips_used": [
         "choosing-first-barbell",
@@ -656,7 +657,8 @@
         "specialty-bars",
         "cardio-equipment",
         "used-equipment",
-        "climate-control"
+        "climate-control",
+        "noise-reduction"
       ]
     }
   }
