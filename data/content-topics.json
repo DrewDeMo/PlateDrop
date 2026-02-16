@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2026-02-13",
+    "last_updated": "2026-02-16",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -643,7 +643,8 @@
         "squat-specialization",
         "bench-press-program",
         "olympic-lifting-basics",
-        "crossfit-style-wod"
+        "crossfit-style-wod",
+        "dumbbell-only-workout"
       ],
       "tips_used": [
         "choosing-first-barbell",
