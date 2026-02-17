@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-17",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -644,7 +644,8 @@
         "bench-press-program",
         "olympic-lifting-basics",
         "crossfit-style-wod",
-        "dumbbell-only-workout"
+        "dumbbell-only-workout",
+        "kettlebell-strength"
       ],
       "tips_used": [
         "choosing-first-barbell",
@@ -663,7 +664,8 @@
         "used-equipment",
         "climate-control",
         "noise-reduction",
-        "lighting-setup"
+        "lighting-setup",
+        "mirror-placement"
       ]
     }
   }
