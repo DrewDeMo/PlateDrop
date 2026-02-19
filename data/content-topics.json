@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2026-02-18",
+    "last_updated": "2026-02-19",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -646,7 +646,8 @@
         "crossfit-style-wod",
         "dumbbell-only-workout",
         "kettlebell-strength",
-        "morning-quick-workout"
+        "morning-quick-workout",
+        "evening-strength-session"
       ],
       "tips_used": [
         "choosing-first-barbell",
@@ -666,7 +667,8 @@
         "climate-control",
         "noise-reduction",
         "lighting-setup",
-        "mirror-placement"
+        "mirror-placement",
+        "storage-solutions"
       ]
     }
   }
