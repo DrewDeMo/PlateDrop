@@ -627,7 +627,7 @@
   ],
   "metadata": {
     "version": "1.0",
-    "last_updated": "2026-02-23",
+    "last_updated": "2026-02-24",
     "total_workouts": 20,
     "total_tips": 20,
     "usage_tracking": {
@@ -649,7 +649,8 @@
         "morning-quick-workout",
         "evening-strength-session",
         "weekend-warrior",
-        "deload-week-workout"
+        "deload-week-workout",
+        "garage-gym-essentials"
       ],
       "tips_used": [
         "choosing-first-barbell",
@@ -670,7 +671,8 @@
         "noise-reduction",
         "lighting-setup",
         "mirror-placement",
-        "storage-solutions"
+        "storage-solutions",
+        "progressive-overload"
       ]
     }
   }
